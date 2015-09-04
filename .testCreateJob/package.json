@@ -1,0 +1,18 @@
+{
+  "name": "testJobCreator",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./createJob"
+  },
+  "dependencies": {
+    "ddp": "*",
+    "ddp-login": "https://registry.npmjs.org/ddp-login/-/ddp-login-1.0.9.tgz",
+    "meteor-job": "*"
+  },
+  "description": "Test creating a job with remote jobCollectionService",
+  "main": "createJob.js",
+  "devDependencies": {},
+  "author": "Todd",
+  "license": "GPLv3"
+}
