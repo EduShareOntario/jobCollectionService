@@ -1,0 +1,10 @@
+systemLog:
+   destination: file
+   path: c:\data\log\mongod.log
+   logAppend: true
+storage:
+   dbPath: c:\data\db
+   journal:
+      enabled: true
+setParameter:
+   enableLocalhostAuthBypass: false
