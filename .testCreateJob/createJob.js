@@ -9,7 +9,7 @@ var Job = require('meteor-job');
 
 // Setup the DDP connection
 var ddp = new DDP({
-  host: "gc-21mnfz1.admin.georgianc.on.ca",
+  host: "localhost",
   port: 3000,
   use_ejson: true
 });
