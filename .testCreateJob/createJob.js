@@ -11,7 +11,8 @@ var Job = require('meteor-job');
 var ddp = new DDP({
   host: "localhost",
   port: 3000,
-  use_ejson: true
+  use_ejson: true,
+  useSockJs: true
 });
 var loginOptions = {
   env: 'METEOR_TOKEN',  // Name of an environment variable to check for a
