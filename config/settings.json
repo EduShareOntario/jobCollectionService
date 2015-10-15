@@ -8,5 +8,12 @@
           "sm7ia7R9b3RLrTcHt"
         ]
     }
-  ]
+  ],
+  "public": {
+    "jobCollections": [
+      {
+        "name": "student-transcript"
+      }
+    ]
+  }
 }
