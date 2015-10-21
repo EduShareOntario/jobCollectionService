@@ -1,4 +1,9 @@
 DefaultIdGenerator = {idGenerator:'MONGO'}
+prefixMatch = new RegExp(/(?!xmlns)^.*:/);
+
+stripPrefix = (str) ->
+  return str.replace(prefixMatch, '');
+
 class Described extends Document
   title: ""
   description: ""
@@ -7,8 +12,11 @@ class Described extends Document
 
 class Transcript extends Described
   # Other fields
-  # student
-  # pescCollegeTranscriptXML
+  student: {}
+  ocasApplication: {}
+  pescCollegeTranscriptXML: ''
+  pescCollegeTranscript: {}
+  pescCollegeTranscriptString: ''
   @Meta
     name: 'Transcript'
     #wrap existing Meteor collection so we can attach schema validation
@@ -19,8 +27,10 @@ class Transcript extends Described
         unless fields.pescCollegeTranscriptXML
           [fields._id, undefined]
         else
-          object = xml2js.parseStringSync(fields.pescCollegeTranscriptXML)
+          object = xml2js.parseStringSync(fields.pescCollegeTranscriptXML,{ attrkey: '@',  xmlns: false, ignoreAttrs: true, explicitArray: false })
+          console.log("1 in generatedField "+fields.pescCollegeTranscriptXML + "\nobject:" + JSON.stringify(object))
           [fields._id, object]
+
       fields
 
 @Schemas = {}
@@ -37,17 +47,22 @@ class Transcript extends Described
 }
 
 @Schemas.Transcript = new SimpleSchema([@Schemas.Described, {
-  student:
+  ocasApplication:
     type: Object
     optional: true
+    blackbox: true
   pescCollegeTranscriptXML:
     type: String
     optional: true
   pescCollegeTranscript:
     type: Object
     optional: true
+    blackbox: true
 }])
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
+#todo: this isn't working properly. All object types (eg. student, pescCollegeTranscript) are resulting in empty objects.
 Transcript.Meta.collection.attachSchema Schemas.Transcript
 
 @Transcript = Transcript
+
+Meteor.methods

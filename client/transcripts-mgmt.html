@@ -1,0 +1,404 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transcript Review</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+<script>
+  $(document).on('pagebeforeshow', '#index', function () {
+
+    $(".addrow").click(function () {
+
+      $("#student1").append(' \
+		<fieldset style="background-color:#ffff99" class="ui-grid-d"> \
+					<div class="ui-block-a"><input type="text" data-theme="a" placeholder="course" name="name_course1" id="name_course1"></div> \
+					<div class="ui-block-b"><input type="number" data-theme="a" placeholder="grade" name="grade_course1" id="grade_course1"></div> \
+					<div class="ui-block-c"> \
+						<select name="select-choice-a" style="width:100px" id="select-choice-a" data-native-menu="false"> \
+							<option>Select Equivalent</option> \
+							<option value="standard">Math Option 1</option> \
+							<option value="rush">Math Option 2</option> \
+							<option value="express">Science Option 1</option> \
+							<option value="overnight">Science Option 2</option> \
+							<option value="express">English Option 1</option> \
+							<option value="overnight">English Option 2</option> \
+						</select> \
+					</div> \
+					<div class="ui-block-d" style="padding-top:20px"><span class="grade">--</span><b> Completed Sept 2010</b></div> \
+				</fieldset> \
+		').enhanceWithin();
+
+    });
+
+
+    $(".split").click(function () {
+
+      $("#course1").append(' \
+		<fieldset style="background-color:#ffff99"  class="ui-grid-d"> \
+					<div class="ui-block-a" style="padding-top:20px">Math Grade 12</div> \
+					<div class="ui-block-b"><input type="number" data-theme="a" placeholder="grade" name="grade_course1" id="grade_course1"></div> \
+					<div class="ui-block-c"> \
+						<select name="select-choice-a" style="width:100px" id="select-choice-a" data-native-menu="false"> \
+							<option>Select Equivalent</option> \
+							<option value="standard">Math Option 1</option> \
+							<option value="rush">Math Option 2</option> \
+							<option value="express">Science Option 1</option> \
+							<option value="overnight">Science Option 2</option> \
+							<option value="express">English Option 1</option> \
+							<option value="overnight">English Option 2</option> \
+						</select> \
+					</div> \
+					<div class="ui-block-d" style="padding-top:20px"><span class="grade">99%</span><b> Completed Sept 2010</b></div> \
+				</fieldset> \
+		').enhanceWithin();
+
+
+    });
+
+
+  });
+</script>
+<style type="text/css">
+  input.ui-input-text, textarea.ui-input-text {
+    background-image: none;
+    padding: .4em;
+    line-height: 1.4;
+    font-size: 16px;
+    display: block;
+    width: 97%;
+  }
+
+  .grade {
+    font-weight: bold;
+    color: black;
+    border: 1px solid black;
+    padding: 6px;
+  }
+
+  .split {
+    color: red !important;
+    font-weight: bold;
+  }
+</style>
+<div data-role="page" id="index" class="type-interior">
+
+  <div data-role="header" data-theme="a"
+       style="background: #004b87 url(images/header_bg.png) 50% top no-repeat; padding-top: 5px; padding-left: 5px">
+    <img src="images/georgian-college-logo-2014.svg" alt="Georgian College" style='height:50px'>
+  </div>
+  <!-- /header -->
+
+  <h2>Transcript Review</h2>
+
+  <div data-role="collapsible-set" data-theme="c" data-content-theme="b">
+
+    <!-- student 1 -->
+    <div data-theme="c" data-role="collapsible">
+      <h2>003984299 - John Smith</h2>
+      <span><b>Institution: </b>Lakehead University on September 12, 2015<br></span> <span><b>Major: </b>Software Engineering<br></span>
+      <span><b>Credential Received: </b>Bachelor Engineering<br></span> <span><b>Overall GPA: </b>4.0<br></span>
+      <span><b>Academic Standing: </b>Amazing<br></span> <span><b>Level: </b>Undergraduate<br></span> <a
+        href="index.html" data-role="button" data-icon="grid" data-theme="f" data-inline="true">View Transcript</a>
+
+      <li data-role="fieldcontain">
+        <label for="level" class="select">Level:</label> <select name="level" id="level" data-native-menu="false">
+        <option value="standard">PS</option>
+        <option value="rush">UG</option>
+      </select>
+      </li>
+
+      <li data-role="fieldcontain">
+        <label for="overall_gpa" class="select">Overall GPA:</label> <input type="number" data-theme="a"
+                                                                            name="overall_gpa" id="overall_gpa">
+      </li>
+
+      <fieldset class="ui-grid-d">
+        <div class="ui-block-a" style="padding-top:20px">Math Grade 12</div>
+        <div class="ui-block-b"><input type="number" data-theme="a" placeholder="grade" name="grade_course1"
+                                       id="grade_course1"></div>
+        <div class="ui-block-c">
+          <select name="select-choice-a" style="width:100px" id="select-choice-a" data-native-menu="false">
+            <option>Select Equivalent</option>
+            <option value="standard">Math Option 1</option>
+            <option value="rush">Math Option 2</option>
+            <option value="express">Science Option 1</option>
+            <option value="overnight">Science Option 2</option>
+            <option value="express">English Option 1</option>
+            <option value="overnight">English Option 2</option>
+          </select>
+        </div>
+        <div class="ui-block-d" style="padding-top:20px"><span class='grade'>98%</span><b> Completed Sept 2010</b> <a
+            class='split' href=''>[split]</a></div>
+      </fieldset>
+      <span id="course1"></span>
+
+      <fieldset class="ui-grid-d">
+        <div class="ui-block-a" style="padding-top:20px">Science Grade 12</div>
+        <div class="ui-block-b"><input type="number" data-theme="a" placeholder="grade" name="grade_course1"
+                                       id="grade_course1"></div>
+        <div class="ui-block-c">
+          <select name="select-choice-a" style="width:100px" id="select-choice-a" data-native-menu="false">
+            <option>Select Equivalent</option>
+            <option value="standard">Math Option 1</option>
+            <option value="rush">Math Option 2</option>
+            <option value="express">Science Option 1</option>
+            <option value="overnight">Science Option 2</option>
+            <option value="express">English Option 1</option>
+            <option value="overnight">English Option 2</option>
+          </select>
+        </div>
+        <div class="ui-block-d" style="padding-top:20px"><span class='grade'>95%</span><b> Completed Sept 2010</b> <a
+            class='split' href=''>[split]</a></div>
+      </fieldset>
+
+      <fieldset class="ui-grid-d">
+        <div class="ui-block-a" style="padding-top:20px">English Grade 12</div>
+        <div class="ui-block-b"><input type="number" data-theme="a" placeholder="grade" name="grade_course1"
+                                       id="grade_course1"></div>
+        <div class="ui-block-c">
+          <select name="select-choice-a" style="width:100px" id="select-choice-a" data-native-menu="false">
+            <option>Select Equivalent</option>
+            <option value="standard">Math Option 1</option>
+            <option value="rush">Math Option 2</option>
+            <option value="express">Science Option 1</option>
+            <option value="overnight">Science Option 2</option>
+            <option value="express">English Option 1</option>
+            <option value="overnight">English Option 2</option>
+          </select>
+        </div>
+        <div class="ui-block-d" style="padding-top:20px"><span class='grade'>85%</span><b> Completed Sept 2010</b> <a
+            class='split' href=''>[split]</a></div>
+      </fieldset>
+      <span id="student1"></span><br> <a href="index.html" data-role="button" class="addrow" data-icon="plus"
+                                         data-theme="g" data-inline="true">Add Row</a> <a href="index.html"
+                                                                                          data-role="button"
+                                                                                          data-icon="check"
+                                                                                          data-theme="g"
+                                                                                          data-inline="true">Transcript Review Complete</a>
+    </div>
+
+
+    <!-- student 1 -->
+    <div data-theme="c" data-role="collapsible">
+      <h2>550020349 - Katy Wilson</h2>
+      <span><b>Sender: </b>Lakehead University on September 12, 2015<br></span>
+      <li data-role="fieldcontain">
+        <label for="select-choice-a" class="select">English Grade 12:</label> <select name="select-choice-a"
+                                                                                      id="select-choice-a"
+                                                                                      data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <li data-role="fieldcontain">
+        <label for="select-choice-b" class="select">Math Grade 12:</label> <select name="select-choice-b"
+                                                                                   id="select-choice-b"
+                                                                                   data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <li data-role="fieldcontain">
+        <label for="select-choice-c" class="select">Science Grade 12:</label> <select name="select-choice-c"
+                                                                                      id="select-choice-c"
+                                                                                      data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <a href="index.html" data-role="button" data-icon="check" data-theme="g"
+         data-inline="true">Transcript Review Complete</a>
+    </div>
+
+
+    <!-- student 1 -->
+    <div data-theme="c" data-role="collapsible">
+      <h2>200049293 - Glen Quagmire</h2>
+      <span><b>Sender: </b>Lakehead University on September 12, 2015<br></span>
+      <li data-role="fieldcontain">
+        <label for="select-choice-a" class="select">English Grade 12:</label> <select name="select-choice-a"
+                                                                                      id="select-choice-a"
+                                                                                      data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <li data-role="fieldcontain">
+        <label for="select-choice-b" class="select">Math Grade 12:</label> <select name="select-choice-b"
+                                                                                   id="select-choice-b"
+                                                                                   data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <li data-role="fieldcontain">
+        <label for="select-choice-c" class="select">Science Grade 12:</label> <select name="select-choice-c"
+                                                                                      id="select-choice-c"
+                                                                                      data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <a href="index.html" data-role="button" data-icon="check" data-theme="g"
+         data-inline="true">Transcript Review Complete</a>
+    </div>
+
+
+    <!-- student 2 -->
+    <div data-theme="d" data-role="collapsible">
+      <h2>200488239 - John Herbert</h2>
+      <span><b>Sender: </b>Lakehead University on September 12, 2015<br></span>
+      <li data-role="fieldcontain">
+        <label for="select-choice-a" class="select">English Grade 12:</label> <select name="select-choice-a"
+                                                                                      id="select-choice-a"
+                                                                                      data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <li data-role="fieldcontain">
+        <label for="select-choice-b" class="select">Math Grade 12:</label> <select name="select-choice-b"
+                                                                                   id="select-choice-b"
+                                                                                   data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+      <li data-role="fieldcontain">
+        <label for="select-choice-c" class="select">Science Grade 12:</label> <select name="select-choice-c"
+                                                                                      id="select-choice-c"
+                                                                                      data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <a href="index.html" data-role="button" data-icon="delete" data-theme="d" data-inline="true">Review Incomplete</a>
+    </div>
+
+
+    <!-- student 3 -->
+    <div data-theme="c" data-role="collapsible">
+      <h2>999999902 - Muriel Goldman</h2>
+      <span><b>Sender: </b>Lakehead University on September 12, 2015<br></span>
+      <li data-role="fieldcontain">
+        <label for="select-choice-5a" class="select">English Grade 12:</label> <select name="select-choice-5a"
+                                                                                       id="select-choice-5a"
+                                                                                       data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+
+      <li data-role="fieldcontain">
+        <label for="select-choice-5b" class="select">Math Grade 12:</label> <select name="select-choice-5b"
+                                                                                    id="select-choice-5b"
+                                                                                    data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+      <li data-role="fieldcontain">
+        <label for="select-choice-5c" class="select">Science Grade 12:</label> <select name="select-choice-5c"
+                                                                                       id="select-choice-5c"
+                                                                                       data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Math Option 1</option>
+        <option value="rush">Math Option 2</option>
+        <option value="express">Science Option 1</option>
+        <option value="overnight">Science Option 2</option>
+        <option value="express">English Option 1</option>
+        <option value="overnight">English Option 2</option>
+      </select>
+      </li>
+      <a href="index.html" data-role="button" data-icon="check" data-theme="g"
+         data-inline="true">Transcript Review Complete</a>
+    </div>
+
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#" data-theme="f" data-icon="gear" class="ui-btn-active ui-state-persist">Button 1</a>
+          </li>
+          <li><a href="#" data-theme="f" data-icon="refresh">Button 2</a>
+          </li>
+          <li><a href="#" data-theme="f" data-icon="check">Button 3</a>
+          </li>
+          <li><a href="#" data-theme="f" data-icon="check">Button 4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</body>
