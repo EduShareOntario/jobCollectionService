@@ -5,14 +5,25 @@ Tracker.autorun () ->
   #todo:  keep the X-Auth-Token cookie up-to-date
   # $.cookie 'X-Auth-Token', Accounts._storedLoginToken()
 
-#Template.body.helpers
-#  transcripts: () ->
-#    this.find({})
+Template.body.rendered =
+  () ->
+    # refresh jQM controls
+    $('[data-role="page"]').trigger('create');
+
+Template.transcript.rendered =
+  () ->
+    # Jquery Mobile requires refresh of Javascript manipulated elements!
+    $('[data-role="collapsible-set"]').collapsibleset("refresh")
+#    $('[data-role="button"]').button('refresh')
+    $(this.view.firstNode().parentElement).enhanceWithin()
+
 
 Template.transcript.helpers
   academicRecords: () ->
     # Reactively populate
-    console.log("in academicRecords helper " + JSON.stringify(this))
+    recs = this.pescCollegeTranscript.CollegeTranscript.Student.AcademicRecord
+    recs = [recs] unless recs is Array
+    return recs
 
 Template.transcript.events
     'click .review-complete': (e, t) ->

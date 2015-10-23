@@ -11,6 +11,26 @@
 <body>
 <script>
   $(document).on('pagebeforeshow', '#index', function () {
+    $("#popupVideo iframe")
+        .attr("width", 0)
+        .attr("height", 0);
+
+    $("#popupVideo").on({
+      popupbeforeposition: function () {
+        var size = scale(1097, 698, 15, 1),
+            w = size.width,
+            h = size.height;
+
+        $("#popupVideo iframe")
+            .attr("width", w)
+            .attr("height", h);
+      },
+      popupafterclose: function () {
+        $("#popupVideo iframe")
+            .attr("width", 0)
+            .attr("height", 0);
+      }
+    });
 
     $(".addrow").click(function () {
 
@@ -63,29 +83,8 @@
 
   });
 </script>
-<style type="text/css">
-  input.ui-input-text, textarea.ui-input-text {
-    background-image: none;
-    padding: .4em;
-    line-height: 1.4;
-    font-size: 16px;
-    display: block;
-    width: 97%;
-  }
 
-  .grade {
-    font-weight: bold;
-    color: black;
-    border: 1px solid black;
-    padding: 6px;
-  }
-
-  .split {
-    color: red !important;
-    font-weight: bold;
-  }
-</style>
-<div data-role="page" id="index" class="type-interior">
+<div data-role="page" id="index" class="type-interior ui-page-theme-h">
 
   <div data-role="header" data-theme="a"
        style="background: #004b87 url(images/header_bg.png) 50% top no-repeat; padding-top: 5px; padding-left: 5px">
@@ -95,7 +94,7 @@
 
   <h2>Transcript Review</h2>
 
-  <div data-role="collapsible-set" data-theme="c" data-content-theme="b">
+  <div data-role="collapsible-set">
 
     {{#each transcripts}}
       {{> transcript}}
@@ -104,59 +103,71 @@
   </div>
 
 
-    <div data-role="footer" data-position="fixed">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#" data-theme="f" data-icon="gear" class="ui-btn-active ui-state-persist">Button 1</a>
-          </li>
-          <li><a href="#" data-theme="f" data-icon="refresh">Button 2</a>
-          </li>
-          <li><a href="#" data-theme="f" data-icon="check">Button 3</a>
-          </li>
-          <li><a href="#" data-theme="f" data-icon="check">Button 4</a>
-          </li>
-        </ul>
-      </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="gear" class="ui-btn-active ui-state-persist">Button 1</a>
+        </li>
+        <li><a href="#" data-icon="refresh">Button 2</a>
+        </li>
+        <li><a href="#" data-icon="check">Button 3</a>
+        </li>
+        <li><a href="#" data-icon="check">Button 4</a>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
+<div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="h" data-tolerance="15,15" class="ui-content">
+  <iframe src="doc.pdf" width="497" height="298" seamless></iframe>
 </div>
 </body>
 <template name="transcript">
   {{#let
-    transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
-    person=pescCollegeTranscript.CollegeTranscript.Student.Person
+  transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
+  person=pescCollegeTranscript.CollegeTranscript.Student.Person
   }}
- 
-  <div data-theme="c" data-role="collapsible"
-       class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-first-child ui-collapsible-collapsed">
-    <h2 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
-      {{person.Name.FirstName}} {{person.Name.LastName}} - {{person.AgencyAssignedID}} ({{transmissionData.DocumentID}})
-      <span class="ui-collapsible-heading-status"> click to expand contents</span>
-    </h2>
-    <div class="ui-collapsible-content" aria-hidden="true">
-      <span><b>Source Institution: </b>{{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}}<br></span>
+    <div data-role="collapsible" data-theme="c">
+      <h2>
+        {{person.Name.FirstName}} {{person.Name.LastName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
+        <span class="ui-collapsible-heading-status"> click to expand contents</span>
+      </h2>
       {{#each academicRecords}}
-        {{#each AcademicAward}}
-          {{> academicAward}}
-        {{/each}}
+        {{#if AcademicAward}}
+          {{> academicAward award=AcademicAward}}
+        {{/if}}
       {{/each}}
-
-      <span id="student"></span><br>
-      <a href="index.html" data-role="button" data-icon="check" data-theme="g" data-inline="true"
-        class="review-complete ui-link ui-btn ui-btn-g ui-icon-check ui-btn-icon-left ui-btn-inline ui-shadow ui-corner-all"
-        role="button">Transcript Review Complete</a>
+      <a href="#transcript" data-role="button" data-icon="info" data-theme="h" data-inline="true" role="button"
+         data-rel="popup" data-position-to="origin" class="view-transcript">View Transcript</a>
+      <a data-role="button"
+         data-icon="check"
+         data-theme="h"
+         data-inline="true"
+         role="button"
+         class="review-complete">Transcript Review Complete</a>
     </div>
-  </div>
   {{/let}}
 </template>
 
 <template name="academicAward">
-  <span><b>Level:</b> {{AcademicAwardLevel}}</span>
-  <span><b>Date:</b> {{AcademicAwardDate}}</span>
-  <span><b>Title:</b> {{AcademicAwardTitle}}</span>
-    <!--{{#if AcademicHonors}}-->
-  <!--<span><b>Academic Honors:</b> {{AcademicHonors.HonorsTitle}} with level: {{AcademicHonors.HonorsLevel}}</span>-->
-    <!--{{/if}}-->
-  <!--<span class="{{#if AcademicCompletionIndicator}}award-completed{{/if}}">Completed</span>-->
-  <span><b>Program Type:</b> {{AcademicAwardProgram.AcademicProgramType}}</span>
-  <span><b>Program Name:</b>{{AcademicAwardProgram.AcademicProgramName}}</span>
+  <ul data-role="listview" data-divider-theme="h" class="ui-listview">
+    <li data-role="list-divider" role="heading" class="ui-li ui-li-divider {{#if award.AcademicCompletionIndicator}}award-completed{{/if}}">
+      {{award.AcademicAwardTitle}} level {{award.AcademicAwardLevel}} awarded on {{award.AcademicAwardDate}}
+    </li>
+    <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r"
+        data-iconpos="right">
+      <div class="ui-btn-inner ui-li">
+        <div class="ui-btn-text">
+          {{#if award.AcademicHonors}}
+            <h4 class="ui-li-heading">Honors</h4>
+            <p class="ui-li-desc">{{award.AcademicHonors.HonorsLevel}} {{award.AcademicHonors.HonorsTitle}}</p>
+          {{/if}}
+          <h4 class="ui-li-heading">Program</h4>
+          <p class="ui-li-desc">
+            <strong>{{award.AcademicAwardProgram.AcademicProgramName}} ({{award.AcademicAwardProgram.AcademicProgramType}})</strong>
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
 </template>
