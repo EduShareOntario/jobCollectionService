@@ -8,3 +8,5 @@ storage:
       enabled: true
 setParameter:
    enableLocalhostAuthBypass: false
+replication:
+   replSetName: rs1
