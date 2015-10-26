@@ -19,6 +19,12 @@ Template.transcript.rendered =
 
 
 Template.transcript.helpers
+  reviewable: () ->
+    return this.reviewer == undefined
+
+  reviewerIsMe: () ->
+    return this.reviewer == Meteor.userId()
+
   academicRecords: () ->
     # Reactively populate
     recs = this.pescCollegeTranscript.CollegeTranscript.Student.AcademicRecord
@@ -26,10 +32,15 @@ Template.transcript.helpers
     return recs
 
 Template.transcript.events
-    'click .review-complete': (e, t) ->
-      console.log "User selected 'Review complete' for transcript: #{this._id}"
-      transcript = Template.currentData()
-      Meteor.call "completeReview", transcript._id
+  'click .review-complete': (e, t) ->
+    console.log "User selected 'Review complete' for transcript: #{this._id}"
+    transcript = Template.currentData()
+    Meteor.call "completeReview", transcript._id
+
+  'click .view-transcript': (e, t) ->
+    console.log "User selected 'View Transcript' for transcript: #{this._id}"
+    transcript = Template.currentData()
+    Meteor.call "startReview", transcript._id
 
 #Write your package code here!
 #Template.body.helpers({

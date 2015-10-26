@@ -83,6 +83,14 @@
 
   });
 </script>
+<style>
+  .not-reviewable a.ui-btn.ui-btn-c {
+    background-color: firebrick;
+  }
+  .reviewer-is-me a.ui-btn.ui-btn-c {
+    background-color: lawngreen;
+  }
+</style>
 
 <div data-role="page" id="index" class="type-interior ui-page-theme-h">
 
@@ -127,9 +135,9 @@
   transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
   person=pescCollegeTranscript.CollegeTranscript.Student.Person
   }}
-    <div data-role="collapsible" data-theme="c">
+    <div data-role="collapsible" data-theme="c" class="{{#unless reviewable}}not-reviewable{{/unless}} {{#if reviewerIsMe}}reviewer-is-me{{/if}}">
       <h2>
-        {{person.Name.FirstName}} {{person.Name.LastName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
+        {{title}} {{person.Name.FirstName}} {{person.Name.LastName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
         <span class="ui-collapsible-heading-status"> click to expand contents</span>
       </h2>
       {{#each academicRecords}}

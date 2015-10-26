@@ -10,8 +10,10 @@ class Transcript extends Described
   # Other fields
   pescCollegeTranscriptXML: undefined
   pescCollegeTranscript: undefined
-  reviewComplete: false
-  reviewedBy: undefined
+  reviewStartedOn: undefined
+  reviewCompletedOn: undefined
+  reviewer: undefined
+  reviewer2: undefined
   @Meta
     name: 'Transcript'
     #wrap existing Meteor collection so we can attach schema validation
@@ -26,7 +28,15 @@ class Transcript extends Described
           console.log("1 in generatedField "+fields.pescCollegeTranscriptXML + "\nobject:" + JSON.stringify(object))
           [fields._id, object]
 
+      fields.reviewer2 = @ReferenceField User, false
+
       fields
+
+
+class User extends Document
+  @Meta
+    name: 'User'
+    collection: Meteor.users
 
 @Schemas = {}
 
@@ -53,8 +63,17 @@ class Transcript extends Described
     type: Object
     optional: true
     blackbox: true
-  reviewComplete:
-    type: Boolean
+  reviewStartedOn:
+    type: Date
+    optional: true
+  reviewCompletedOn:
+    type: Date
+    optional: true
+  reviewer:
+    type: String
+    optional: true
+  reviewer2:
+    type: User
     optional: true
 }])
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
@@ -66,7 +85,14 @@ Transcript.Meta.collection.attachSchema Schemas.Transcript
 Meteor.methods
   completeReview: (transcriptId) ->
     #todo: add real access control logic!!
-    #if (this.userId) {
-    transcript = Transcript.documents.exists({_id:transcriptId});
-    console.log("completeReview for transcript:" + transcript);
-    Transcript.documents.update({_id:transcriptId}, { $set: {reviewComplete:true}});
+    if (this.userId)
+      transcript = Transcript.documents.exists({_id:transcriptId})
+      console.log("completeReview for transcript:" + JSON.stringify(transcript))
+      Transcript.documents.update({_id:transcriptId}, { $set: {reviewCompletedOn: new Date(), reviewer:this.userId, reviewer2:Meteor.user()}})
+
+  startReview: (transcriptId) ->
+    #todo: add real access control logic!!
+    if (this.userId)
+      transcript = Transcript.documents.exists({_id:transcriptId})
+      console.log("startReview for transcript:" + JSON.stringify(transcript))
+      Transcript.documents.update({_id:transcriptId}, { $set: {reviewStartedOn: new Date(), reviewer:this.userId, reviewer2:Meteor.user()}})
