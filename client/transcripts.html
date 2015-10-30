@@ -3,114 +3,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transcript Review</title>
   <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="transcripts.css"/>
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
 </head>
-
 <body>
-<script>
-  $(document).on('pagebeforeshow', '#index', function () {
-    $("#popupVideo iframe")
-        .attr("width", 0)
-        .attr("height", 0);
+<div id="page" data-role="page" class="type-interior ui-page-theme-h">
+</div>
+</body>
 
-    $("#popupVideo").on({
-      popupbeforeposition: function () {
-        var size = scale(1097, 698, 15, 1),
-            w = size.width,
-            h = size.height;
+<template name="transcriptsMainLayout">k
+  {{> header}}
+  <main>
+    {{>Template.dynamic template=content}}
+  </main>
+  {{> footer}}
+</template>
 
-        $("#popupVideo iframe")
-            .attr("width", w)
-            .attr("height", h);
-      },
-      popupafterclose: function () {
-        $("#popupVideo iframe")
-            .attr("width", 0)
-            .attr("height", 0);
-      }
-    });
-
-    $(".addrow").click(function () {
-
-      $("#student1").append(' \
-		<fieldset style="background-color:#ffff99" class="ui-grid-d"> \
-					<div class="ui-block-a"><input type="text" data-theme="a" placeholder="course" name="name_course1" id="name_course1"></div> \
-					<div class="ui-block-b"><input type="number" data-theme="a" placeholder="grade" name="grade_course1" id="grade_course1"></div> \
-					<div class="ui-block-c"> \
-						<select name="select-choice-a" style="width:100px" id="select-choice-a" data-native-menu="false"> \
-							<option>Select Equivalent</option> \
-							<option value="standard">Math Option 1</option> \
-							<option value="rush">Math Option 2</option> \
-							<option value="express">Science Option 1</option> \
-							<option value="overnight">Science Option 2</option> \
-							<option value="express">English Option 1</option> \
-							<option value="overnight">English Option 2</option> \
-						</select> \
-					</div> \
-					<div class="ui-block-d" style="padding-top:20px"><span class="grade">--</span><b> Completed Sept 2010</b></div> \
-				</fieldset> \
-		').enhanceWithin();
-
-    });
-
-
-    $(".split").click(function () {
-
-      $("#course1").append(' \
-		<fieldset style="background-color:#ffff99"  class="ui-grid-d"> \
-					<div class="ui-block-a" style="padding-top:20px">Math Grade 12</div> \
-					<div class="ui-block-b"><input type="number" data-theme="a" placeholder="grade" name="grade_course1" id="grade_course1"></div> \
-					<div class="ui-block-c"> \
-						<select name="select-choice-a" style="width:100px" id="select-choice-a" data-native-menu="false"> \
-							<option>Select Equivalent</option> \
-							<option value="standard">Math Option 1</option> \
-							<option value="rush">Math Option 2</option> \
-							<option value="express">Science Option 1</option> \
-							<option value="overnight">Science Option 2</option> \
-							<option value="express">English Option 1</option> \
-							<option value="overnight">English Option 2</option> \
-						</select> \
-					</div> \
-					<div class="ui-block-d" style="padding-top:20px"><span class="grade">99%</span><b> Completed Sept 2010</b></div> \
-				</fieldset> \
-		').enhanceWithin();
-
-
-    });
-
-
-  });
-</script>
-<style>
-  .not-reviewable a.ui-btn.ui-btn-c {
-    background-color: firebrick;
-  }
-  .reviewer-is-me a.ui-btn.ui-btn-c {
-    background-color: lawngreen;
-  }
-</style>
-
-<div data-role="page" id="index" class="type-interior ui-page-theme-h">
-
+<template name="header">
   <div data-role="header" data-theme="a"
        style="background: #004b87 url(images/header_bg.png) 50% top no-repeat; padding-top: 5px; padding-left: 5px">
     <img src="images/georgian-college-logo-2014.svg" alt="Georgian College" style='height:50px'>
   </div>
-  <!-- /header -->
-
   <h2>Transcript Review</h2>
+</template>
 
-  <div data-role="collapsible-set">
-
-    {{#each transcripts}}
-      {{> transcript}}
-    {{/each}}
-
-  </div>
-
-
+<template name="footer">
   <div data-role="footer" data-position="fixed">
     <div data-role="navbar">
       <ul>
@@ -125,19 +43,32 @@
       </ul>
     </div>
   </div>
-</div>
-<div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="h" data-tolerance="15,15" class="ui-content">
-  <iframe src="doc.pdf" width="497" height="298" seamless></iframe>
-</div>
-</body>
-<template name="transcript">
+</template>
+
+<template name="login">
+  {{> loginButtons}}
+</template>
+
+<template name="transcriptList">
+  {{#if Template.subscriptionsReady}}
+    <div data-role="collapsible-set">
+      {{#each transcripts}}
+        {{> transcriptSummary}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>Loading...</p>
+  {{/if}}
+</template>
+
+<template name="transcriptSummary">
   {{#let
   transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
   person=pescCollegeTranscript.CollegeTranscript.Student.Person
   }}
-    <div data-role="collapsible" data-theme="c" class="{{#unless reviewable}}not-reviewable{{/unless}} {{#if reviewerIsMe}}reviewer-is-me{{/if}}">
+    <div data-role="collapsible" data-theme="c" class="{{#unless awaitingReview}}not-reviewable{{/unless}} {{#if reviewerIsMe}}reviewer-is-me{{/if}}">
       <h2>
-        {{title}} {{person.Name.FirstName}} {{person.Name.LastName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
+        {{title}} {{fullName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
         <span class="ui-collapsible-heading-status"> click to expand contents</span>
       </h2>
       {{#each academicRecords}}
@@ -145,16 +76,48 @@
           {{> academicAward award=AcademicAward}}
         {{/if}}
       {{/each}}
-      <a href="#transcript" data-role="button" data-icon="info" data-theme="h" data-inline="true" role="button"
-         data-rel="popup" data-position-to="origin" class="view-transcript">View Transcript</a>
       <a data-role="button"
-         data-icon="check"
+         data-icon="grid"
          data-theme="h"
          data-inline="true"
          role="button"
-         class="review-complete">Transcript Review Complete</a>
+         href="{{pathForTranscriptReview}}"
+         class="view-transcript {{#unless reviewable}}hide{{/unless}}">View Transcript</a>
     </div>
   {{/let}}
+</template>
+
+<template name="transcriptDetail">
+  {{#with transcript}}
+  <div>
+    <a data-role="button"
+       data-icon="check"
+       data-theme="h"
+       data-inline="true"
+       role="button"
+       class="review-complete">Transcript Review Complete</a>
+    <a data-role="button"
+       data-icon="cross"
+       data-theme="h"
+       data-inline="true"
+       role="button"
+       class="cancel-review">Cancel Review</a>
+
+    <p>{{transcript.transcriptDump}}</p>
+    <a data-role="button"
+       data-icon="check"
+       data-theme="h"
+       data-inline="true"
+       role="button"
+       class="review-complete">Transcript Review Complete</a>
+    <a data-role="button"
+       data-icon="cross"
+       data-theme="h"
+       data-inline="true"
+       role="button"
+       class="cancel-review">Cancel Review</a>
+  </div>
+  {{/with}}
 </template>
 
 <template name="academicAward">
@@ -164,12 +127,14 @@
     </li>
     <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r"
         data-iconpos="right">
-      <div class="ui-btn-inner ui-li">
-        <div class="ui-btn-text">
+      <div class="ui-grid-a my-breakpoint">
+        <div class="ui-block-a">
           {{#if award.AcademicHonors}}
             <h4 class="ui-li-heading">Honors</h4>
             <p class="ui-li-desc">{{award.AcademicHonors.HonorsLevel}} {{award.AcademicHonors.HonorsTitle}}</p>
           {{/if}}
+        </div>
+        <div class="ui-block-b">
           <h4 class="ui-li-heading">Program</h4>
           <p class="ui-li-desc">
             <strong>{{award.AcademicAwardProgram.AcademicProgramName}} ({{award.AcademicAwardProgram.AcademicProgramType}})</strong>
@@ -179,3 +144,13 @@
     </li>
   </ul>
 </template>
+
+<!--<template name="popupTranscript">-->
+<!--<div class="popupTranscript">-->
+    <!--{{#if currentTranscript}}-->
+<!--{{>transcriptDetail}}-->
+    <!--{{/if}}-->
+<!--<iframe src="{{selectedTranscript.url}}"></iframe>-->
+<!--</div>-->
+<!--</template>-->
+

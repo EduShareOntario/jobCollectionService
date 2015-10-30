@@ -12,3 +12,6 @@ peerlibrary:xml2js
 coffeescript
 accounts-password
 accounts-ui
+kadira:flow-router
+kadira:blaze-layout
+aldeed:template-extension
