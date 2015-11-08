@@ -1,0 +1,34 @@
+<template name="transcriptDetail">
+  {{#with transcript}}
+    <div>
+      {{>transcriptReviewButtons}}
+      <p>{{transcript.transcriptDump}}</p>
+      {{>transcriptReviewButtons}}
+    </div>
+  {{/with}}
+</template>
+
+<template name="transcriptReviewButtons">
+  <a data-role="button"
+     data-icon="check"
+     data-theme="h"
+     data-inline="true"
+     role="button"
+     class="review-complete">Transcript Review Complete</a>
+  <a data-role="button"
+     data-icon="cross"
+     data-theme="h"
+     data-inline="true"
+     role="button"
+     class="cancel-review">Cancel Review</a>
+</template>
+
+<!--<template name="popupTranscript">-->
+<!--<div class="popupTranscript">-->
+    <!--{{#if currentTranscript}}-->
+<!--{{>transcriptDetail}}-->
+    <!--{{/if}}-->
+<!--<iframe src="{{selectedTranscript.url}}"></iframe>-->
+<!--</div>-->
+<!--</template>-->
+

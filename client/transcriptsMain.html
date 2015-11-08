@@ -1,0 +1,46 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transcript Review</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="transcripts.css"/>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div id="page" data-role="page" class="type-interior ui-page-theme-h">
+</div>
+</body>
+
+<template name="transcriptsMainLayout">k
+  {{> header}}
+  <main>
+    {{>Template.dynamic template=content}}
+  </main>
+  {{> footer}}
+</template>
+
+<template name="header">
+  <div data-role="header" data-theme="a"
+       style="background: #004b87 url(images/header_bg.png) 50% top no-repeat; padding-top: 5px; padding-left: 5px">
+    <img src="images/georgian-college-logo-2014.svg" alt="Georgian College" style='height:50px'>
+  </div>
+  <h2>Transcript Review</h2>
+</template>
+
+<template name="footer">
+  <div data-role="footer" data-position="fixed">
+    <!--<div data-role="navbar">-->
+      <!--<ul>-->
+        <!--<li><a href="#" data-icon="gear" class="ui-btn-active ui-state-persist">Button 1</a>-->
+        <!--</li>-->
+        <!--<li><a href="#" data-icon="refresh">Button 2</a>-->
+        <!--</li>-->
+        <!--<li><a href="#" data-icon="check">Button 3</a>-->
+        <!--</li>-->
+        <!--<li><a href="#" data-icon="check">Button 4</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  </div>
+</template>

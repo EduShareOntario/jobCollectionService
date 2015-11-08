@@ -15,7 +15,7 @@ function createJobCollections(jobCollectionConfigs) {
       }
     });
   } else {
-    JobCollections = [];
+    jobCollections = [];
     console.log("Missing jobCollections object.  Make sure METEOR_SETTINGS is configured with the desired jobCollections.");
   }
   return jobCollections;
