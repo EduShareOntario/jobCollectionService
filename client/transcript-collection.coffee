@@ -144,8 +144,11 @@ transcriptReviewRouter = FlowRouter.group {prefix: "/transcriptReview"}
 transcriptReviewRouter.route '/', {
   name: 'transcriptReviewList'
   action: () ->
-    console.log "Rendering transcript review list"
-    BlazeLayout.render "transcriptsMainLayout", {content: "transcriptList"}
+    Tracker.autorun () ->
+      FlowRouter.watchPathChange()
+      if (FlowRouter.current().route.name == 'transcriptReviewList')
+        console.log "Rendering transcript review list"
+        BlazeLayout.render "transcriptsMainLayout", {content: "transcriptList"}
 }
 
 transcriptReviewRouter.route '/:transcriptId', {

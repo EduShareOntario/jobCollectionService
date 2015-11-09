@@ -25,7 +25,7 @@ class Transcript extends Described
     return @reviewCompletedOn == undefined  && @reviewer == undefined
 
   reviewable: () ->
-    return undefined == @reviewer || @reviewerIsMe()
+    return (undefined == @reviewer || @reviewerIsMe()) && @reviewCompletedOn == undefined
 
   reviewerIsMe: () ->
     return @reviewer == Meteor.userId()
