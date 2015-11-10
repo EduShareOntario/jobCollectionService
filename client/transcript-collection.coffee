@@ -1,3 +1,5 @@
+subscriptionMgr = new SubsManager()
+
 Tracker.autorun () ->
   #todo:  keep the X-Auth-Token cookie up-to-date
   # $.cookie 'X-Auth-Token', Accounts._storedLoginToken()
@@ -17,13 +19,13 @@ Template.body.rendered =
 Template.transcriptsMainLayout.rendered =
   () ->
     console.log "Template.transcriptsMainLayout.rendered"
-    # refresh jQuery Mobile controls
-    $('[data-role="page"]').trigger('create');
+#    # refresh jQuery Mobile controls
+#    $('[data-role="page"]').trigger('create');
 
 Template.transcriptList.onCreated () ->
   self = this
   @autorun () ->
-    subscription = self.subscribe "transcripts", {
+    subscription = subscriptionMgr.subscribe "transcripts", {
       onReady: () ->
         console.log "transcriptList autorun subscribed to 'transcripts' publication."
         # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
@@ -33,6 +35,7 @@ Template.transcriptList.onCreated () ->
     }
     if (subscription.ready())
       console.log "subscription ready!"
+      $('[data-role="page"]').trigger("create")
     else
       console.log "subscription not ready!"
 
@@ -40,20 +43,18 @@ Template.transcriptList.onCreated () ->
     return transcripts()
 
 transcripts = () ->
-  console.log "transcripts() function called"
-  cursor = Transcript.documents.find {reviewCompletedOn: undefined}, {sort: {created: -1}}
-  console.log "transcripts() function called,  cursor: " + JSON.stringify(cursor)
+  cursor = Transcript.documents.find {reviewCompletedOn: undefined}, {sort: {created: 1}}
   return cursor
 
 Template.transcriptList.helpers {
   transcripts: () ->
     return Template.instance().transcripts()
 
-  initializeTemplateElements: () ->
-# refresh jQuery Mobile controls
-#    $('[data-role="page"]').trigger('create');
-    $(this.view.firstNode().parentElement).enhanceWithin()
-    $('[data-role="collapsible-set"]').collapsibleset("refresh")
+#  initializeTemplateElements: () ->
+## refresh jQuery Mobile controls
+##    $('[data-role="page"]').trigger('create');
+#    $(this.view.firstNode().parentElement).enhanceWithin()
+#    $('[data-role="collapsible-set"]').collapsibleset("refresh")
 }
 
 Template.transcriptList.events
@@ -80,16 +81,13 @@ Template.transcriptList.rendered = () ->
   #
   #   This pattern allows us to reinitialize our jQuery plugins (carousels, masonry-like stuff, etc...) whenever new items are being added to the model and subsequently rendered in the DOM by Blaze.
   #
-  computation = Deps.autorun (comp) ->
+  Deps.autorun (comp) ->
       # reference a reactive dependency such that this 'autorun' computation will get called whenever it changes!
       t = transcripts()
       # afterFlush so the DOM is ready!
       Deps.afterFlush () ->
-        console.log "afterFlush, DOM should exist "
-        console.log "computation :" + JSON.stringify(comp)
-#        $('[data-role="collapsible-set"]').collapsibleset("refresh")
+        $('[data-role="page"]').trigger("create")
 
-  console.log JSON.stringify(computation)
 
 Template.transcriptSummary.helpers
   academicRecords: () ->
@@ -106,9 +104,17 @@ Template.transcriptDetail.onCreated () ->
   self = this
   @autorun () ->
     transcriptId = FlowRouter.getParam('transcriptId')
-    subscription = self.subscribe "transcript", transcriptId, {
+    subscription = subscriptionMgr.subscribe "transcript", transcriptId, {
       onReady: () ->
-        console.log "transcriptList autorun subscribed to 'transcript' #{transcriptId} publications"
+        console.log "transcriptDetail autorun subscribed to 'transcript' #{transcriptId} publications"
+
+        # Convert XML to HTML using the transcript document service
+        t = transcript()
+        HTTP.post Meteor.settings.public.transcriptToHtmlURL, {headers: { "Content-Type":"application/x-www-form-urlencoded" }, params: {"doc": t.pescCollegeTranscriptXML}}, (error, response) ->
+          console.log "error:"+error
+          console.log "response:"+response
+          Session.set "transcriptHtml", response.content unless response == undefined
+
         # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
         Deps.afterFlush () ->
           console.log "afterFlush following subscribe ready, DOM should exist "
@@ -116,6 +122,9 @@ Template.transcriptDetail.onCreated () ->
     }
     if (subscription.ready())
       console.log "subscription ready!"
+      Deps.afterFlush () ->
+        console.log "afterFlush following subscribe ready, DOM should exist "
+        $('[data-role="page"]').trigger("create")
     else
       console.log "subscription not ready!"
 
@@ -123,19 +132,27 @@ Template.transcriptDetail.rendered = () ->
   # Jquery Mobile requires refresh of Javascript manipulated elements!
   $(this.view.firstNode().parentElement).enhanceWithin()
 
+transcript = () ->
+  transcriptId = FlowRouter.getParam('transcriptId')
+  return Transcript.documents.findOne(transcriptId) || {}
+
 Template.transcriptDetail.helpers
   transcript: () ->
-    transcriptId = FlowRouter.getParam('transcriptId')
-    return Transcript.documents.findOne(transcriptId) || {}
+    return transcript()
+
+  transcriptHtml: () ->
+    return Session.get "transcriptHtml"
 
 Template.transcriptDetail.events =
   'click .review-complete': (e) ->
     console.log "User completed review of transcript: #{this._id}"
     Meteor.call "completeReview", this._id
+    FlowRouter.go "transcriptReviewList"
 
   'click .cancel-review': (e) ->
     console.log "User cancelled review of transcript: #{this._id}"
     Meteor.call "cancelReview", this._id
+    FlowRouter.go "transcriptReviewList"
 
 
 BlazeLayout.setRoot '#page'
@@ -144,16 +161,28 @@ transcriptReviewRouter = FlowRouter.group {prefix: "/transcriptReview"}
 transcriptReviewRouter.route '/', {
   name: 'transcriptReviewList'
   action: () ->
-    Tracker.autorun () ->
-      FlowRouter.watchPathChange()
-      if (FlowRouter.current().route.name == 'transcriptReviewList')
-        console.log "Rendering transcript review list"
-        BlazeLayout.render "transcriptsMainLayout", {content: "transcriptList"}
+#    Tracker.autorun () ->
+#      FlowRouter.watchPathChange()
+#      if (FlowRouter.current().route.name == 'transcriptReviewList')
+    console.log "Rendering transcript review list"
+    BlazeLayout.render "transcriptsMainLayout", {content: "transcriptList"}
+#      else
+#        console.log "transcriptReviewList pathChanged to #{FlowRouter.current().route.path}"
 }
+
+Tracker.autorun () ->
+  FlowRouter.watchPathChange()
+  console.log "route:" + FlowRouter.current()?.route?.name
+#  FlowRouter.go FlowRouter.current().route.name
 
 transcriptReviewRouter.route '/:transcriptId', {
   name: 'transcriptReviewDetail',
   action: (params) ->
+#    Tracker.autorun () ->
+#      FlowRouter.watchPathChange()
+#      if (FlowRouter.current().route.name == 'transcriptReviewDetail')
     console.log "Reviewing transcript:", params.transcriptId
     BlazeLayout.render "transcriptsMainLayout", {content: "transcriptDetail"}
+#      else
+#        console.log "transcriptReviewDetail pathChanged to #{FlowRouter.current().route.path}"
 }

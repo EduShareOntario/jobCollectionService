@@ -2,7 +2,9 @@
   {{#with transcript}}
     <div>
       {{>transcriptReviewButtons}}
-      <p>{{transcript.transcriptDump}}</p>
+      {{#if transcriptHtml}}
+        {{{transcriptHtml}}}
+      {{/if}}
       {{>transcriptReviewButtons}}
     </div>
   {{/with}}

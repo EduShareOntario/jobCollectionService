@@ -15,3 +15,5 @@ accounts-ui
 kadira:flow-router
 kadira:blaze-layout
 aldeed:template-extension
+meteorhacks:subs-manager
+http
