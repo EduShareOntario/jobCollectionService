@@ -11,6 +11,14 @@
     }
 }
 
+[data-role="header"] > img {
+    height: 50px
+}
+[data-role="header"] {
+    height: 50px;
+    padding-top: 5px;
+}
+
 .not-reviewable a.ui-btn.ui-btn-c {
     background-color: firebrick;
 }
@@ -19,5 +27,9 @@
 }
 
 .hide {
+    display: none;
+}
+
+#georgian-banner {
     display: none;
 }

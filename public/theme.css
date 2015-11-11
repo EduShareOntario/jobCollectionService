@@ -1270,52 +1270,52 @@ button.ui-btn-icon-notext,
 	animation-name: flipintoleft;
 }
 @-webkit-keyframes flipouttoleft {
-    from { -webkit-transform: rotateY(0); }
+    from { -webkit-transform: rotateY(0deg); }
     to { -webkit-transform: rotateY(-90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoleft {
-    from { -moz-transform: rotateY(0); }
+    from { -moz-transform: rotateY(0deg); }
     to { -moz-transform: rotateY(-90deg) scale(.9); }
 }
 @keyframes flipouttoleft {
-    from { transform: rotateY(0); }
+    from { transform: rotateY(0deg); }
     to { transform: rotateY(-90deg) scale(.9); }
 }
 @-webkit-keyframes flipouttoright {
-    from { -webkit-transform: rotateY(0) ; }
+    from { -webkit-transform: rotateY(0deg) ; }
     to { -webkit-transform: rotateY(90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoright {
-    from { -moz-transform: rotateY(0); }
+    from { -moz-transform: rotateY(0deg); }
     to { -moz-transform: rotateY(90deg) scale(.9); }
 }
 @keyframes flipouttoright {
-    from { transform: rotateY(0); }
+    from { transform: rotateY(0deg); }
     to { transform: rotateY(90deg) scale(.9); }
 }
 @-webkit-keyframes flipintoleft {
     from { -webkit-transform: rotateY(-90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0); }
+    to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoleft {
     from { -moz-transform: rotateY(-90deg) scale(.9); }
-    to { -moz-transform: rotateY(0); }
+    to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoleft {
     from { transform: rotateY(-90deg) scale(.9); }
-    to { transform: rotateY(0); }
+    to { transform: rotateY(0deg); }
 }
 @-webkit-keyframes flipintoright {
     from { -webkit-transform: rotateY(90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0); }
+    to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoright {
     from { -moz-transform: rotateY(90deg) scale(.9); }
-    to { -moz-transform: rotateY(0); }
+    to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoright {
     from { transform: rotateY(90deg) scale(.9); }
-    to { transform: rotateY(0); }
+    to { transform: rotateY(0deg); }
 }
 /* The properties in this rule are only necessary for the 'flip' transition.
  * We need specify the perspective to create a projection matrix. This will add
@@ -1377,52 +1377,52 @@ button.ui-btn-icon-notext,
 	animation-name: flipintoleft;
 }
 @-webkit-keyframes flipouttoleft {
-    from { -webkit-transform: rotateY(0); }
+    from { -webkit-transform: rotateY(0deg); }
     to { -webkit-transform: rotateY(-90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoleft {
-    from { -moz-transform: rotateY(0); }
+    from { -moz-transform: rotateY(0deg); }
     to { -moz-transform: rotateY(-90deg) scale(.9); }
 }
 @keyframes flipouttoleft {
-    from { transform: rotateY(0); }
+    from { transform: rotateY(0deg); }
     to { transform: rotateY(-90deg) scale(.9); }
 }
 @-webkit-keyframes flipouttoright {
-    from { -webkit-transform: rotateY(0) ; }
+    from { -webkit-transform: rotateY(0deg) ; }
     to { -webkit-transform: rotateY(90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoright {
-    from { -moz-transform: rotateY(0); }
+    from { -moz-transform: rotateY(0deg); }
     to { -moz-transform: rotateY(90deg) scale(.9); }
 }
 @keyframes flipouttoright {
-    from { transform: rotateY(0); }
+    from { transform: rotateY(0deg); }
     to { transform: rotateY(90deg) scale(.9); }
 }
 @-webkit-keyframes flipintoleft {
     from { -webkit-transform: rotateY(-90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0); }
+    to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoleft {
     from { -moz-transform: rotateY(-90deg) scale(.9); }
-    to { -moz-transform: rotateY(0); }
+    to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoleft {
     from { transform: rotateY(-90deg) scale(.9); }
-    to { transform: rotateY(0); }
+    to { transform: rotateY(0deg); }
 }
 @-webkit-keyframes flipintoright {
     from { -webkit-transform: rotateY(90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0); }
+    to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoright {
     from { -moz-transform: rotateY(90deg) scale(.9); }
-    to { -moz-transform: rotateY(0); }
+    to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoright {
     from { transform: rotateY(90deg) scale(.9); }
-    to { transform: rotateY(0); }
+    to { transform: rotateY(0deg); }
 }
 /* flow transition */
 .flow {

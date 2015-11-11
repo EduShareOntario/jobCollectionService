@@ -1,13 +1,22 @@
 <template name="transcriptDetail">
   {{#with transcript}}
+    <div data-role="header" data-position="fixed">
+      <h2>{{fullName}}</h2>
+      {{>transcriptReviewNav}}
+    </div>
     <div>
-      {{>transcriptReviewButtons}}
       {{#if transcriptHtml}}
         {{{transcriptHtml}}}
       {{/if}}
-      {{>transcriptReviewButtons}}
+    </div>
+    <div data-role="footer" data-position="fixed">
+      {{>transcriptReviewNav}}
     </div>
   {{/with}}
+</template>
+
+<template name="transcriptReviewNav">
+  {{>transcriptReviewButtons}}
 </template>
 
 <template name="transcriptReviewButtons">
@@ -18,7 +27,7 @@
      role="button"
      class="review-complete">Transcript Review Complete</a>
   <a data-role="button"
-     data-icon="cross"
+     data-icon="back"
      data-theme="h"
      data-inline="true"
      role="button"

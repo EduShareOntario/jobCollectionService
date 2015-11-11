@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="/theme.css"/>
   <link rel="stylesheet" href="/transcripts.css"/>
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="/jqueryMobileConfig.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
@@ -14,18 +15,17 @@
 
 <template name="transcriptsMainLayout">
   {{> header}}
-  <main>
+  <main role="main" class="ui-content">
     {{>Template.dynamic template=content}}
   </main>
   {{> footer}}
 </template>
 
 <template name="header">
-  <div data-role="header" data-theme="a"
-       style="background: #004b87 url(images/header_bg.png) 50% top no-repeat; padding-top: 5px; padding-left: 5px">
-    <img src="/images/georgian-college-logo-2014.svg" alt="Georgian College" style='height:50px'>
+  <div data-role="header" data-theme="a" data-position="fixed"
+       style="background: #004b87 url(/images/header_bg.png) 50% top no-repeat; padding-left: 5px">
+    <img src="/images/georgian-college-logo-2014.svg" alt="Georgian College">
   </div>
-  <h2>Transcript Review</h2>
 </template>
 
 <template name="footer">
