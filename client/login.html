@@ -1,3 +1,25 @@
 <template name="login">
-  {{> loginButtons}}
+  {{> ldapLogin}}<br>
+  {{> currentUser}}
 </template>
+
+<template name="unauthorized">
+  <h2 class="error-message">You are not authorized to access this application.</h2>
+  {{>login}}
+</template>
+
+<template name="currentUser">
+  {{#if currentUser}}
+    First Name: {{currentUser.givenName}} <br>
+    Last Name: {{currentUser.sn}} <br>
+    Display Name: {{currentUser.displayName}}<br>
+    Email: {{currentUser.mail}}<br>
+    Member Of: <br> {{#each addKeys currentUser.memberOf}}
+    &nbsp;&nbsp; {{key}}: {{value}} <br>
+  {{/each}}
+    Not member Of: <br> {{#each addKeys currentUser.notMemberOf}}
+    &nbsp;&nbsp; {{key}}: {{value}} <br>
+  {{/each}}
+  {{/if}}
+</template>
+

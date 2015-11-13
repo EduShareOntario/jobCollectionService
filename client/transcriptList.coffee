@@ -20,6 +20,11 @@ Template.transcriptList.onCreated () ->
 
 transcripts = () ->
   cursor = Transcript.documents.find {reviewCompletedOn: undefined}, {sort: {created: 1}}
+  cursor.observe {
+    added: (item) ->
+      Deps.afterFlush () ->
+        $('[data-role="collapsible-set"]').enhanceWithin()
+  }
   return cursor
 
 Template.transcriptList.helpers {
@@ -52,9 +57,12 @@ Template.transcriptList.rendered = () ->
   Deps.autorun (comp) ->
 # reference a reactive dependency such that this 'autorun' computation will get called whenever it changes!
     t = transcripts()
+
     # afterFlush so the DOM is ready!
     Deps.afterFlush () ->
       $('[data-role="page"]').trigger("create")
+#      $('[data-role="collapsible-set"]').collapsibleset()
+      $('[data-role="collapsible-set"]').enhanceWithin()
 
 
 Template.transcriptSummary.helpers

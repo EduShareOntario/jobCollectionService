@@ -11,29 +11,31 @@
 </template>
 
 <template name="transcriptSummary">
-  {{#let
-  transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
-  person=pescCollegeTranscript.CollegeTranscript.Student.Person
-  }}
-    <div data-role="collapsible" data-theme="c" class="{{#unless awaitingReview}}not-reviewable{{/unless}} {{#if reviewerIsMe}}reviewer-is-me{{/if}}">
-      <h2>
-        {{title}} {{fullName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
-        <span class="ui-collapsible-heading-status"> click to expand contents</span>
-      </h2>
-      {{#each academicRecords}}
-        {{#if AcademicAward}}
-          {{> academicAward award=AcademicAward}}
-        {{/if}}
-      {{/each}}
-      <a data-role="button"
-         data-icon="grid"
-         data-theme="h"
-         data-inline="true"
-         role="button"
-         href="{{pathForTranscriptReview}}"
-         class="view-transcript {{#unless reviewable}}hide{{/unless}}">View Transcript</a>
-    </div>
-  {{/let}}
+  <div data-role="collapsible" data-theme="c" class="{{#unless awaitingReview}}not-reviewable{{/unless}} {{#if reviewerIsMe}}reviewer-is-me{{/if}}">
+    {{#if pescCollegeTranscript}}
+      {{#let
+        transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
+        person=pescCollegeTranscript.CollegeTranscript.Student.Person
+      }}
+        <h2>
+          {{title}} {{fullName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
+          <span class="ui-collapsible-heading-status"> click to expand contents</span>
+        </h2>
+        {{#each academicRecords}}
+          {{#if AcademicAward}}
+            {{> academicAward award=AcademicAward}}
+          {{/if}}
+        {{/each}}
+      {{/let}}
+    {{/if}}
+    <a data-role="button"
+       data-icon="grid"
+       data-theme="h"
+       data-inline="true"
+       role="button"
+       href="{{pathForTranscriptReview}}"
+       class="view-transcript {{#unless reviewable}}hide{{/unless}}">View Transcript</a>
+  </div>
 </template>
 
 <template name="academicAward">

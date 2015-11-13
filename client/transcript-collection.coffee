@@ -41,3 +41,8 @@ Template.transcriptDetail.events =
     #console.log "User cancelled review of transcript: #{this._id}"
     Meteor.call "cancelReview", this._id
     FlowRouter.go "transcriptReviewList"
+
+UI.registerHelper 'addKeys', (all) ->
+  return _.map all, (i, k) ->
+    return {key: k, value: i}
+

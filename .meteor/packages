@@ -18,3 +18,4 @@ aldeed:template-extension
 meteorhacks:subs-manager
 http
 reactive-var
+tdamsma:meteor-accounts-ldap

@@ -40,12 +40,12 @@ if (Meteor.isServer) {
 
 }
 
-if (Meteor.isClient) {
-  JobCollections = createJobCollections(Meteor.settings.public ? Meteor.settings.public.jobCollections : undefined);
-
-  Meteor.startup(function(){
-    JobCollections.forEach(function(jobCollection) {
-      Meteor.subscribe(jobCollection.root);
-    });
-  });
-}
+//if (Meteor.isClient) {
+//  JobCollections = createJobCollections(Meteor.settings.public ? Meteor.settings.public.jobCollections : undefined);
+//
+//  Meteor.startup(function(){
+//    JobCollections.forEach(function(jobCollection) {
+//      Meteor.subscribe(jobCollection.root);
+//    });
+//  });
+//}
