@@ -13,9 +13,6 @@ Template.transcriptDetail.onCreated () ->
             template.transcriptHtml.set(response.content)
         else
           template.transcriptHtml.set("<h2>Transcript #{transcriptId} not found</h2>")
-        # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
-        Deps.afterFlush () ->
-          $('[data-role="page"]').trigger("create")
     }
 
 getTranscript = (id) ->
@@ -41,8 +38,3 @@ Template.transcriptDetail.events =
     #console.log "User cancelled review of transcript: #{this._id}"
     Meteor.call "cancelReview", this._id
     FlowRouter.go "transcriptReviewList"
-
-UI.registerHelper 'addKeys', (all) ->
-  return _.map all, (i, k) ->
-    return {key: k, value: i}
-

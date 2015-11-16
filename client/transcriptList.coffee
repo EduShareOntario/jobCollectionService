@@ -36,7 +36,8 @@ Template.transcriptList.events
   'click .view-transcript': (e, t) ->
     Meteor.call "startReview", this._id
 
-Template.transcriptList.rendered = () ->
+Template.transcriptList.onRendered () ->
+  template = this
 #
 # The following code realizes the recipe documented at http://stackoverflow.com/questions/25486954/meteor-rendered-callback-and-applying-jquery-plugins.
 # In our case we need to initialize jQuery Mobile elements!
@@ -54,20 +55,17 @@ Template.transcriptList.rendered = () ->
 #
 #   This pattern allows us to reinitialize our jQuery plugins (carousels, masonry-like stuff, etc...) whenever new items are being added to the model and subsequently rendered in the DOM by Blaze.
 #
-  Deps.autorun (comp) ->
-# reference a reactive dependency such that this 'autorun' computation will get called whenever it changes!
+  template.autorun () ->
+    # reference a reactive dependency such that this 'autorun' computation will get called whenever it changes!
     t = transcripts()
-
     # afterFlush so the DOM is ready!
     Deps.afterFlush () ->
-      $('[data-role="page"]').trigger("create")
-#      $('[data-role="collapsible-set"]').collapsibleset()
       $('[data-role="collapsible-set"]').enhanceWithin()
 
 
 Template.transcriptSummary.helpers
   academicRecords: () ->
-# Reactively populate
+    # Reactively populate
     recs = this.pescCollegeTranscript.CollegeTranscript.Student.AcademicRecord
     recs = [recs] unless recs is Array
     return recs
