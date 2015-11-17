@@ -26,6 +26,6 @@
     display: none;
 }
 
-.loginError {
+.errorText {
     color: darkred;
 }
