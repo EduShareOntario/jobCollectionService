@@ -1,6 +1,3 @@
-#Template.ldapLogin2.replaces "ldapLogin"
-#Template.ldapLogin2.inheritsHelpersFrom "ldapLogin"
-
 Template.ldapLogin2.onCreated () ->
   this.loginFailed = new ReactiveVar(false)
 
@@ -15,6 +12,8 @@ Template.ldapLogin2.events = {
   'click button[name="logout"]': (e) ->
     Template.instance().loginFailed.set(false)
     Meteor.logout()
+    Session.set 'redirectAfterLogin', null
+    FlowRouter.go 'login'
 }
 
 Meteor.loginWithLdap2 = (username, password, callback) ->
@@ -26,25 +25,32 @@ Meteor.loginWithLdap2 = (username, password, callback) ->
     }]
     ,
     validateResult: (result) ->
-      console.log result
-      console.log result
     ,
     userCallback: callback
   }
 
 Template.ldapLogin2.helpers
   loginFailed: () ->
-    return Template.instance().loginFailed.get()
+    failed = Template.instance().loginFailed.get()
+    #console.log "loginFailed: #{failed}"
+    return failed
+
+  unauthorized: () ->
+    failed = Template.instance().loginFailed.get()
+    authorized = Meteor.user()?.memberOf?.length > 0
+    redirect = Session.get 'redirectAfterLogin'
+    return !failed and redirect and !(authorized)
 
 
 # Initiate Login Process:
 initLogin2 = (e, tpl) ->
-  tpl.loginFailed.set(false)
-  username = $(tpl.find('input[name="ldap"]')).val();
-  password = $(tpl.find('input[name="password"]')).val();
-  Meteor.loginWithLdap2 username, password, (result) ->
-    console.log JSON.stringify(result)
-    if (Meteor.userId())
-      tpl.loginFailed.set(false)
-    else
-      tpl.loginFailed.set(true)
+  username = $(tpl.find('input[name="ldap"]')).val().trim();
+  password = $(tpl.find('input[name="password"]')).val().trim();
+  if username.length == 0 or password.length == 0
+    tpl.loginFailed.set true
+  else
+    tpl.loginFailed.set(false)
+    Meteor.loginWithLdap2 username, password, (result) ->
+      #console.log JSON.stringify(result)
+      if (result && result.error)
+        tpl.loginFailed.set(true)

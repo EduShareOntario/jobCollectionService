@@ -23,8 +23,9 @@ ensureLoggedIn = () ->
       FlowRouter.go 'login'
 
 ensurePermitted = () ->
-  unless Meteor.user()?.memberOf?.length > 0
-    FlowRouter.go 'unauthorized'
+  Deps.autorun () ->
+    unless Meteor.user()?.memberOf?.length > 0
+      FlowRouter.go 'login'
 
 privateRoutes = FlowRouter.group {
   name: 'private',
@@ -35,17 +36,18 @@ privateRoutes = FlowRouter.group {
 Accounts.onLogin ->
   redirect = Session.get 'redirectAfterLogin'
   unless redirect is '/login'
+    Session.set 'redirectAfterLogin', null
     FlowRouter.go redirect || '/transcript'
 
 privateRoutes.route '/transcript', {
   name: 'transcriptReviewList'
   action: () ->
-    console.log "Rendering transcript review list"
+    #console.log "Rendering transcript review list"
     BlazeLayout.render "transcriptsMain", {content: "transcriptList"}
 }
 privateRoutes.route '/transcript/:transcriptId', {
   name: 'transcriptReviewDetail',
   action: (params) ->
-    console.log "Reviewing transcript:", params.transcriptId
+    #console.log "Reviewing transcript:", params.transcriptId
     BlazeLayout.render "transcriptsMain", {content: "transcriptDetail"}
 }

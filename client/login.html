@@ -1,12 +1,6 @@
 <template name="login">
   {{> ldapLogin2}}
-  <!--{{> ldapLogin}}-->
   {{> currentUser}}
-</template>
-
-<template name="unauthorized">
-  <h2 class="error-message">You are not authorized to access this application.</h2>
-  {{>login}}
 </template>
 
 <template name="currentUser">
@@ -25,7 +19,7 @@
 </template>
 
 <template name="ldapLogin2">
-  <form class="form-horizontal ui-grid-b">
+  <form class="form-horizontal ui-grid-b my-breakpoint">
     <div class="ui-block-a"></div>
     <div class="ui-block-b">
         <div class="form-group">
@@ -45,7 +39,10 @@
         <span class="loggingIn">Logging in...</span>
       {{/if}}
       {{#if loginFailed}}
-        <span class="loginError">Invalid Username or Password</span>
+        <span class="errorText">Invalid Username or Password</span>
+      {{/if}}
+      {{#if unauthorized}}
+        <span class="errorText">You are not authorized to access this application.</span>
       {{/if}}
     </div>
     <div class="ui-block-c"></div>
