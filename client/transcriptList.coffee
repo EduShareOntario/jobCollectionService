@@ -5,14 +5,14 @@ Template.transcriptList.onCreated () ->
   @autorun () ->
     subscription = subscriptionMgr.subscribe "transcripts", {
       onReady: () ->
-        console.log "transcriptList autorun subscribed to 'transcripts' publication."
+        #console.log "transcriptList autorun subscribed to 'transcripts' publication."
         # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
         Deps.afterFlush () ->
-          console.log "afterFlush following subscribe ready, DOM should exist "
+          #console.log "afterFlush following subscribe ready, DOM should exist "
           $('[data-role="page"]').trigger("create")
     }
     if (subscription.ready())
-      console.log "subscription ready!"
+      #console.log "subscription ready!"
       $('[data-role="page"]').trigger("create")
 
   self.transcripts = () ->

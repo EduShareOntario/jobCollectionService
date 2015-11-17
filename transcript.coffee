@@ -64,6 +64,7 @@ class User extends Document
   created:
     type: Date
     defaultValue: new Date()
+    denyUpdate: true
   # Define a placeholder for the PeerDB _schema field as this is required for the 'migrations' feature.
   _schema:
     type: String
@@ -101,26 +102,27 @@ class User extends Document
 Transcript.Meta.collection.attachSchema Schemas.Transcript
 
 @Transcript = Transcript
+@User = User
 
 Meteor.methods
   completeReview: (transcriptId) ->
-    #todo: add real access control logic!!
-    if (Meteor.userId())
-      exists = Transcript.documents.exists({_id:transcriptId})
-      if (exists)
-        console.log "completeReview for transcript:" + transcriptId
-        Transcript.documents.update({_id:transcriptId}, { $set: {reviewCompletedOn: new Date(), reviewer:Meteor.userId(), reviewer2:Meteor.user()}})
-      else
-        console.log "completeReview failed for transcript:" + transcriptId + " ; a document with this id does not exist!"
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+    exists = Transcript.documents.exists({_id:transcriptId})
+    if (exists)
+      console.log "#{user._id}, #{user.dn} : completeReview for transcript:" + transcriptId
+      Transcript.documents.update({_id:transcriptId}, { $set: {reviewCompletedOn: new Date(), reviewer:Meteor.userId(), reviewer2:Meteor.user()}})
+    else
+      console.log "#{user._id}, #{user.dn} : completeReview failed for transcript:" + transcriptId + " ; a document with this id does not exist!"
 
   startReview: (transcriptId) ->
-    #todo: add real access control logic!!
-    if (Meteor.userId())
-      console.log "startReview for transcript:" + transcriptId
-      Transcript.documents.update({_id:transcriptId}, { $set: {reviewStartedOn: new Date(), reviewer:Meteor.userId(), reviewer2:Meteor.user()}})
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+    console.log "#{user._id}, #{user.dn} : startReview for transcript:" + transcriptId
+    Transcript.documents.update({_id:transcriptId}, { $set: {reviewStartedOn: new Date(), reviewer:Meteor.userId(), reviewer2:Meteor.user()}})
 
   cancelReview: (transcriptId) ->
-    #todo: add real access control logic!!
-    if (Meteor.userId())
-      console.log "cancelReview for transcript:" + transcriptId
-      Transcript.documents.update(_id:transcriptId, { $unset: {reviewStartedOn: "", reviewer:"", reviewer2:""}})
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+    console.log "#{user._id}, #{user.dn} : cancelReview for transcript:" + transcriptId
+    Transcript.documents.update(_id:transcriptId, { $unset: {reviewStartedOn: "", reviewer:"", reviewer2:""}})

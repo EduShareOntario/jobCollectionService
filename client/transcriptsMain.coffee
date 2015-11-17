@@ -10,5 +10,5 @@ Template.transcriptsMain.onRendered () ->
     # See http://docs.meteor.com/#/full/template_helpers
     FlowRouter.watchPathChange()
     Deps.afterFlush ->
-      console.log "transcriptsMain rendered"
+      #console.log "transcriptsMain rendered"
       $(template.firstNode.parentElement).trigger("create")
