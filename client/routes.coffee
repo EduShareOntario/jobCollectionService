@@ -14,18 +14,16 @@ exposed.route '/unauthorized', {
 
 # Before going to any route that is part of this route group, make sure the user is logged in!
 ensureLoggedIn = () ->
-  Deps.autorun () ->
-    unless Meteor.loggingIn() or Meteor.userId()
-      route = FlowRouter.current()
-      # remember where they want to go!
-      unless route.route.name is 'login'
-        Session.set 'redirectAfterLogin', route.path
-      FlowRouter.go 'login'
+  unless Meteor.loggingIn() or Meteor.userId()
+    route = FlowRouter.current()
+    # remember where they want to go!
+    unless route.route.name is 'login'
+      Session.set 'redirectAfterLogin', route.path
+    FlowRouter.go 'login'
 
 ensurePermitted = () ->
-  Deps.autorun () ->
-    unless Meteor.user()?.memberOf?.length > 0
-      FlowRouter.go 'login'
+  unless Meteor.user()?.memberOf?.length > 0
+    FlowRouter.go 'login'
 
 privateRoutes = FlowRouter.group {
   name: 'private',
