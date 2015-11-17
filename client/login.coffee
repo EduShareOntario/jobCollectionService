@@ -8,12 +8,6 @@ Template.ldapLogin2.events = {
   'keyup input': (e, tpl) ->
     if (e.keyCode == 13) #If Enter Key Pressed
       initLogin2 e, tpl
-
-  'click button[name="logout"]': (e) ->
-    Template.instance().loginFailed.set(false)
-    Meteor.logout()
-    Session.set 'redirectAfterLogin', null
-    FlowRouter.go 'login'
 }
 
 Meteor.loginWithLdap2 = (username, password, callback) ->
