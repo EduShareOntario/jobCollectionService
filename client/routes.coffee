@@ -22,7 +22,7 @@ ensureLoggedIn = () ->
     FlowRouter.go 'login'
 
 ensurePermitted = () ->
-  unless Meteor.user()?.memberOf?.length > 0
+  unless Meteor.loggingIn() or Meteor.user()?.memberOf?.length > 0
     FlowRouter.go 'login'
 
 privateRoutes = FlowRouter.group {
