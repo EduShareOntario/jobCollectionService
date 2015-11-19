@@ -45,3 +45,11 @@ Meteor.methods
       console.log transcipt.title + ":" + transcipt._id
     console.log "createTranscriptsForTesting is done"
 
+  createTranscript: (transcript) ->
+    console.log "createTranscript called with #{JSON.stringify(transcript)}"
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+    transcript = new Transcript(transcript)
+    insertAndWait = Meteor.wrapAsync Transcript.documents.insert
+    newId = insertAndWait transcript
+    return newId
