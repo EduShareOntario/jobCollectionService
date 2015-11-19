@@ -18,7 +18,7 @@ ensureLoggedIn = () ->
     route = FlowRouter.current()
     # remember where they want to go!
     unless route.route.name is 'login'
-      Session.set 'redirectAfterLogin', route.path
+      Session.set 'redirectAfterLogin', route.name
     FlowRouter.go 'login'
 
 ensurePermitted = () ->
@@ -32,10 +32,13 @@ privateRoutes = FlowRouter.group {
 
 # After successful login, redirect the user to the route they originally tried.
 Accounts.onLogin ->
-  redirect = Session.get 'redirectAfterLogin'
-  unless redirect is '/login'
-    Session.set 'redirectAfterLogin', null
-    FlowRouter.go redirect || '/transcript'
+  currentRoute = FlowRouter.current().route
+  redirect = (Session.get 'redirectAfterLogin') or 'transcriptReviewList'
+  Session.set 'redirectAfterLogin', null
+  if currentRoute?.name is redirect
+    FlowRouter.reload()
+  else
+    FlowRouter.go redirect
 
 privateRoutes.route '/transcript', {
   name: 'transcriptReviewList'
