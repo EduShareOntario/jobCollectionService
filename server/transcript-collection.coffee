@@ -50,6 +50,21 @@ Meteor.methods
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
     transcript = new Transcript(transcript)
-    insertAndWait = Meteor.wrapAsync Transcript.documents.insert
-    newId = insertAndWait transcript
+    newId = Transcript.documents.insert transcript
     return newId
+
+  getTranscript: (transcriptId) ->
+    console.log "getTranscript called with #{JSON.stringify(transcriptId)}"
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+    transcript = Transcript.documents.findOne(transcriptId)
+    console.log "transcript is #{transcript}"
+    return transcript
+
+  setApplicant: (transcriptId, applicant) ->
+    console.log "setApplicant called with transcriptId #{transcriptId} and applicant #{JSON.stringify(applicant)}"
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+    Transcript.documents.update {_id:transcriptId}, { $set:{applicant: applicant} }
+    return true
+

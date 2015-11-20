@@ -1,18 +1,29 @@
 {
   "jobCollections": [
     {
-      "name": "student-transcript",
+      "name": "student-transcript-in",
       "adminUserIds": [
           "studentTranscriptAdmin",
           "aFrEmKx5uPxdFdoCk",
           "sm7ia7R9b3RLrTcHt"
         ]
+    },
+    {
+      "name": "student-transcript-out",
+      "adminUserIds": [
+        "studentTranscriptAdmin",
+        "aFrEmKx5uPxdFdoCk",
+        "sm7ia7R9b3RLrTcHt"
+      ]
     }
   ],
   "public": {
     "jobCollections": [
       {
-        "name": "student-transcript"
+        "name": "student-transcript-in"
+      },
+      {
+        "name": "student-transcript-out"
       }
     ],
     "transcriptToHtmlURL": "http://transformdoc.georgiantest.com"

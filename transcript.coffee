@@ -96,7 +96,15 @@ class User extends Document
     type: User
     optional: true
     blackbox: true
+  applicant:
+    type: Object
+    optional: true
+    blackbox: true
 }])
+
+@Schemas.Applicant = new SimpleSchema {
+
+}
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
 #todo: this isn't working properly. All object types (eg. student, pescCollegeTranscript) are resulting in empty objects.
 Transcript.Meta.collection.attachSchema Schemas.Transcript

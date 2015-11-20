@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns0:CollegeTranscript xmlns:ns0="urn:org:pesc:message:CollegeTranscript:v1.3.0" xmlns:AcRec="urn:org:pesc:sector:AcademicRecord:v1.6.0" xmlns:core="urn:org:pesc:core:CoreMain:v1.10.0" xmlns:ext="urn:ca:ocas:useextensions">
+	<TransmissionData>
+		<DocumentID>5259233</DocumentID>
+		<CreatedDateTime>2015-09-07T07:31:20-05:00</CreatedDateTime>
+		<DocumentTypeCode>RequestedRecord</DocumentTypeCode>
+		<TransmissionType>Original</TransmissionType>
+		<Source>
+			<Organization>
+				<CSIS>351411</CSIS>
+				<OrganizationName>York University</OrganizationName>
+				<Contacts>
+					<Address>
+						<AddressLine>Office of the Registrar</AddressLine>
+						<AddressLine>4700 Keele Street</AddressLine>
+						<City>North York</City>
+						<StateProvinceCode>ON</StateProvinceCode>
+						<PostalCode>M3J 1P3</PostalCode>
+					</Address>
+					<Phone>
+						<PhoneNumber>736-5262</PhoneNumber>
+					</Phone>
+					<FaxPhone>
+						<PhoneNumber>736-5444</PhoneNumber>
+					</FaxPhone>
+					<NoteMessage>Transcripts Unit</NoteMessage>
+				</Contacts>
+			</Organization>
+		</Source>
+		<Destination>
+			<Organization/>
+		</Destination>
+		<DocumentCompleteCode>Complete</DocumentCompleteCode>
+		<RequestTrackingID>C20150903092923</RequestTrackingID>
+	</TransmissionData>
+	<Student>
+		<Person>
+			<SchoolAssignedPersonID>211596962</SchoolAssignedPersonID>
+			<AgencyAssignedID>152281017</AgencyAssignedID>
+			<Birth/>
+			<Name>
+				<NamePrefix>Mr</NamePrefix>
+				<FirstName>Hassan</FirstName>
+				<MiddleName>Mujtaba</MiddleName>
+				<LastName>Amarsi</LastName>
+			</Name>
+			<AlternateName/>
+			<Gender><GenderCode>Male</GenderCode></Gender>
+		</Person>
+		<AcademicRecord>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2011-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall/Winter 2011</SessionName>
+					<SessionType>LongSession</SessionType>
+					<SessionBeginDate>2011-09-01</SessionBeginDate>
+					<SessionEndDate>2012-04-01</SessionEndDate>
+				</AcademicSessionDetail>
+				<AcademicProgram>
+					<AcademicProgramName>Bachelor Of Arts</AcademicProgramName>
+				</AcademicProgram>
+				<AcademicAward>
+					<AcademicAwardLevel>2.4</AcademicAwardLevel>
+					<AcademicAwardTitle>Faculty of Liberal Arts and Professional Studies, B.A., Political Science</AcademicAwardTitle>
+				</AcademicAward>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>SC NATS</CourseSubjectAbbreviation>
+					<CourseNumber>1840</CourseNumber>
+					<CourseTitle>Science, Technology and the Environ</CourseTitle>
+					<NoteMessage>TITLE CONTINUED ment</NoteMessage>
+					<NoteMessage>CLASS SIZE      331</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   4.4 (C)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>D+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP PHIL</CourseSubjectAbbreviation>
+					<CourseNumber>1000</CourseNumber>
+					<CourseTitle>Introduction to Philosophy</CourseTitle>
+					<NoteMessage>CLASS SIZE      184</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   4.2 (C)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP POLS</CourseSubjectAbbreviation>
+					<CourseNumber>1000</CourseNumber>
+					<CourseTitle>Introduction to Politics</CourseTitle>
+					<NoteMessage>CLASS SIZE      106</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   5.9 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>D+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP POLS</CourseSubjectAbbreviation>
+					<CourseNumber>2910</CourseNumber>
+					<CourseTitle>Cdn. Democracy in North American Co</CourseTitle>
+					<NoteMessage>TITLE CONTINUED ntext</NoteMessage>
+					<NoteMessage>CLASS SIZE      116</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   3.9 (C)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>9.00</CourseCreditValue>
+					<CourseCreditEarned>9.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP SOSC</CourseSubjectAbbreviation>
+					<CourseNumber>1210</CourseNumber>
+					<CourseTitle>Human Rights in a Socio-legal Conte</CourseTitle>
+					<NoteMessage>TITLE CONTINUED xt</NoteMessage>
+					<NoteMessage>CLASS SIZE      239</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   5.1 (C+)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<NoteMessage>DECISION        Winter 2012-May proceed in Honours.</NoteMessage>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2012-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall/Winter 2012</SessionName>
+					<SessionType>LongSession</SessionType>
+					<SessionBeginDate>2012-09-01</SessionBeginDate>
+					<SessionEndDate>2013-04-01</SessionEndDate>
+				</AcademicSessionDetail>
+				<AcademicProgram>
+					<AcademicProgramName>Bachelor Of Arts</AcademicProgramName>
+				</AcademicProgram>
+				<AcademicAward>
+					<AcademicAwardLevel>2.5</AcademicAwardLevel>
+					<AcademicAwardTitle>Faculty of Liberal Arts and Professional Studies, B.A., Hons. International Deve</AcademicAwardTitle>
+					<NoteMessage>TITLE CONTINUED lopment Studies</NoteMessage>
+				</AcademicAward>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP ARB</CourseSubjectAbbreviation>
+					<CourseNumber>2700</CourseNumber>
+					<CourseTitle>Introduction to Arab Culture</CourseTitle>
+					<NoteMessage>CLASS SIZE      42</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.4 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP POLS</CourseSubjectAbbreviation>
+					<CourseNumber>2940</CourseNumber>
+					<CourseTitle>Introduction to International Polit</CourseTitle>
+					<NoteMessage>TITLE CONTINUED ics</NoteMessage>
+					<NoteMessage>CLASS SIZE      153</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   4.9 (C+)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>9.00</CourseCreditValue>
+					<CourseCreditEarned>9.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP SOSC</CourseSubjectAbbreviation>
+					<CourseNumber>1430</CourseNumber>
+					<CourseTitle>Intro. to International Develop. St</CourseTitle>
+					<NoteMessage>TITLE CONTINUED udies</NoteMessage>
+					<NoteMessage>CLASS SIZE      195</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   5.1 (C+)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<NoteMessage>DECISION        Winter 2013-May continue in Honours.</NoteMessage>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2013-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall/Winter 2013</SessionName>
+					<SessionType>LongSession</SessionType>
+					<SessionBeginDate>2013-09-01</SessionBeginDate>
+					<SessionEndDate>2014-04-01</SessionEndDate>
+				</AcademicSessionDetail>
+				<AcademicProgram>
+					<AcademicProgramName>Bachelor Of Arts</AcademicProgramName>
+				</AcademicProgram>
+				<AcademicAward>
+					<AcademicAwardLevel>2.5</AcademicAwardLevel>
+					<AcademicAwardTitle>Faculty of Liberal Arts and Professional Studies, B.A., Hons. International Deve</AcademicAwardTitle>
+					<NoteMessage>TITLE CONTINUED lopment Studies</NoteMessage>
+				</AcademicAward>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>D+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP LING</CourseSubjectAbbreviation>
+					<CourseNumber>1000</CourseNumber>
+					<CourseTitle>Introduction to Linguistics</CourseTitle>
+					<NoteMessage>CLASS SIZE      57</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.5 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>3.00</CourseCreditValue>
+					<CourseCreditEarned>3.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP LING</CourseSubjectAbbreviation>
+					<CourseNumber>2400</CourseNumber>
+					<CourseTitle>Language in Its Social Context</CourseTitle>
+					<NoteMessage>CLASS SIZE      59</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   4.8 (C+)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>9.00</CourseCreditValue>
+					<CourseCreditEarned>9.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP SOSC</CourseSubjectAbbreviation>
+					<CourseNumber>2480</CourseNumber>
+					<CourseTitle>Introduction to African Studies</CourseTitle>
+					<NoteMessage>CLASS SIZE      82</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   5.6 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP SOSC</CourseSubjectAbbreviation>
+					<CourseNumber>2800</CourseNumber>
+					<CourseTitle>Development: Comp. &amp; Hist. Perspect</CourseTitle>
+					<NoteMessage>TITLE CONTINUED ive</NoteMessage>
+					<NoteMessage>CLASS SIZE      81</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   5.2 (C+)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<NoteMessage>DECISION        Winter 2014-May proceed only in Bachelor program.</NoteMessage>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2014-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall/Winter 2014</SessionName>
+					<SessionType>LongSession</SessionType>
+					<SessionBeginDate>2014-09-01</SessionBeginDate>
+					<SessionEndDate>2015-05-01</SessionEndDate>
+				</AcademicSessionDetail>
+				<AcademicProgram>
+					<AcademicProgramName>Bachelor Of Arts</AcademicProgramName>
+				</AcademicProgram>
+				<AcademicAward>
+					<AcademicAwardLevel>2.5</AcademicAwardLevel>
+					<AcademicAwardTitle>Faculty of Liberal Arts and Professional Studies, B.A., Hons. International Deve</AcademicAwardTitle>
+					<NoteMessage>TITLE CONTINUED lopment Studies</NoteMessage>
+				</AcademicAward>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>3.00</CourseCreditValue>
+					<CourseCreditEarned>3.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP GEOG</CourseSubjectAbbreviation>
+					<CourseNumber>4850</CourseNumber>
+					<CourseTitle>The state, civil society and develo</CourseTitle>
+					<NoteMessage>TITLE CONTINUED pment</NoteMessage>
+					<NoteMessage>CLASS SIZE      13</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.5 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP HUMA</CourseSubjectAbbreviation>
+					<CourseNumber>4180</CourseNumber>
+					<CourseTitle>Europe   la Mode</CourseTitle>
+					<NoteMessage>CLASS SIZE      18</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.1 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>3.00</CourseCreditValue>
+					<CourseCreditEarned>3.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP LING</CourseSubjectAbbreviation>
+					<CourseNumber>3160</CourseNumber>
+					<CourseTitle>Discourse Analysis</CourseTitle>
+					<NoteMessage>CLASS SIZE      46</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.2 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>3.00</CourseCreditValue>
+					<CourseCreditEarned>3.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP LING</CourseSubjectAbbreviation>
+					<CourseNumber>3240</CourseNumber>
+					<CourseTitle>Second Language Acquisition</CourseTitle>
+					<NoteMessage>CLASS SIZE      43</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.0 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>3.00</CourseCreditValue>
+					<CourseCreditEarned>3.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP SOCI</CourseSubjectAbbreviation>
+					<CourseNumber>4430</CourseNumber>
+					<CourseTitle>Canada and Refugees</CourseTitle>
+					<NoteMessage>CLASS SIZE      19</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.3 (B)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B+</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP SOSC</CourseSubjectAbbreviation>
+					<CourseNumber>3800</CourseNumber>
+					<CourseTitle>Development Studies and Research Me</CourseTitle>
+					<NoteMessage>TITLE CONTINUED thods</NoteMessage>
+					<NoteMessage>CLASS SIZE      15</NoteMessage>
+					<NoteMessage>CLASS AVERAGE   6.5 (B+)</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<NoteMessage>DECISION        Winter 2015-May continue in Honours.</NoteMessage>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2015-05</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Summer 2015</SessionName>
+					<SessionType>Semester</SessionType>
+					<SessionBeginDate>2015-05-01</SessionBeginDate>
+					<SessionEndDate>2015-08-01</SessionEndDate>
+				</AcademicSessionDetail>
+				<AcademicProgram>
+					<AcademicProgramName>Bachelor Of Arts</AcademicProgramName>
+				</AcademicProgram>
+				<AcademicAward>
+					<AcademicAwardLevel>2.5</AcademicAwardLevel>
+					<AcademicAwardTitle>Faculty of Liberal Arts and Professional Studies, B.A., Hons. International Deve</AcademicAwardTitle>
+					<NoteMessage>TITLE CONTINUED lopment Studies</NoteMessage>
+				</AcademicAward>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP ANTH</CourseSubjectAbbreviation>
+					<CourseNumber>4340</CourseNumber>
+					<CourseTitle>Advocacy and Social Movements</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>FA MUSI</CourseSubjectAbbreviation>
+					<CourseNumber>2520</CourseNumber>
+					<CourseTitle>Contemporary Black Urban Music</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Semester</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>6.00</CourseCreditValue>
+					<CourseCreditEarned>6.00</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C</CourseAcademicGrade>
+					<CourseSubjectAbbreviation>AP SOSC</CourseSubjectAbbreviation>
+					<CourseNumber>4600</CourseNumber>
+					<CourseTitle>International Develop. Studies Semi</CourseTitle>
+					<NoteMessage>TITLE CONTINUED nar</NoteMessage>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+			</AcademicSession>
+			<AdditionalStudentAchievements/>
+		</AcademicRecord>
+	</Student>
+</ns0:CollegeTranscript>

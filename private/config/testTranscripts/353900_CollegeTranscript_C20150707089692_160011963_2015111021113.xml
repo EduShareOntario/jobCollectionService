@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns0:CollegeTranscript xmlns:ns0="urn:org:pesc:message:CollegeTranscript:v1.3.0" xmlns:AcRec="urn:org:pesc:sector:AcademicRecord:v1.6.0" xmlns:core="urn:org:pesc:core:CoreMain:v1.10.0" xmlns:ext="urn:ca:ocas:useextensions">
+	<TransmissionData>
+		<DocumentID>5259261</DocumentID>
+		<CreatedDateTime>2015-09-10T07:31:13-05:00</CreatedDateTime>
+		<DocumentTypeCode>RequestedRecord</DocumentTypeCode>
+		<TransmissionType>Original</TransmissionType>
+		<Source>
+			<Organization>
+				<CSIS>352011</CSIS>
+				<OrganizationName>Ryerson University</OrganizationName>
+				<Contacts>
+					<Address>
+						<AddressLine>350 Victoria Street</AddressLine>
+						<City>Toronto</City>
+						<StateProvinceCode>ON</StateProvinceCode>
+						<PostalCode>M5B2K3</PostalCode>
+					</Address>
+				</Contacts>
+			</Organization>
+		</Source>
+		<Destination>
+			<Organization/>
+		</Destination>
+		<DocumentCompleteCode>Complete</DocumentCompleteCode>
+		<RequestTrackingID>C20150707089692</RequestTrackingID>
+		<NoteMessage>LEGEND          http://www.ryerson.ca/currentstudents/essr/</NoteMessage>
+	</TransmissionData>
+	<Student>
+		<Person>
+			<SchoolAssignedPersonID>500643255</SchoolAssignedPersonID>
+			<AgencyAssignedID>152033913</AgencyAssignedID>
+			<Birth/>
+			<Name>
+				<NamePrefix>Mr</NamePrefix>
+				<FirstName>Chris</FirstName>
+				<LastName>Evans</LastName>
+			</Name>
+			<AlternateName/>
+			<Gender><GenderCode>Male</GenderCode></Gender>
+		</Person>
+		<AcademicRecord>
+			<AcademicSummary>
+				<NoteMessage>REG HISTORY     PROGRAM : Bachelor of Arts</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2014-07-28 : Active in Program</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2014-07-28 : Politics and Governance Major</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2015-05-05 : Academic Leave</NoteMessage>
+				<NoteMessage>NOTATION        CUM UNITS EARNED - Bachelor of Arts - 4</NoteMessage>
+				<NoteMessage>NOTATION        CUMULATIVE GPA -  Bachelor of Arts - 0.96</NoteMessage>
+			</AcademicSummary>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2014-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall 2014</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C-</CourseAcademicGrade>
+					<CourseQualityPointsEarned>1.67</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>BSM</CourseSubjectAbbreviation>
+					<CourseNumber>200</CourseNumber>
+					<CourseTitle>The Growing Bus: Breaking Even</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>A-</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0025.000</CourseCSISCode>
+					<CourseQualityPointsEarned>3.67</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CFRE</CourseSubjectAbbreviation>
+					<CourseNumber>101</CourseNumber>
+					<CourseTitle>Introductory French I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseQualityPointsEarned>2.33</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CRM</CourseSubjectAbbreviation>
+					<CourseNumber>100</CourseNumber>
+					<CourseTitle>Canadian Criminal Justice</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>D</CourseAcademicGrade>
+					<CourseQualityPointsEarned>1</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>POG</CourseSubjectAbbreviation>
+					<CourseNumber>100</CourseNumber>
+					<CourseTitle>People, Power and Politics</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>SSH</CourseSubjectAbbreviation>
+					<CourseNumber>205</CourseNumber>
+					<CourseTitle>Academic Writing and Research</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>All</AcademicSummaryType>
+					<AcademicSummaryLevel>Undergraduate</AcademicSummaryLevel>
+					<GPA>
+						<CreditHoursEarned>4</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>1.73</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+					<NoteMessage>DECISION        Academic Standing: Clear</NoteMessage>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2015-01</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Winter 2015</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>ACC</CourseSubjectAbbreviation>
+					<CourseNumber>100</CourseNumber>
+					<CourseTitle>Intro Financial Accounting</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>POG</CourseSubjectAbbreviation>
+					<CourseNumber>110</CourseNumber>
+					<CourseTitle>Power Influence in Cdn Pols</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>SOC</CourseSubjectAbbreviation>
+					<CourseNumber>107</CourseNumber>
+					<CourseTitle>Sociology of the Everyday</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>SSH</CourseSubjectAbbreviation>
+					<CourseNumber>105</CourseNumber>
+					<CourseTitle>Critical Thinking I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>All</AcademicSummaryType>
+					<AcademicSummaryLevel>Undergraduate</AcademicSummaryLevel>
+					<GPA>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>0</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+					<NoteMessage>DECISION        Academic Standing:  Required to Withdraw</NoteMessage>
+				</AcademicSummary>
+			</AcademicSession>
+			<AdditionalStudentAchievements/>
+		</AcademicRecord>
+	</Student>
+</ns0:CollegeTranscript>
