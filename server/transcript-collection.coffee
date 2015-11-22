@@ -58,7 +58,7 @@ Meteor.methods
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
     transcript = Transcript.documents.findOne(transcriptId)
-    console.log "transcript is #{transcript}"
+    #console.log "transcript is #{transcript}"
     return transcript
 
   setApplicant: (transcriptId, applicant) ->

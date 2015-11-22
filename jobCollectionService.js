@@ -30,11 +30,20 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     // Normal Meteor publish call, the server always controls what each client can see
     JobCollections.forEach(function(jobCollection) {
-      Meteor.publish(jobCollection.name, function() {
+      Meteor.publish(jobCollection.root, function() {
         return jobCollection.find({});
       });
       // Start the job queue running
       jobCollection.startJobServer();
+
+      //Ready jobs that are waiting.
+      //Jobs go into a waiting state when they have been running too long as specified by workTimeout.
+      Job.processJobs(jobCollection.root, 'readyJobs', function(job,cb){
+        Job.readyJobs(job.root);
+        job.done();
+        cb();
+      });
+
     });
   });
 
