@@ -3,22 +3,26 @@ subscriptionMgr = new SubsManager { expireIn: 3 }
 Template.transcriptList.onCreated () ->
   self = this
   @autorun () ->
-    subscription = subscriptionMgr.subscribe "transcripts", {
+    userId = Meteor.userId() # force evaluation if user changes
+    subscription = subscriptionMgr.subscribe "transcripts", Meteor.user(), {
       onReady: () ->
-        #console.log "transcriptList autorun subscribed to 'transcripts' publication."
+        console.log "transcriptList autorun subscribed to 'transcripts' publication. when userId is #{userId}"
         # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
         Deps.afterFlush () ->
-          #console.log "afterFlush following subscribe ready, DOM should exist "
+          console.log "transcriptList autorun afterFlush following subscribe ready, DOM should exist. when userId is #{userId}"
           $('[data-role="page"]').trigger("create")
     }
     if (subscription.ready())
-      #console.log "subscription ready!"
+      console.log "subscription ready!"
       $('[data-role="page"]').trigger("create")
+    console.log "subscribed to 'transcripts' publication when userId is #{userId}"
 
   self.transcripts = () ->
+    console.log "transcripts() called from template onCreated event handler."
     return transcripts()
 
 transcripts = () ->
+  console.log "transcripts() called"
   cursor = Transcript.documents.find {reviewCompletedOn: undefined}, {sort: {created: 1}}
   cursor.observe {
     added: (item) ->
@@ -29,6 +33,7 @@ transcripts = () ->
 
 Template.transcriptList.helpers {
   transcripts: () ->
+    console.log "transcripts() helper called"
     return Template.instance().transcripts()
 }
 

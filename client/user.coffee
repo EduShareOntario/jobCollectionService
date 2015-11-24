@@ -1,3 +1,5 @@
 Deps.autorun () ->
-  Meteor.subscribe "userData", Meteor.userId()
-
+  userId = Meteor.userId()
+  if userId
+    Meteor.subscribe "userData", userId
+    console.log "subscribed to userData for userId #{userId}"

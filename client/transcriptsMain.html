@@ -16,7 +16,15 @@
 <template name="transcriptsMain">
   {{> header}}
   <main role="main" class="ui-content">
-    {{>Template.dynamic template=content}}
+    {{#if authorized }}
+        {{>Template.dynamic template=content}}
+    {{ else }}
+      {{#if authReady}}
+        <span class="errorText">You are not authorized to access this application.</span>
+      {{ else }}
+        <span class="errorText">Checking your permission to access this application.</span>
+      {{/if}}
+    {{/if}}
   </main>
   {{> footer}}
 </template>

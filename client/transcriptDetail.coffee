@@ -15,6 +15,17 @@ Template.transcriptDetail.onCreated () ->
           template.transcriptHtml.set("<h2>Transcript #{transcriptId} not found</h2>")
     }
 
+Template.transcriptDetail.onRendered () ->
+  template = this
+  # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
+  template.autorun () ->
+# Watching the path change makes this autorun whenever the path changes!
+# See http://docs.meteor.com/#/full/template_helpers
+    FlowRouter.watchPathChange()
+    Deps.afterFlush ->
+      console.log "transcriptDetail rendered"
+      $(template.firstNode.parentElement).trigger("create")
+
 getTranscript = (id) ->
   return Transcript.documents.findOne(id) || {}
 

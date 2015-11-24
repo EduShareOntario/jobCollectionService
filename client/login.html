@@ -1,6 +1,10 @@
 <template name="login">
-  {{> ldapLogin2}}
-  {{> currentUser}}
+  {{> header}}
+  <main role="main" class="ui-content">
+    {{> ldapLogin2}}
+    {{> currentUser}}
+  </main>
+  {{> footer}}
 </template>
 
 <template name="currentUser">
@@ -37,12 +41,14 @@
         <button type="button" class="btn btn-login" name="login2">Login</button>
       {{#if loggingIn }}
         <span class="loggingIn">Logging in...</span>
-      {{/if}}
-      {{#if loginFailed}}
-        <span class="errorText">Invalid Username or Password</span>
-      {{/if}}
-      {{#if unauthorized}}
-        <span class="errorText">You are not authorized to access this application.</span>
+      {{else}}
+        {{#if authError}}
+            <span class="errorText">Invalid Username or Password</span>
+        {{else}}
+          {{#unless authorized}}
+              <span class="errorText">You are not authorized to access this application.</span>
+          {{/unless}}
+        {{/if}}
       {{/if}}
     </div>
     <div class="ui-block-c"></div>
