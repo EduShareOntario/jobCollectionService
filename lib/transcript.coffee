@@ -49,11 +49,6 @@ class Transcript extends Described
       fields
 
 
-class User extends Document
-  @Meta
-    name: 'User'
-    collection: Meteor.users
-
 @Schemas = {}
 
 @Schemas.Described = new SimpleSchema {
@@ -93,7 +88,7 @@ class User extends Document
     type: String
     optional: true
   reviewer2:
-    type: User
+    type: @User
     optional: true
     blackbox: true
   applicant:
@@ -106,11 +101,9 @@ class User extends Document
 
 }
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
-#todo: this isn't working properly. All object types (eg. student, pescCollegeTranscript) are resulting in empty objects.
 Transcript.Meta.collection.attachSchema Schemas.Transcript
 
 @Transcript = Transcript
-@User = User
 
 Meteor.methods
   completeReview: (transcriptId) ->

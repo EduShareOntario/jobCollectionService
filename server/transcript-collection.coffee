@@ -1,6 +1,6 @@
 fs = Npm.require 'fs'
 
-Meteor.publish 'transcripts', () ->
+Meteor.publish 'transcripts', (user) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
   user = User.documents.findOne this.userId
   throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
