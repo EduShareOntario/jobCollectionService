@@ -1,47 +1,9 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Transcript Review</title>
-  <link rel="stylesheet" href="/theme.css"/>
-  <link rel="stylesheet" href="/transcripts.css"/>
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="/jqueryMobileConfig.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-</head>
-<body>
-<div id="page" data-role="page" class="type-interior ui-page-theme-h">
-</div>
-</body>
-
 <template name="transcriptsMain">
-  {{> header}}
   <main role="main" class="ui-content">
     {{#if authorized }}
         {{>Template.dynamic template=content}}
     {{ else }}
-      {{#if authReady}}
-        <span class="errorText">You are not authorized to access this application.</span>
-      {{ else }}
-        <span class="errorText">Checking your permission to access this application.</span>
-      {{/if}}
+      {{>authStatus}}
     {{/if}}
   </main>
-  {{> footer}}
-</template>
-
-<template name="footer">
-  <div data-role="footer" data-position="fixed">
-    <!--<div data-role="navbar">-->
-      <!--<ul>-->
-        <!--<li><a href="#" data-icon="gear" class="ui-btn-active ui-state-persist">Button 1</a>-->
-        <!--</li>-->
-        <!--<li><a href="#" data-icon="refresh">Button 2</a>-->
-        <!--</li>-->
-        <!--<li><a href="#" data-icon="check">Button 3</a>-->
-        <!--</li>-->
-        <!--<li><a href="#" data-icon="check">Button 4</a>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</div>-->
-  </div>
 </template>

@@ -2,24 +2,9 @@
   {{> header}}
   <main role="main" class="ui-content">
     {{> ldapLogin2}}
-    {{> currentUser}}
+    {{> authStatus}}
   </main>
   {{> footer}}
-</template>
-
-<template name="currentUser">
-  {{#if currentUser}}
-    First Name: {{currentUser.givenName}} <br>
-    Last Name: {{currentUser.sn}} <br>
-    Display Name: {{currentUser.displayName}}<br>
-    Email: {{currentUser.mail}}<br>
-    Member Of: <br> {{#each addKeys currentUser.memberOf}}
-    &nbsp;&nbsp; {{key}}: {{value}} <br>
-  {{/each}}
-    Not member Of: <br> {{#each addKeys currentUser.notMemberOf}}
-    &nbsp;&nbsp; {{key}}: {{value}} <br>
-  {{/each}}
-  {{/if}}
 </template>
 
 <template name="ldapLogin2">
@@ -39,17 +24,13 @@
           </div>
         </div>
         <button type="button" class="btn btn-login" name="login2">Login</button>
-      {{#if loggingIn }}
-        <span class="loggingIn">Logging in...</span>
-      {{else}}
-        {{#if authError}}
-            <span class="errorText">Invalid Username or Password</span>
+        {{#if authenticating}}
+          <span class="authenticating">Logging in...</span>
         {{else}}
-          {{#unless authorized}}
-              <span class="errorText">You are not authorized to access this application.</span>
-          {{/unless}}
+          {{#if authError}}
+            <span class="errorText">Invalid Username or Password</span>
+          {{/if}}
         {{/if}}
-      {{/if}}
     </div>
     <div class="ui-block-c"></div>
   </form>

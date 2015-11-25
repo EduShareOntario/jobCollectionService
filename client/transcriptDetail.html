@@ -1,16 +1,16 @@
 <template name="transcriptDetail">
   {{#with transcript}}
-    <div data-role="header" data-position="fixed">
+    {{#header}}
       {{>transcriptReviewNav}}
-    </div>
+    {{/header}}
     <div>
       {{#if transcriptHtml}}
         {{{transcriptHtml}}}
       {{/if}}
     </div>
-    <div data-role="footer" data-position="fixed">
+    {{#footer}}
       {{>transcriptReviewNav}}
-    </div>
+    {{/footer}}
   {{/with}}
 </template>
 
@@ -50,13 +50,4 @@
   </div>
 
 </template>
-
-<!--<template name="popupTranscript">-->
-<!--<div class="popupTranscript">-->
-    <!--{{#if currentTranscript}}-->
-<!--{{>transcriptDetail}}-->
-    <!--{{/if}}-->
-<!--<iframe src="{{selectedTranscript.url}}"></iframe>-->
-<!--</div>-->
-<!--</template>-->
 

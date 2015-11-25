@@ -1,21 +1,24 @@
 subscriptionMgr = new SubsManager { expireIn: 3 }
 
 Template.transcriptList.onCreated () ->
+  console.log "transcriptList created, userId is #{Meteor.userId()}"
   self = this
   @autorun () ->
-    userId = Meteor.userId() # force evaluation if user changes
-    subscription = subscriptionMgr.subscribe "transcripts", Meteor.user(), {
-      onReady: () ->
-        console.log "transcriptList autorun subscribed to 'transcripts' publication. when userId is #{userId}"
-        # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
-        Deps.afterFlush () ->
-          console.log "transcriptList autorun afterFlush following subscribe ready, DOM should exist. when userId is #{userId}"
-          $('[data-role="page"]').trigger("create")
-    }
-    if (subscription.ready())
-      console.log "subscription ready!"
-      $('[data-role="page"]').trigger("create")
-    console.log "subscribed to 'transcripts' publication when userId is #{userId}"
+    if Auth.authorized()
+      userId = Meteor.userId()
+#      username = Meteor.user()?.username
+      subscription = subscriptionMgr.subscribe "transcripts", userId, {
+        onReady: () ->
+          console.log "transcriptList autorun subscribed to 'transcripts' publication. when userId is #{userId}"
+          # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
+          Deps.afterFlush () ->
+            console.log "transcriptList autorun afterFlush following subscribe ready, DOM should exist. when userId is #{userId}"
+            $('[data-role="page"]').trigger("create")
+      }
+      if (subscription.ready())
+        console.log "subscription ready!"
+        $('[data-role="page"]').trigger("create")
+      console.log "subscribed to 'transcripts' publication when userId is #{userId}"
 
   self.transcripts = () ->
     console.log "transcripts() called from template onCreated event handler."

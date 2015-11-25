@@ -8,28 +8,28 @@
     [data-role="header"] .ui-block-b {
       padding-right: 1%;
     }
-    [data-role="header"], [data-role="footer"] {
+    [data-role="header"] {
       background: #004b87 url(/images/header_bg.png) 50% top no-repeat !important;
     }
     .logo {
-      height: 50px
+      height: 45px;
+      margin: 2px;
     }
-    .georgian-banner {
-      padding-top: 5px;
-      padding-left: 5px;
-    }
-
   </style>
   <div data-role="header" data-theme="a" data-position="fixed">
-    <div class="ui-grid-a">
-      <div class="georgian-banner ui-block-a">
-        <img class="logo" src="/images/georgian-college-logo-2014.svg" alt="Georgian College">
+    {{#if Template.contentBlock}}
+      {{> Template.contentBlock}}
+    {{else}}
+      <div class="ui-grid-a">
+        <div class="georgian-banner ui-block-a">
+          <img class="logo" src="/images/georgian-college-logo-2014.svg" alt="Georgian College">
+        </div>
+        <div class="ui-block-b">
+          {{#if authReady}}
+            <button class="btn" name="logout">Logout</button>
+          {{/if}}
+        </div>
       </div>
-      <div class="ui-block-b">
-        {{#if currentUser}}
-          <button class="btn" name="logout">Logout</button>
-        {{/if}}
-      </div>
-    </div>
+    {{/if}}
   </div>
 </template>
