@@ -1,0 +1,27 @@
+
+/* stack all grids below 40em (640px) */
+@media all and (max-width: 35em) {
+    .my-breakpoint .ui-block-a,
+    .my-breakpoint .ui-block-b,
+    .my-breakpoint .ui-block-c,
+    .my-breakpoint .ui-block-d,
+    .my-breakpoint .ui-block-e {
+        width: 100%;
+        float: none;
+    }
+}
+
+.not-reviewable a.ui-btn.ui-btn-c {
+    background-color: firebrick;
+}
+.reviewer-is-me a.ui-btn.ui-btn-c {
+    background-color: #64a70b;
+}
+
+.hide {
+    display: none;
+}
+
+.errorText {
+    color: darkred;
+}

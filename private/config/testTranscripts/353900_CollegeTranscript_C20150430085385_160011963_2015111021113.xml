@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns0:CollegeTranscript xmlns:ns0="urn:org:pesc:message:CollegeTranscript:v1.3.0" xmlns:AcRec="urn:org:pesc:sector:AcademicRecord:v1.6.0" xmlns:core="urn:org:pesc:core:CoreMain:v1.10.0" xmlns:ext="urn:ca:ocas:useextensions">
+	<TransmissionData>
+		<DocumentID>5259246</DocumentID>
+		<CreatedDateTime>2015-09-09T07:30:54-05:00</CreatedDateTime>
+		<DocumentTypeCode>RequestedRecord</DocumentTypeCode>
+		<TransmissionType>Original</TransmissionType>
+		<Source>
+			<Organization>
+				<CSIS>352011</CSIS>
+				<OrganizationName>Ryerson University</OrganizationName>
+				<Contacts>
+					<Address>
+						<AddressLine>350 Victoria Street</AddressLine>
+						<City>Toronto</City>
+						<StateProvinceCode>ON</StateProvinceCode>
+						<PostalCode>M5B2K3</PostalCode>
+					</Address>
+				</Contacts>
+			</Organization>
+		</Source>
+		<Destination>
+			<Organization/>
+		</Destination>
+		<DocumentCompleteCode>Complete</DocumentCompleteCode>
+		<RequestTrackingID>C20150430085385</RequestTrackingID>
+		<NoteMessage>LEGEND          http://www.ryerson.ca/currentstudents/essr/</NoteMessage>
+	</TransmissionData>
+	<Student>
+		<Person>
+			<SchoolAssignedPersonID>500146670</SchoolAssignedPersonID>
+			<AgencyAssignedID>151773282</AgencyAssignedID>
+			<Birth/>
+			<Name>
+				<NamePrefix>Miss</NamePrefix>
+				<FirstName>Natasha</FirstName>
+				<LastName>Moghul</LastName>
+			</Name>
+			<AlternateName/>
+			<Gender><GenderCode>Female</GenderCode></Gender>
+		</Person>
+		<AcademicRecord>
+			<AcademicSummary>
+				<NoteMessage>REG HISTORY     PROGRAM : Non Certificate Program</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2011-12-08 : Active in Program</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2011-12-08 : Non Certificate Studies Course(s)</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2014-09-02 : Cancelled</NoteMessage>
+				<NoteMessage>NOTATION        CUM UNITS EARNED - Non Certificate Program - 5</NoteMessage>
+				<NoteMessage>NOTATION        CUMULATIVE GPA -  Non Certificate Program - 2.09</NoteMessage>
+			</AcademicSummary>
+			<AcademicSummary>
+				<NoteMessage>REG HISTORY     PROGRAM : Bachelor of Science</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2009-04-07 : Cancelled</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2009-04-07 : Biology Major</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2009-08-18 : Active in Program</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2010-12-23 : Academic Leave</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2013-01-30 : Discontinued</NoteMessage>
+				<NoteMessage>REG HISTORY     PROGRAM : Business Management</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2014-07-28 : Active in Program</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2014-07-28 : Undeclared Major</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2015-03-16 : Active in Program</NoteMessage>
+				<NoteMessage>REG HIST CONT'D 2015-03-16 : Marketing  Management Major</NoteMessage>
+				<NoteMessage>NOTATION        CUM UNITS EARNED - Bachelor of Science - 4</NoteMessage>
+				<NoteMessage>NOTATION        CUMULATIVE GPA -  Bachelor of Science - 0.89</NoteMessage>
+				<NoteMessage>NOTATION        CUM UNITS EARNED - Business Management - 3</NoteMessage>
+				<NoteMessage>NOTATION        CUMULATIVE GPA -  Business Management - 1.67</NoteMessage>
+			</AcademicSummary>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2009-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall 2009</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>D-</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0.67</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>BLG</CourseSubjectAbbreviation>
+					<CourseNumber>143</CourseNumber>
+					<CourseTitle>Biology I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CHY</CourseSubjectAbbreviation>
+					<CourseNumber>103</CourseNumber>
+					<CourseTitle>General Chemistry I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>MTH</CourseSubjectAbbreviation>
+					<CourseNumber>131</CourseNumber>
+					<CourseTitle>Modern Mathematics I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>530</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>PSD</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>SCI</CourseSubjectAbbreviation>
+					<CourseNumber>180</CourseNumber>
+					<CourseTitle>Orientation</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>All</AcademicSummaryType>
+					<AcademicSummaryLevel>Undergraduate</AcademicSummaryLevel>
+					<GPA>
+						<CreditHoursEarned>2</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>0.22</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+					<NoteMessage>DECISION        Academic Standing:  Probationary</NoteMessage>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2010-01</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Winter 2010</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>D+</CourseAcademicGrade>
+					<CourseQualityPointsEarned>1.33</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>BLG</CourseSubjectAbbreviation>
+					<CourseNumber>144</CourseNumber>
+					<CourseTitle>Biology II</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>All</AcademicSummaryType>
+					<AcademicSummaryLevel>Undergraduate</AcademicSummaryLevel>
+					<GPA>
+						<CreditHoursEarned>1</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>1.33</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+					<NoteMessage>DECISION        Academic Standing: Probationary</NoteMessage>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2010-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall 2010</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>BLG</CourseSubjectAbbreviation>
+					<CourseNumber>151</CourseNumber>
+					<CourseTitle>Microbiology I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B+</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0060.003</CourseCSISCode>
+					<CourseQualityPointsEarned>3.33</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CPHL</CourseSubjectAbbreviation>
+					<CourseNumber>110</CourseNumber>
+					<CourseTitle>Philosophy of Religion I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>All</AcademicSummaryType>
+					<AcademicSummaryLevel>Undergraduate</AcademicSummaryLevel>
+					<GPA>
+						<CreditHoursEarned>1</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>1.67</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+					<NoteMessage>DECISION        Academic Standing:  Required to Withdraw</NoteMessage>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2012-01</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Winter 2012</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0014.000</CourseCSISCode>
+					<CourseQualityPointsEarned>2</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CECN</CourseSubjectAbbreviation>
+					<CourseNumber>104</CourseNumber>
+					<CourseTitle>Introductory Microeconomics</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B+</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0034.003</CourseCSISCode>
+					<CourseQualityPointsEarned>3.33</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CITM</CourseSubjectAbbreviation>
+					<CourseNumber>102</CourseNumber>
+					<CourseTitle>Business Information Systems I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0071.000</CourseCSISCode>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CQMS</CourseSubjectAbbreviation>
+					<CourseNumber>102</CourseNumber>
+					<CourseTitle>Business Statistics I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>UserDefined</AcademicSummaryType>
+					<GPA>
+						<CreditHoursEarned>2</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>1.78</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2012-02</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Spring/Summer 2012</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0001.000</CourseCSISCode>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CACC</CourseSubjectAbbreviation>
+					<CourseNumber>100</CourseNumber>
+					<CourseTitle>Intro Financial Accounting</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>UserDefined</AcademicSummaryType>
+					<GPA>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>0</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2012-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall 2012</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>A-</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0001.000</CourseCSISCode>
+					<CourseQualityPointsEarned>3.67</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CACC</CourseSubjectAbbreviation>
+					<CourseNumber>100</CourseNumber>
+					<CourseTitle>Intro Financial Accounting</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>UserDefined</AcademicSummaryType>
+					<GPA>
+						<CreditHoursEarned>1</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>3.67</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2013-09</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Fall 2013</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>C+</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0071.000</CourseCSISCode>
+					<CourseQualityPointsEarned>2.33</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CQMS</CourseSubjectAbbreviation>
+					<CourseNumber>102</CourseNumber>
+					<CourseTitle>Business Statistics I</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>UserDefined</AcademicSummaryType>
+					<GPA>
+						<CreditHoursEarned>1</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>2.33</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2014-05</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Spring/Summer 2014</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B+</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0048.006</CourseCSISCode>
+					<CourseQualityPointsEarned>3.33</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CGMS</CourseSubjectAbbreviation>
+					<CourseNumber>200</CourseNumber>
+					<CourseTitle>Intro to Global Management</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>UserDefined</AcademicSummaryType>
+					<GPA>
+						<CreditHoursEarned>1</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>3.33</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2015-01</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Winter 2015</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B-</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0033.000</CourseCSISCode>
+					<CourseQualityPointsEarned>2.67</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>MHR</CourseSubjectAbbreviation>
+					<CourseNumber>523</CourseNumber>
+					<CourseTitle>Human Resources Management</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>All</AcademicSummaryType>
+					<AcademicSummaryLevel>Undergraduate</AcademicSummaryLevel>
+					<GPA>
+						<CreditHoursEarned>1</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>2.67</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+				</AcademicSummary>
+			</AcademicSession>
+			<AcademicSession>
+				<AcademicSessionDetail>
+					<SessionDesignator>2015-05</SessionDesignator>
+					<SessionDesignatorSuffix>1</SessionDesignatorSuffix>
+					<SessionName>Spring/Summer 2015</SessionName>
+				</AcademicSessionDetail>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>0</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>F</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0001.000</CourseCSISCode>
+					<CourseQualityPointsEarned>0</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CACC</CourseSubjectAbbreviation>
+					<CourseNumber>406</CourseNumber>
+					<CourseTitle>Intro Management Accounting</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>D-</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0014.000</CourseCSISCode>
+					<CourseQualityPointsEarned>0.67</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CECN</CourseSubjectAbbreviation>
+					<CourseNumber>204</CourseNumber>
+					<CourseTitle>Introductory Macroeconomics</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<Course>
+					<CourseCreditBasis>Regular</CourseCreditBasis>
+					<CourseCreditUnits>Units</CourseCreditUnits>
+					<CourseCreditLevel>Undergraduate</CourseCreditLevel>
+					<CourseCreditValue>1</CourseCreditValue>
+					<CourseCreditEarned>1</CourseCreditEarned>
+					<CourseAcademicGradeScaleCode>15</CourseAcademicGradeScaleCode>
+					<CourseAcademicGrade>B+</CourseAcademicGrade>
+					<CourseNarrativeExplanationGrade>82</CourseNarrativeExplanationGrade>
+					<CourseCSISCode>0050.000</CourseCSISCode>
+					<CourseQualityPointsEarned>3.33</CourseQualityPointsEarned>
+					<CourseSubjectAbbreviation>CMKT</CourseSubjectAbbreviation>
+					<CourseNumber>100</CourseNumber>
+					<CourseTitle>Principles of Marketing</CourseTitle>
+					<UserDefinedExtensions>
+						<ext:CollegeTranscriptCourseExtensions>
+							<BasisForCreditCode>R</BasisForCreditCode>
+						</ext:CollegeTranscriptCourseExtensions>
+					</UserDefinedExtensions>
+				</Course>
+				<AcademicSummary>
+					<AcademicSummaryType>All</AcademicSummaryType>
+					<AcademicSummaryLevel>Undergraduate</AcademicSummaryLevel>
+					<GPA>
+						<CreditHoursEarned>2</CreditHoursEarned>
+						<CreditUnit>Units</CreditUnit>
+						<GradePointAverage>1.33</GradePointAverage>
+						<NoteMessage>N</NoteMessage>
+					</GPA>
+					<NoteMessage>DECISION        Academic Standing: Clear</NoteMessage>
+				</AcademicSummary>
+			</AcademicSession>
+			<AdditionalStudentAchievements/>
+		</AcademicRecord>
+	</Student>
+</ns0:CollegeTranscript>

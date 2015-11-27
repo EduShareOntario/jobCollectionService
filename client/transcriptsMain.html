@@ -1,0 +1,9 @@
+<template name="transcriptsMain">
+  <main role="main" class="ui-content">
+    {{#if authorized }}
+        {{>Template.dynamic template=content}}
+    {{ else }}
+      {{>authStatus}}
+    {{/if}}
+  </main>
+</template>

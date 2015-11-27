@@ -1,0 +1,15 @@
+systemLog:
+   destination: file
+   path: c:\data\log3\mongod.log
+   logAppend: true
+storage:
+   dbPath: c:\data\db3
+   journal:
+      enabled: true
+setParameter:
+   enableLocalhostAuthBypass: false
+net:
+   bindIp: 127.0.0.1
+   port: 27019
+replication:
+   replSetName: rs1

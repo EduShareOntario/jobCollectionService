@@ -1,0 +1,65 @@
+<template name="transcriptList">
+  {{> header}}
+  {{#if Template.subscriptionsReady}}
+    <div data-role="collapsible-set">
+      {{#each transcripts}}
+        {{> transcriptSummary}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>Loading...</p>
+  {{/if}}
+</template>
+
+<template name="transcriptSummary">
+  <div data-role="collapsible" data-theme="c" class="{{#unless awaitingReview}}not-reviewable{{/unless}} {{#if reviewerIsMe}}reviewer-is-me{{/if}}">
+    {{#if pescCollegeTranscript}}
+      {{#let
+        transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
+        person=pescCollegeTranscript.CollegeTranscript.Student.Person
+      }}
+        <h2>
+          {{title}} {{fullName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
+          <span class="ui-collapsible-heading-status"> click to expand contents</span>
+        </h2>
+        {{#each academicRecords}}
+          {{#if AcademicAward}}
+            {{> academicAward award=AcademicAward}}
+          {{/if}}
+        {{/each}}
+      {{/let}}
+    {{/if}}
+    <a data-role="button"
+       data-icon="grid"
+       data-theme="h"
+       data-inline="true"
+       role="button"
+       href="{{pathForTranscriptReview}}"
+       class="view-transcript {{#unless reviewable}}hide{{/unless}}">View Transcript</a>
+  </div>
+</template>
+
+<template name="academicAward">
+  <ul data-role="listview" data-divider-theme="h" class="ui-listview">
+    <li data-role="list-divider" role="heading" class="ui-li ui-li-divider {{#if award.AcademicCompletionIndicator}}award-completed{{/if}}">
+      {{award.AcademicAwardTitle}} level {{award.AcademicAwardLevel}} awarded on {{award.AcademicAwardDate}}
+    </li>
+    <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r"
+        data-iconpos="right">
+      <div class="ui-grid-a my-breakpoint">
+        <div class="ui-block-a">
+          {{#if award.AcademicHonors}}
+            <h4 class="ui-li-heading">Honors</h4>
+            <p class="ui-li-desc">{{award.AcademicHonors.HonorsLevel}} {{award.AcademicHonors.HonorsTitle}}</p>
+          {{/if}}
+        </div>
+        <div class="ui-block-b">
+          <h4 class="ui-li-heading">Program</h4>
+          <p class="ui-li-desc">
+            <strong>{{award.AcademicAwardProgram.AcademicProgramName}} ({{award.AcademicAwardProgram.AcademicProgramType}})</strong>
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</template>

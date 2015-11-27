@@ -6,5 +6,16 @@
 
 meteor-platform
 vsivsi:job-collection
+aldeed:collection2
+peerlibrary:peerdb
+peerlibrary:xml2js
+coffeescript
 accounts-password
 accounts-ui
+kadira:flow-router
+kadira:blaze-layout
+aldeed:template-extension
+meteorhacks:subs-manager
+http
+reactive-var
+tdamsma:meteor-accounts-ldap

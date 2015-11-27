@@ -1,0 +1,55 @@
+{
+  "jobCollections": [
+    {
+      "name": "student-transcript-in",
+      "adminUserIds": [
+        ],
+      "adminGroups": [
+        "GG-ADMIN-Information Technology-Enterprise Systems-Production"
+      ],
+      "scheduledJobs": ["getTranscriptIdsFromOCAS"]
+    },
+    {
+      "name": "student-transcript-out",
+      "adminUserIds": [
+      ],
+      "adminGroups": [
+        "GG-ADMIN-Information Technology-Enterprise Systems-Production"
+      ],
+      "scheduledJobs": ["getTranscriptRequestsFromOCAS"]
+    }
+  ],
+  "public": {
+    "jobCollections": [
+      {
+        "name": "student-transcript-in"
+      },
+      {
+        "name": "student-transcript-out"
+      }
+    ],
+    "transcriptToHtmlURL": "http://transformdoc.georgiantest.com"
+  },
+  "ldap": {
+    "debug": true,
+    "domain": "georgiancollege.ca",
+    "baseDn": "ou=Georgian,dc=admin,dc=georgianc,dc=on,dc=ca",
+    "url": "ldap://badcadm03.admin.georgianc.on.ca:389/",
+    "bindCn": "cn=0-LDAPGrails,ou=Service Accounts,ou=Georgian,dc=admin,dc=georgianc,dc=on,dc=ca",
+    "bindPassword": "Gr00vy:Tra1n",
+    "autopublishFields": [
+      "displayName",
+      "givenName",
+      "department",
+      "employeeNumber",
+      "mail",
+      "title",
+      "address",
+      "phone"
+    ],
+    "groupMembership": [
+      "GG-ADMIN-Information Technology-Enterprise Systems-Production",
+      "REG-RegManagers-MOD"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+<template name="transcriptDetail">
+  {{#with transcript}}
+    {{#header}}
+      {{>transcriptReviewNav}}
+    {{/header}}
+    <div>
+      {{#if transcriptHtml}}
+        {{{transcriptHtml}}}
+      {{/if}}
+    </div>
+    {{#footer}}
+      {{>transcriptReviewNav}}
+    {{/footer}}
+  {{/with}}
+</template>
+
+<template name="transcriptReviewNav">
+  {{>transcriptReviewButtons}}
+</template>
+
+<template name="transcriptReviewButtons">
+  <style>
+    .cancel-review {
+      float: right;
+    }
+    .center h3 {
+      text-align: center;
+    }
+  </style>
+  <div class="ui-grid-b">
+    <div class="ui-block-a">
+      <a data-role="button"
+         data-icon="check"
+         data-theme="h"
+         data-inline="true"
+         role="button"
+         class="review-complete">Transcript Review Complete</a>
+    </div>
+    <div class="ui-block-b center">
+      <h3>{{fullName}}</h3>
+    </div>
+    <div class="ui-block-c">
+      <a data-role="button"
+         data-icon="back"
+         data-theme="h"
+         data-inline="true"
+         role="button"
+         class="cancel-review">Cancel Review</a>
+    </div>
+  </div>
+
+</template>
+

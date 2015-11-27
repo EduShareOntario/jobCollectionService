@@ -1,0 +1,407 @@
+{
+  "CollegeTranscript" : {
+    "TransmissionData" : {
+      "DocumentID" : "b5740b7d-98ff-4744-9342-17762b2a4f31",
+      "CreatedDateTime" : "2015-07-09T02:49:41.5626857-04:00",
+      "DocumentTypeCode" : "RequestedRecord",
+      "TransmissionType" : "Original",
+      "Source" : {
+        "Organization" : {
+          "CSIS" : "353200",
+          "OrganizationName" : "Centennial",
+          "Contacts" : {
+            "Address" : {
+              "AddressLine" : "801, promenade de l'Aviation",
+              "City" : "Ottawa",
+              "StateProvince" : "ON",
+              "PostalCode" : "K1K 4R3",
+              "CountryCode" : "CA"
+            },
+            "Phone" : {
+              "PhoneNumber" : "6137422483",
+              "PhoneNumberExtension" : "2879"
+            },
+            "FaxPhone" : {
+              "PhoneNumber" : "6137422481"
+            },
+            "Email" : {
+              "EmailAddress" : "dewawp8r458@mailinator.com"
+            },
+            "URL" : {
+              "URLAddress" : "www3.lacitec.on.ca"
+            },
+            "NoteMessage" : "Denis Gravel"
+          }
+        }
+      },
+      "Destination" : {
+        "Organization" : {
+          "CSIS" : "353900",
+          "OrganizationName" : "Georgian"
+        }
+      },
+      "DocumentProcessCode" : "TEST",
+      "DocumentOfficialCode" : "Official",
+      "DocumentCompleteCode" : "Complete",
+      "RequestTrackingID" : "C20150709002289"
+    },
+    "Student" : {
+      "Person" : {
+        "SchoolAssignedPersonID" : "0",
+        "AgencyAssignedID" : "140046966",
+        "Birth" : {
+          "Birthday" : "--07-04"
+        },
+        "Name" : {
+          "NameCode" : "Formal",
+          "NamePrefix" : "Mrs",
+          "FirstName" : "Emeryville",
+          "LastName" : "Franks"
+        },
+        "Gender" : {
+          "GenderCode" : "Female"
+        }
+      },
+      "AcademicRecord" : {
+        "AcademicAward" : {
+          "AcademicAwardLevel" : "4.1",
+          "AcademicAwardDate" : "2005-08-31",
+          "AcademicAwardTitle" : "Ontario College Graduate Cert",
+          "AcademicHonors" : {
+            "HonorsTitle" : "Honours",
+            "HonorsLevel" : "FirstHighest"
+          },
+          "AcademicCompletionIndicator" : "true",
+          "AcademicAwardProgram" : {
+            "ProgramSecondarySchoolCode" : "CareerPrep",
+            "AcademicProgramType" : "Major",
+            "AcademicProgramName" : "International Project Manageme"
+          }
+        },
+        "AcademicSummary" : {
+          "AcademicSummaryType" : "SenderOnly",
+          "AcademicSummaryLevel" : "Undergraduate",
+          "GPA" : {
+            "CreditHoursAttempted" : "58",
+            "CreditHoursEarned" : "58",
+            "GradePointAverage" : "86.6",
+            "CreditHoursforGPA" : "50"
+          }
+        },
+        "AcademicSession" : [
+          {
+            "AcademicSessionDetail" : {
+              "SessionDesignator" : "2004-09",
+              "SessionDesignatorSuffix" : "70",
+              "SessionName" : "Fall 2004",
+              "SessionType" : "Semester",
+              "SessionBeginDate" : "2004-09-01",
+              "SessionEndDate" : "2004-12-15"
+            },
+            "StudentLevel" : {
+              "StudentLevelCode" : "CollegeFirstYear"
+            },
+            "AcademicProgram" : {
+              "ProgramSecondarySchoolCode" : "CareerPrep",
+              "AcademicProgramType" : "Major",
+              "AcademicProgramName" : "International Project Manageme"
+            },
+            "Course" : [
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "4",
+                "CourseCreditEarned" : "4",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "77",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "308",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "101",
+                "CourseTitle" : "Introduction to Development"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "88",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "264",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "102",
+                "CourseTitle" : "Mgmt Skills for Intl Dev"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "86",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "258",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "103",
+                "CourseTitle" : "Project Design and Planning"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "4",
+                "CourseCreditEarned" : "4",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "86",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "344",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "104",
+                "CourseTitle" : "Cross-Cultural Effectiveness"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "91",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "273",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "105",
+                "CourseTitle" : "World Geography"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "80",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "240",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "106",
+                "CourseTitle" : "Mgmt Information Systems"
+              }
+            ],
+            "AcademicSummary" : {
+              "AcademicSummaryType" : "SenderOnly",
+              "AcademicSummaryLevel" : "Undergraduate",
+              "GPA" : {
+                "CreditHoursAttempted" : "20",
+                "CreditHoursEarned" : "20",
+                "GradePointAverage" : "84.3",
+                "CreditHoursforGPA" : "20"
+              }
+            }
+          },
+          {
+            "AcademicSessionDetail" : {
+              "SessionDesignator" : "2005-01",
+              "SessionDesignatorSuffix" : "30",
+              "SessionName" : "Winter 2005",
+              "SessionType" : "Semester",
+              "SessionBeginDate" : "2005-01-15",
+              "SessionEndDate" : "2005-05-15"
+            },
+            "StudentLevel" : {
+              "StudentLevelCode" : "CollegeFirstYear"
+            },
+            "AcademicProgram" : {
+              "ProgramSecondarySchoolCode" : "CareerPrep",
+              "AcademicProgramType" : "Major",
+              "AcademicProgramName" : "International Project Manageme"
+            },
+            "Course" : [
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "4",
+                "CourseCreditEarned" : "4",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "87",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "348",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "201",
+                "CourseTitle" : "Issues in Intl Development"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "86",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "258",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "202",
+                "CourseTitle" : "Financial Management"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "95",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "285",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "203",
+                "CourseTitle" : "Operations Management"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "4",
+                "CourseCreditEarned" : "4",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "92",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "368",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "204",
+                "CourseTitle" : "Project Mgmt: Sectoral Stds"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "93",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "279",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "206",
+                "CourseTitle" : "Humanitarian Assistance"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "4",
+                "CourseCreditEarned" : "4",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "93",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "372",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "303",
+                "CourseTitle" : "Proj Des & Planning- Sim"
+              }
+            ],
+            "AcademicSummary" : {
+              "AcademicSummaryType" : "SenderOnly",
+              "AcademicSummaryLevel" : "Undergraduate",
+              "GPA" : {
+                "CreditHoursAttempted" : "21",
+                "CreditHoursEarned" : "21",
+                "GradePointAverage" : "90.9",
+                "CreditHoursforGPA" : "21"
+              }
+            }
+          },
+          {
+            "AcademicSessionDetail" : {
+              "SessionDesignator" : "2005-05",
+              "SessionDesignatorSuffix" : "50",
+              "SessionName" : "Summer 2005",
+              "SessionType" : "Semester",
+              "SessionBeginDate" : "2005-05-20",
+              "SessionEndDate" : "2005-06-30"
+            },
+            "StudentLevel" : {
+              "StudentLevelCode" : "CollegeSophomore"
+            },
+            "AcademicProgram" : {
+              "ProgramSecondarySchoolCode" : "CareerPrep",
+              "AcademicProgramType" : "Major",
+              "AcademicProgramName" : "International Project Manageme"
+            },
+            "Course" : [
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "85",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "255",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "205",
+                "CourseTitle" : "Communication Skills for Mgrs"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "86",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "258",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "301",
+                "CourseTitle" : "Speciac Topics: Intl Dev"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "3",
+                "CourseCreditEarned" : "3",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "74",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "222",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "302",
+                "CourseTitle" : "The Canadian Dev Context"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "2",
+                "CourseCreditEarned" : "2",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "SAT",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "0",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "304",
+                "CourseTitle" : "Career Orientation"
+              },
+              {
+                "CourseCreditBasis" : "Regular",
+                "CourseCreditLevel" : "Undergraduate",
+                "CourseCreditValue" : "6",
+                "CourseCreditEarned" : "6",
+                "CourseAcademicGradeScaleCode" : "89",
+                "CourseAcademicGrade" : "SAT",
+                "CourseRepeatCode" : "RepeatCounted",
+                "CourseQualityPointsEarned" : "0",
+                "CourseSubjectAbbreviation" : "IPMP",
+                "CourseNumber" : "400",
+                "CourseTitle" : "Intl Development Proj or Plmt"
+              }
+            ],
+            "AcademicSummary" : {
+              "AcademicSummaryType" : "SenderOnly",
+              "AcademicSummaryLevel" : "Undergraduate",
+              "GPA" : {
+                "CreditHoursAttempted" : "17",
+                "CreditHoursEarned" : "17",
+                "GradePointAverage" : "81.6",
+                "CreditHoursforGPA" : "9"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
