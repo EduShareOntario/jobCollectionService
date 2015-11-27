@@ -1,3 +1,16 @@
+function createJob(collectionName, jobType) {
+  var c = new Meteor.Collection(collectionName);
+  var exists = (c.find({type:jobType}).count() > 0);
+  if (!exists) {
+    var job = new Job(collectionName, jobType, {});
+    job.priority('normal');
+    job.retry({ retries: Job.forever, wait: 15 * 60 * 1000 });
+    job.repeat({ repeats: Job.forever });
+    job.save();
+    //todo: handle save failure!!
+  }
+}
+
 function createJobCollections(jobCollectionConfigs) {
   var jobCollections = [];
   var jobCollection;
@@ -11,6 +24,9 @@ function createJobCollections(jobCollectionConfigs) {
             console.log(userid);
             return jobCollectionConfig.adminUserIds.indexOf(userid != -1);
           }
+        });
+        _.each(jobCollectionConfig.scheduledJobs, function (jobType) {
+          createJob(jobCollectionConfig.name, jobType);
         });
       }
     });
@@ -44,7 +60,6 @@ if (Meteor.isServer) {
         job.done();
         cb();
       });
-
     });
   });
 

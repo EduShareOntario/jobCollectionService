@@ -3,18 +3,20 @@
     {
       "name": "student-transcript-in",
       "adminUserIds": [
-          "studentTranscriptAdmin",
-          "aFrEmKx5uPxdFdoCk",
-          "sm7ia7R9b3RLrTcHt"
-        ]
+        ],
+      "adminGroups": [
+        "GG-ADMIN-Information Technology-Enterprise Systems-Production"
+      ],
+      "scheduledJobs": ["getTranscriptIdsFromOCAS"]
     },
     {
       "name": "student-transcript-out",
       "adminUserIds": [
-        "studentTranscriptAdmin",
-        "aFrEmKx5uPxdFdoCk",
-        "sm7ia7R9b3RLrTcHt"
-      ]
+      ],
+      "adminGroups": [
+        "GG-ADMIN-Information Technology-Enterprise Systems-Production"
+      ],
+      "scheduledJobs": ["getTranscriptRequestsFromOCAS"]
     }
   ],
   "public": {

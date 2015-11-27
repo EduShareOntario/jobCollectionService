@@ -4,7 +4,7 @@ Meteor.publish 'transcripts', (userId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
   user = User.documents.findOne this.userId
   throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
-  return Transcript.documents.find {reviewCompletedOn:undefined}
+  return Transcript.documents.find {reviewCompletedOn:undefined}, {sort: {created: -1}}
 
 Meteor.publish 'transcript', (transcriptId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
