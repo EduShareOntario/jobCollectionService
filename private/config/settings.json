@@ -34,7 +34,7 @@
     "debug": true,
     "domain": "georgiancollege.ca",
     "baseDn": "ou=Georgian,dc=admin,dc=georgianc,dc=on,dc=ca",
-    "url": "ldap://badcadm03.admin.georgianc.on.ca:389/",
+    "url": "ldap://badcadm03.admin.georgianc.on.ca/",
     "bindCn": "cn=0-LDAPGrails,ou=Service Accounts,ou=Georgian,dc=admin,dc=georgianc,dc=on,dc=ca",
     "bindPassword": "Gr00vy:Tra1n",
     "autopublishFields": [
