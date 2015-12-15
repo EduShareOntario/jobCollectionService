@@ -1,6 +1,6 @@
 devErrorsEnabled:false
 debuggingEnabled:false
 loggingEnabled:true
-logDirectory:c:\apps\local\jobCollectionService\logs
+logDirectory:c:\apps\local\transcript\logs
 nodeProcessCommandLine:C:\Program Files (x86)\nodejs\node.exe
 node_env:production
