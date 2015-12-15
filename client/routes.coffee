@@ -54,13 +54,13 @@ Accounts.onLogin ->
   Session.set 'redirectAfterLogin', null
   FlowRouter.redirect redirectRoutePath
 
-privateRoutes.route '/transcript', {
+privateRoutes.route '/', {
   name: 'transcriptReviewList'
   action: () ->
     console.log "Rendering transcript review list"
     BlazeLayout.render "transcriptsMain", {content: "transcriptList"}
 }
-privateRoutes.route '/transcript/:transcriptId', {
+privateRoutes.route '/:transcriptId', {
   name: 'transcriptReviewDetail',
   action: (params) ->
     console.log "Reviewing transcript:", params.transcriptId
