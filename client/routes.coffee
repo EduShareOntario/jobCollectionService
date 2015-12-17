@@ -22,18 +22,16 @@ exposed.route '/logout', {
 
 # Before going to any route that is part of this route group, make sure the user is logged in!
 ensureLoggedIn = (context, redirect, stop) ->
-  unless Meteor.loggingIn() or Meteor.userId()
-    routeName = FlowRouter.getRouteName()
-    # remember where they want to go!
-    unless routeName is 'login'
-      Session.set 'redirectAfterLogin', FlowRouter.current().path
-    console.log "ensureLoggedIn redirecting to /login"
-    redirect '/login'
-
-ensurePermitted = (context, redirect, stop) ->
-  unless Meteor.loggingIn() or Meteor.user()?.memberOf?.length > 0
-    console.log "ensurePermitted redirecting to /login"
-    redirect '/login'
+  console.log "ensureLoggedIn called"
+  routeName = FlowRouter.getRouteName()
+  unless routeName is 'login'
+    unless Auth.ready() or Auth.authenticating()
+      # remember where they want to go!
+      currentPath = FlowRouter.current().path
+      console.log "Saving redirectAfterLogin to #{currentPath}"
+      Session.set 'redirectAfterLogin', currentPath
+      console.log "ensureLoggedIn redirecting to /login"
+      redirect '/login'
 
 privateRoutes = FlowRouter.group {
   name: 'private',
@@ -54,13 +52,13 @@ Accounts.onLogin ->
   Session.set 'redirectAfterLogin', null
   FlowRouter.redirect redirectRoutePath
 
-privateRoutes.route '/', {
+privateRoutes.route '/review', {
   name: 'transcriptReviewList'
   action: () ->
     console.log "Rendering transcript review list"
     BlazeLayout.render "transcriptsMain", {content: "transcriptList"}
 }
-privateRoutes.route '/:transcriptId', {
+privateRoutes.route '/review/:transcriptId', {
   name: 'transcriptReviewDetail',
   action: (params) ->
     console.log "Reviewing transcript:", params.transcriptId

@@ -28,7 +28,7 @@
         "name": "student-transcript-out"
       }
     ],
-    "transcriptToHtmlURL": "http://transformdoc.georgiantest.com"
+    "transcriptToHtmlURL": "http://apps.georgiantest.com/transformdoc"
   },
   "ldap": {
     "debug": true,

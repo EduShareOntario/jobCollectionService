@@ -4054,7 +4054,7 @@ html .ui-alt-icon .ui-radio-off:after {
 }
 /* Loader */
 .ui-icon-loading {
-	background: url(images/ajax-loader.gif);
+	background: url(../public/images/ajax-loader.gif);
 	background-size: 2.875em 2.875em;
 }
 
@@ -4238,8 +4238,8 @@ html .ui-page-theme-h .ui-radio-on:after,html .ui-bar-h .ui-radio-on:after,html 
   font-weight: 400;
   src: local('Lato Regular'),
     local('Lato-Regular'),
-    url(fonts/lato-regular.woff) format('woff'),
-    url(fonts/lato-regular.ttf) format('truetype');
+    url(../public/fonts/lato-regular.woff) format('woff'),
+    url(../public/fonts/lato-regular.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
@@ -4247,8 +4247,8 @@ html .ui-page-theme-h .ui-radio-on:after,html .ui-bar-h .ui-radio-on:after,html 
   font-weight: 700;
   src: local('Lato Bold'),
     local('Lato-Bold'),
-    url(fonts/lato-bold.woff) format('woff'),
-    url(fonts/lato-bold.ttf) format('truetype');
+    url(../public/fonts/lato-bold.woff) format('woff'),
+    url(../public/fonts/lato-bold.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
@@ -4256,8 +4256,8 @@ html .ui-page-theme-h .ui-radio-on:after,html .ui-bar-h .ui-radio-on:after,html 
   font-weight: 900;
   src: local('Lato Black'),
     local('Lato-Black'),
-    url(fonts/lato-black.woff) format('woff'),
-    url(fonts/lato-black.ttf) format('truetype');
+    url(../public/fonts/lato-black.woff) format('woff'),
+    url(../public/fonts/lato-black.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
@@ -4265,15 +4265,15 @@ html .ui-page-theme-h .ui-radio-on:after,html .ui-bar-h .ui-radio-on:after,html 
   font-weight: 400;
   src: local('Lato Italic'),
     local('Lato-Italic'),
-    url(fonts/lato-italic.woff) format('woff'),
-    url(fonts/lato-italic.ttf) format('truetype');
+    url(../public/fonts/lato-italic.woff) format('woff'),
+    url(../public/fonts/lato-italic.ttf) format('truetype');
 }
 @font-face {
   font-family: "Flat-UI-Icons-24";
   font-weight: normal;
   font-style: normal;
-  src: url("fonts/Flat-UI-Icons-24.woff") format("woff"),
-    url(fonts/Flat-UI-Icons-24.ttf) format('truetype');
+  src: url("../public/fonts/Flat-UI-Icons-24.woff") format("woff"),
+    url(../public/fonts/Flat-UI-Icons-24.ttf) format('truetype');
 }
 
 /* Use the following CSS code if you want to have a class per icon */

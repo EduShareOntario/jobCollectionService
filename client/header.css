@@ -1,0 +1,15 @@
+[name="logout"].btn {
+    float: right;
+    width: 40%;
+    min-width: 6em;
+}
+[data-role="header"] .ui-block-b {
+    padding-right: 1%;
+}
+[data-role="header"] {
+    background: #004b87 url(../images/header_bg.png) 50% top no-repeat !important;
+}
+.logo {
+    height: 45px;
+    margin: 2px;
+}

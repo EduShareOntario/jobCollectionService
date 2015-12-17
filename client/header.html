@@ -1,28 +1,11 @@
 <template name="header">
-  <style>
-    [name="logout"].btn {
-      float: right;
-      width: 40%;
-      min-width: 6em;
-    }
-    [data-role="header"] .ui-block-b {
-      padding-right: 1%;
-    }
-    [data-role="header"] {
-      background: #004b87 url(images/header_bg.png) 50% top no-repeat !important;
-    }
-    .logo {
-      height: 45px;
-      margin: 2px;
-    }
-  </style>
   <div data-role="header" data-theme="a" data-position="fixed">
     {{#if Template.contentBlock}}
       {{> Template.contentBlock}}
     {{else}}
       <div class="ui-grid-a">
         <div class="georgian-banner ui-block-a">
-          <img class="logo" src="images/georgian-college-logo-2014.svg" alt="Georgian College">
+          <img class="logo" src="/transcript/images/georgian-college-logo-2014.svg" alt="Georgian College">
         </div>
         <div class="ui-block-b">
           {{#if authReady}}
