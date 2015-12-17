@@ -18,10 +18,10 @@
         transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
         person=pescCollegeTranscript.CollegeTranscript.Student.Person
       }}
-        <h2>
-          {{title}} {{fullName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
+        <h3>
+          {{pescCollegeTranscript.CollegeTranscript.TransmissionData.RequestTrackingID}} {{fullName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
           <span class="ui-collapsible-heading-status"> click to expand contents</span>
-        </h2>
+        </h3>
         {{#each academicRecords}}
           {{#if AcademicAward}}
             {{> academicAward award=AcademicAward}}
