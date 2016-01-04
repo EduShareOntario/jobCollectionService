@@ -1,13 +1,12 @@
-function createJob(collectionName, jobType) {
-  var c = new Meteor.Collection(collectionName);
-  var exists = (c.find({type:jobType}).count() > 0);
+function createJob(jobCollection, jobType) {
+  var exists = (jobCollection.find({type:jobType}).count() > 0);
   if (!exists) {
-    var job = new Job(collectionName, jobType, {});
+    var job = new Job(jobCollection.root, jobType, {});
     job.priority('normal');
     job.retry({ retries: Job.forever, wait: 15 * 60 * 1000 });
     job.repeat({ repeats: Job.forever });
     job.save();
-    //todo: handle save failure!!
+    //todo:  handle save failure!!
   }
 }
 
@@ -26,7 +25,7 @@ function createJobCollections(jobCollectionConfigs) {
           }
         });
         _.each(jobCollectionConfig.scheduledJobs, function (jobType) {
-          createJob(jobCollectionConfig.name, jobType);
+          createJob(jobCollection, jobType);
         });
       }
     });
