@@ -1,31 +1,22 @@
 {
   "jobCollections": [
     {
-      "name": "student-transcript-in",
+      "name": "student-transcript",
       "adminUserIds": [
         ],
       "adminGroups": [
         "GG-ADMIN-Information Technology-Enterprise Systems-Production"
       ],
-      "scheduledJobs": ["getTranscriptIdsFromOCAS"]
-    },
-    {
-      "name": "student-transcript-out",
-      "adminUserIds": [
-      ],
-      "adminGroups": [
-        "GG-ADMIN-Information Technology-Enterprise Systems-Production"
-      ],
-      "scheduledJobs": ["getTranscriptRequestsFromOCAS"]
+      "scheduledJobs": [
+        "getInboundTranscriptRequestIdsFromOCAS"
+        ,"getOutboundTranscriptRequestIdsFromOCAS"
+      ]
     }
   ],
   "public": {
     "jobCollections": [
       {
-        "name": "student-transcript-in"
-      },
-      {
-        "name": "student-transcript-out"
+        "name": "student-transcript"
       }
     ],
     "transcriptToHtmlURL": "http://apps.georgiantest.com/transformdoc"
