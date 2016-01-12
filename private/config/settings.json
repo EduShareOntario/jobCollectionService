@@ -40,7 +40,8 @@
     ],
     "groupMembership": [
       "GG-ADMIN-Information Technology-Enterprise Systems-Production",
-      "REG-RegManagers-MOD"
+      "REG-RegManagers-MOD",
+      "APP-XML-TransQueue"
     ]
   }
 }
