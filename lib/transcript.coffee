@@ -44,6 +44,13 @@ class Transcript extends Described
 #          console.log "in generatedField "+fields.pescCollegeTranscriptXML + "\nobject:" + JSON.stringify(object)
           [fields._id, object]
 
+      fields.ocasRequestId = @GeneratedField 'self', ['pescCollegeTranscript'], (fields) ->
+        unless fields.pescCollegeTranscript
+          [fields._id, undefined]
+        else
+          object = fields.pescCollegeTranscript.CollegeTranscript.TransmissionData.RequestTrackingID
+          [fields._id, object]
+
       fields.reviewer2 = @ReferenceField User, false
 
       fields
@@ -67,10 +74,6 @@ class Transcript extends Described
 }
 
 @Schemas.Transcript = new SimpleSchema([@Schemas.Described, {
-  ocasApplication:
-    type: Object
-    optional: true
-    blackbox: true
   pescCollegeTranscriptXML:
     type: String
     optional: true
@@ -78,6 +81,9 @@ class Transcript extends Described
     type: Object
     optional: true
     blackbox: true
+  ocasRequestId:
+    type: String
+    optional: true
   reviewStartedOn:
     type: Date
     optional: true
@@ -102,6 +108,8 @@ class Transcript extends Described
 }
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
 Transcript.Meta.collection.attachSchema Schemas.Transcript
+Transcript.Meta.collection._ensureIndex ocasRequestId: 1, created: 1 unless Meteor.isClient
+Transcript.Meta.collection._ensureIndex reviewCompletedOn: 1 unless Meteor.isClient
 
 @Transcript = Transcript
 

@@ -26,7 +26,7 @@ Template.transcriptList.onCreated () ->
 
 transcripts = () ->
   console.log "transcripts() called"
-  cursor = Transcript.documents.find {reviewCompletedOn: undefined}, {sort: {created:1, "pescCollegeTranscript.CollegeTranscript.TransmissionData.RequestTrackingID":1}}
+  cursor = Transcript.documents.find {reviewCompletedOn: undefined, applicant: {$ne:null}}, {sort: {ocasRequestId:1}}
   cursor.observe {
     added: (item) ->
       Deps.afterFlush () ->
