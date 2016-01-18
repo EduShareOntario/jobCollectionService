@@ -11,12 +11,12 @@ function createJob(jobCollection, jobType) {
 }
 
 function createJobCollections(jobCollectionConfigs) {
-  var jobCollections = [];
+  var jobCollections = {};
   var jobCollection;
   if (jobCollectionConfigs) {
     jobCollectionConfigs.forEach(function (jobCollectionConfig) {
       jobCollection = new JobCollection(jobCollectionConfig.name);
-      jobCollections.push(jobCollection);
+      jobCollections[jobCollectionConfig.name] = jobCollection;
       if (Meteor.isServer) {
         jobCollection.allow( {
           admin: function(userid, method, params) {
@@ -36,20 +36,18 @@ function createJobCollections(jobCollectionConfigs) {
   return jobCollections;
 }
 
-var JobCollections;
+// App scoped!
+JobCollections = {};
 
 if (Meteor.isServer) {
   // Create our collections.
   JobCollections = createJobCollections(Meteor.settings.jobCollections);
 
   Meteor.startup(function () {
-    // Normal Meteor publish call, the server always controls what each client can see
-    JobCollections.forEach(function(jobCollection) {
-      Meteor.publish(jobCollection.root, function() {
-        return jobCollection.find({});
-      });
+    _.each(JobCollections, function(jobCollection, name) {
       // Start the job queue running
       jobCollection.startJobServer();
+      console.log("started job server "+name);
 
       //Ready jobs that are waiting.
       //Jobs go into a waiting state when they have been running too long as specified by workTimeout.

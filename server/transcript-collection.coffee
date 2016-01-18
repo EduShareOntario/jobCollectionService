@@ -4,6 +4,7 @@ Meteor.publish 'transcripts', (userId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
   user = User.documents.findOne this.userId
   throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+  this.unblock
   return Transcript.documents.find {reviewCompletedOn:undefined, applicant: {$ne:null}}, {sort: {ocasRequestId:1}}
 
 Meteor.publish 'transcript', (transcriptId) ->
@@ -67,4 +68,18 @@ Meteor.methods
     throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
     Transcript.documents.update {_id:transcriptId}, { $set:{applicant: applicant} }
     return true
+
+  #
+  # Example use:
+  # ddpClient.call("findRedundantJobs", [createJobConfig.root, {"data.ocasRequestId": {$in: requestIds}, status: {$ne: "failed"}}, {"data.ocasRequestId": 1}], function (err, redundantJobs) { ...}
+  findRedundantJobs: (jobCollectionName, redundantSelector, resultFields) ->
+    #console.log "findRedundantJobs called with jobCollectionName #{jobCollectionName}, redundantSelector #{JSON.stringify(redundantSelector)} and resultFields #{JSON.stringify(resultFields)}"
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+
+    jobCollection = JobCollections[jobCollectionName]
+    collection = jobCollection._collection
+    #console.log "searching Job Collection name:#{jobCollectionName}, object: #{collection}, with keys: #{_.keys(collection unless collection is undefined )}, root:#{jobCollection?.root}, JobCollections:#{JobCollections}, keys:#{_.keys(JobCollections)}"
+    result = collection.find redundantSelector, {fields:resultFields} unless collection is undefined
+    return result.fetch()
 
