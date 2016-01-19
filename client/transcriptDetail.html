@@ -3,15 +3,57 @@
     {{#header}}
       {{>transcriptReviewNav}}
     {{/header}}
-    <div>
-      {{#if transcriptHtml}}
+    <!--{{>formatRadioSelection}}-->
+    <!--{{>formatCheckboxSelection}}-->
+    <div class="ui-body">
+      <!--{{#if transcriptHtml and showHtml}}-->
         {{{transcriptHtml}}}
-      {{/if}}
+      <!--{{/if}}-->
     </div>
+    <div class="ui-body">
+      <!--{{#if showXml}}-->
+      <pre>
+        {{transcript.transcriptXmlDump}}
+      </pre>
+      <!--{{/if}}-->
+    </div>
+    <div class="ui-body">
+      <!--{{#if showJson}}-->
+      <pre>
+        {{transcript.transcriptJsonDump}}
+      </pre>
+      <!--{{/if}}-->
+    </div>
+
     {{#footer}}
       {{>transcriptReviewNav}}
     {{/footer}}
   {{/with}}
+</template>
+
+<template name="formatToggle">
+
+</template>
+<template name="formatRadioSelection">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <input type="radio" name="xml-choice" id="xml-choice" value="xml">
+    <label for="xml-choice">Raw</label>
+    <input type="radio" name="html-choice" id="html-choice" value="html">
+    <label for="html-choice">Pretty</label>
+    <input type="radio" name="json-choice" id="json-choice" value="json">
+    <label for="json-choice">Simple</label>
+  </fieldset>
+</template>
+
+<template name="formatCheckboxSelection">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <input type="checkbox" name="xml-checkbox" id="xml-checkbox" value="xml">
+    <label for="xml-checkbox">Raw</label>
+    <input type="checkbox" name="html-checkbox" id="html-checkbox" value="html" checked="checked">
+    <label for="html-checkbox">Pretty</label>
+    <input type="checkbox" name="json-checkbox" id="json-checkbox" value="json">
+    <label for="json-checkbox">Simple</label>
+  </fieldset>
 </template>
 
 <template name="transcriptReviewNav">

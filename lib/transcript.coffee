@@ -18,8 +18,11 @@ class Transcript extends Described
     name = @pescCollegeTranscript.CollegeTranscript.Student.Person.Name
     return name.FirstName + ' ' + name.LastName
 
-  transcriptDump: () ->
+  transcriptXmlDump: () ->
     return @pescCollegeTranscriptXML
+
+  transcriptJsonDump: () ->
+    return JSON.stringify @pescCollegeTranscript, null, '\t'
 
   awaitingReview: () ->
     return @reviewCompletedOn == undefined  && @reviewer == undefined
