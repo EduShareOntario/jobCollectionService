@@ -12,7 +12,7 @@
 </template>
 
 <template name="transcriptSummary">
-  <div data-role="collapsible" data-theme="c" class="{{#unless awaitingReview}}not-reviewable{{/unless}} {{#if reviewerIsMe}}reviewer-is-me{{/if}}">
+  <div data-role="collapsible" data-theme="c" class="{{#if reviewerIsMe}}reviewer-is-me{{/if}}">
     {{#if pescCollegeTranscript}}
       {{#let
         transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
@@ -35,7 +35,7 @@
        data-inline="true"
        role="button"
        href="{{pathForTranscriptReview}}"
-       class="view-transcript {{#unless reviewable}}hide{{/unless}}">View Transcript</a>
+       class="view-transcript">View Transcript</a>
   </div>
 </template>
 
@@ -46,7 +46,7 @@
     </li>
     <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r"
         data-iconpos="right">
-      <div class="ui-grid-a my-breakpoint">
+      <div class="ui-grid-a ui-responsive">
         <div class="ui-block-a">
           {{#if award.AcademicHonors}}
             <h4 class="ui-li-heading">Honors</h4>

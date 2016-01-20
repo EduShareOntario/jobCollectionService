@@ -1,25 +1,16 @@
 
-/* stack all grids below 40em (640px) */
-@media all and (max-width: 35em) {
-    .my-breakpoint .ui-block-a,
-    .my-breakpoint .ui-block-b,
-    .my-breakpoint .ui-block-c,
-    .my-breakpoint .ui-block-d,
-    .my-breakpoint .ui-block-e {
-        width: 100%;
-        float: none;
-    }
-}
-
 .not-reviewable a.ui-btn.ui-btn-c {
     background-color: firebrick;
 }
-.reviewer-is-me a.ui-btn.ui-btn-c {
-    background-color: #64a70b;
+.reviewer-not-me {
+    background-color: #e57200;
+}
+.reviewer-is-me {
+    background-color: #C4BFB6;
 }
 
 .hide {
-    display: none;
+    display: none!important;
 }
 
 .errorText {
@@ -28,4 +19,8 @@
 
 .wrapText {
     white-space: normal;
+}
+
+.ui-page-theme-h {
+    padding-top: 38px!important;
 }

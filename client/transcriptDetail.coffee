@@ -7,6 +7,10 @@ Template.transcriptDetail.onCreated () ->
       onReady: () ->
         # Convert XML to HTML using the transcript document service
         t = getTranscript(transcriptId)
+        console.log "transcript awaitingReview:#{t.awaitingReview()}"
+        if (t.awaitingReview())
+          Meteor.call "startReview", t._id
+
         if (t.pescCollegeTranscriptXML)
           HTTP.post Meteor.settings.public.transcriptToHtmlURL, {headers: { "Content-Type":"application/x-www-form-urlencoded" }, params: {"doc": t.pescCollegeTranscriptXML}}, (error, response) ->
             # Update the reactive state to trigger the view to generate!
@@ -27,23 +31,40 @@ Template.transcriptDetail.onRendered () ->
       $(template.firstNode.parentElement).trigger("create")
 
 getTranscript = (id) ->
+  id = getTranscriptId() unless id
   return Transcript.documents.findOne(id) || {}
+
+getTranscriptId = ->
+  return FlowRouter.getParam('transcriptId')
 
 Template.transcriptDetail.helpers
   transcript: () ->
-    return getTranscript FlowRouter.getParam 'transcriptId'
+    return getTranscript()
 
   transcriptId: () ->
-    return FlowRouter.getParam('transcriptId')
+    return getTranscriptId()
 
   transcriptHtml: () ->
     return Template.instance().transcriptHtml.get()
+
+  showHtml: () ->
+    return true if Template.instance().transcriptHtml.get()
+
+  showXml: () ->
+    return true
+
+  showJson: () ->
+    return true
 
 Template.transcriptDetail.events =
   'click .review-complete': (e) ->
     #console.log "User completed review of transcript: #{this._id}"
     Meteor.call "completeReview", this._id
     FlowRouter.go "transcriptReviewList"
+
+  'click .review-takeover': (e) ->
+    #console.log "User review takeover for transcript: #{this._id}"
+    Meteor.call "startReview", this._id
 
   'click .cancel-review': (e) ->
     #console.log "User cancelled review of transcript: #{this._id}"

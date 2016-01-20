@@ -42,7 +42,7 @@ Template.transcriptList.helpers {
 
 Template.transcriptList.events
   'click .view-transcript': (e, t) ->
-    Meteor.call "startReview", this._id
+#    Meteor.call "startReview", this._id
 
 Template.transcriptList.onRendered () ->
   template = this

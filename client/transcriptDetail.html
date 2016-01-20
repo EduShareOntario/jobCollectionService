@@ -3,26 +3,19 @@
     {{#header}}
       {{>transcriptReviewNav}}
     {{/header}}
-    <!--{{>formatRadioSelection}}-->
-    <!--{{>formatCheckboxSelection}}-->
-    <div class="ui-body">
-      <!--{{#if transcriptHtml and showHtml}}-->
-        {{{transcriptHtml}}}
-      <!--{{/if}}-->
+    {{>reviewStatus}}
+    <div class="ui-body {{#unless showHtml}}hide{{/unless}}">
+      {{{transcriptHtml}}}
     </div>
-    <div class="ui-body">
-      <!--{{#if showXml}}-->
+    <div class="ui-body {{#unless showXml}}hide{{/unless}}">
       <pre class="wrapText">
-        {{transcript.transcriptXmlDump}}
+        {{transcriptXmlDump}}
       </pre>
-      <!--{{/if}}-->
     </div>
-    <div class="ui-body">
-      <!--{{#if showJson}}-->
+    <div class="ui-body {{#unless showJson}}hide{{/unless}}">
       <pre>
-        {{transcript.transcriptJsonDump}}
+        {{transcriptJsonDump}}
       </pre>
-      <!--{{/if}}-->
     </div>
 
     {{#footer}}
@@ -32,17 +25,36 @@
 </template>
 
 <template name="formatToggle">
-
+  <style>
+    .custom-size-flipswitch.ui-flipswitch .ui-btn.ui-flipswitch-on {
+      text-indent: -3.9em;
+    }
+  </style>
+  <input type="checkbox" data-role="flipswitch" name="format-checkbox" id="format-checkbox" data-on-text="Format" data-off-text="Raw" data-wrapper-class="custom-size-flipswitch" checked="false">
 </template>
+
+<template name="formatButton">
+  <div class="ui-grid-a">
+    <style>
+    </style>
+    <div class="ui-block-a"></div>
+    <div class="ui-block-b">
+      <button class="ui-btn ui-btn-right">Toggle Format</button>
+    </div>
+  </div>
+</template>
+
 <template name="formatRadioSelection">
-  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-    <input type="radio" name="xml-choice" id="xml-choice" value="xml">
-    <label for="xml-choice">Raw</label>
-    <input type="radio" name="html-choice" id="html-choice" value="html">
-    <label for="html-choice">Pretty</label>
-    <input type="radio" name="json-choice" id="json-choice" value="json">
-    <label for="json-choice">Simple</label>
-  </fieldset>
+  <form>
+    <fieldset id="format-selection" data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <input type="radio" name="xml-choice" id="xml-choice" value="xml">
+      <label for="xml-choice">Raw</label>
+      <input type="radio" name="html-choice" id="html-choice" value="html">
+      <label for="html-choice">Pretty</label>
+      <input type="radio" name="json-choice" id="json-choice" value="json">
+      <label for="json-choice">Simple</label>
+    </fieldset>
+  </form>
 </template>
 
 <template name="formatCheckboxSelection">
@@ -54,6 +66,16 @@
     <input type="checkbox" name="json-checkbox" id="json-checkbox" value="json">
     <label for="json-checkbox">Simple</label>
   </fieldset>
+</template>
+
+<template name="reviewStatus">
+  <div class="ui-grid-a" data-theme="h">
+    <style>
+    </style>
+    <div class="{{#if reviewerIsMe}}reviewer-is-me{{else}}reviewer-not-me{{/if}}">
+      <p>{{reviewer2.displayName}} started review on {{reviewStartedOn}} {{#if reviewCompletedOn}} and completed on {{reviewCompletedOn}}{{/if}}</p>
+    </div>
+  </div>
 </template>
 
 <template name="transcriptReviewNav">
@@ -71,12 +93,20 @@
   </style>
   <div class="ui-grid-b">
     <div class="ui-block-a">
-      <a data-role="button"
-         data-icon="check"
-         data-theme="h"
-         data-inline="true"
-         role="button"
-         class="review-complete">Transcript Review Complete</a>
+      {{#unless reviewCompletedOn}}
+        <a id="review-complete" data-role="button"
+           data-icon="check"
+           data-theme="h"
+           data-inline="true"
+           role="button"
+           class="review-complete {{#unless reviewable}}hide{{/unless}}">Complete Review</a>
+        <a id="review-takeover" data-role="button"
+           data-icon="check"
+           data-theme="h"
+           data-inline="true"
+           role="button"
+           class="review-takeover {{#if reviewerIsMe}}hide{{/if}}">Takeover Review</a>
+      {{/unless}}
     </div>
     <div class="ui-block-b center">
       <h3>{{fullName}}</h3>
