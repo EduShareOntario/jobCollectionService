@@ -12,7 +12,7 @@
 </template>
 
 <template name="transcriptSummary">
-  <div data-role="collapsible" data-theme="c" class="{{#if reviewerIsMe}}reviewer-is-me{{/if}}">
+  <div data-role="collapsible" data-theme="c" class="{{#if reviewerIsMe}}reviewer-is-me{{/if}} {{#unless reviewable}}reviewer-not-me{{/unless}}">
     {{#if pescCollegeTranscript}}
       {{#let
         transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData

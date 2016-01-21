@@ -1,11 +1,8 @@
 
-.not-reviewable a.ui-btn.ui-btn-c {
-    background-color: firebrick;
-}
-.reviewer-not-me {
+.reviewer-not-me, .reviewer-not-me a.ui-btn.ui-btn-c, .reviewer-not-me a:hover.ui-btn.ui-btn-c {
     background-color: #e57200;
 }
-.reviewer-is-me {
+.reviewer-is-me, .reviewer-is-me a.ui-btn.ui-btn-c, .reviewer-is-me a:hover.ui-btn.ui-btn-c {
     background-color: #C4BFB6;
 }
 

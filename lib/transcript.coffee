@@ -123,7 +123,7 @@ Meteor.methods
     exists = Transcript.documents.exists({_id:transcriptId})
     if (exists)
       console.log "#{user._id}, #{user.dn} : completeReview for transcript:" + transcriptId
-      Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $set: {reviewCompletedOn: new Date(), reviewer:Meteor.userId(), reviewer2:Meteor.user()}})
+      Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, reviewer:user._id}, { $set: {reviewCompletedOn: new Date(), reviewer:user._id, reviewer2:user}})
     else
       console.log "#{user._id}, #{user.dn} : completeReview failed for transcript:" + transcriptId + " ; a document with this id does not exist!"
 
@@ -131,10 +131,10 @@ Meteor.methods
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
     console.log "#{user._id}, #{user.dn} : startReview for transcript:" + transcriptId
-    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $set: {reviewStartedOn: new Date(), reviewer:Meteor.userId(), reviewer2:Meteor.user()}})
+    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $set: {reviewStartedOn: new Date(), reviewer:user._id, reviewer2:user}})
 
   cancelReview: (transcriptId) ->
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
     console.log "#{user._id}, #{user.dn} : cancelReview for transcript:" + transcriptId
-    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $unset: {reviewStartedOn: "", reviewer:"", reviewer2:""}})
+    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, reviewer:user._id}, { $unset: {reviewStartedOn: "", reviewer:"", reviewer2:""}})
