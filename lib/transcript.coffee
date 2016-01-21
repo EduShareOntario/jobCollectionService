@@ -1,4 +1,4 @@
-DefaultIdGenerator = {idGenerator:'MONGO'}
+DefaultIdGenerator = { idGenerator:'MONGO' }
 
 class Described extends Document
 #  title: ""
@@ -31,6 +31,9 @@ class Transcript extends Described
 
   reviewerIsMe: () ->
     return @reviewer?._id == Meteor.userId()
+
+  myId: () ->
+    return @__originalId || @_id
 
   @Meta
     name: 'Transcript'
@@ -107,8 +110,42 @@ class Transcript extends Described
 }
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
 Transcript.Meta.collection.attachSchema Schemas.Transcript
-Transcript.Meta.collection._ensureIndex ocasRequestId: 1, created: 1 unless Meteor.isClient
-Transcript.Meta.collection._ensureIndex reviewCompletedOn: 1 unless Meteor.isClient
+
+if (Meteor.isServer)
+  Transcript.Meta.collection._ensureIndex ocasRequestId: 1, created: 1
+  Transcript.Meta.collection._ensureIndex reviewCompletedOn: 1
+  #Transcript.Meta.collection._ensureIndex { title: 'text', description: 'text', pescCollegeTranscriptXML: 'text', 'reviewer.displayName': 'text', ocasRequestId: 'text', 'applicant.studentId': 'text', 'applicant.termCode': 'text'}, {background: true, name: 'search'} unless Meteor.isClient
+
+#EasySearch takes care of client and server initialization differences!
+@TranscriptIndex = new EasySearch.Index
+  name: 'transcriptIndex'
+  #todo: Fix MongoTextIndex to support more text fields or enusreIndex callback
+  #  fields: ['title','description','pescCollegeTranscriptXML','reviewer.displayName','ocasRequestId','applicant.studentId','applicant.termCode']
+  fields: ['title', 'description','pescCollegeTranscriptXML']
+  defaultSearchOptions: {score: {$meta: "textScore"}, sort: {score: {$meta: "textScore"}}, limit: 50, props: { searchFilter: 'pendingReview' }}
+  #todo: Enhance EasySearch.MongoTextIndex to support ensureIndex with {background: true, name: 'search'}
+  engine: new EasySearch.MongoTextIndex {
+    transform: (doc) ->
+      return new Transcript doc
+    selector: (searchObject, options, aggregation) ->
+      console.log searchObject
+      console.log options
+      console.log aggregation
+      selector =  this.defaultConfiguration().selector searchObject, options, aggregation
+      switch options.search.props.searchFilter
+        when "pendingReview"
+          selector.reviewCompletedOn = undefined
+          selector.applicant = {$ne:null}
+        when "reviewedByMe"
+          selector['reviewer._id'] = options.search.userId
+        when "reviewed"
+          selector.reviewer = {$ne:null}
+
+      return selector
+  }
+  collection: Transcript.Meta.collection
+  permission: (options) ->
+    return options.userId # only allow searching when the user is logged in
 
 @Transcript = Transcript
 

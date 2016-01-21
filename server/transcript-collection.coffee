@@ -1,11 +1,22 @@
 fs = Npm.require 'fs'
 
-Meteor.publish 'transcripts', (userId) ->
+Meteor.publish 'pendingReviewTranscripts', (userId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
   user = User.documents.findOne this.userId
   throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
   this.unblock
   return Transcript.documents.find {reviewCompletedOn:undefined, applicant: {$ne:null}}, {sort: {ocasRequestId:1}}
+
+Meteor.publish 'transcriptSearch', (userId, searchText) ->
+  throw new Meteor.Error(403, "Access denied") unless this.userId
+  user = User.documents.findOne this.userId
+  throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+  console.log "transcriptSearch called for user #{user.displayName} with searchText #{searchText}"
+  this.unblock
+  if searchText
+    return Transcript.documents.find {$text: { $search: searchText}}, {score: {$meta: "textScore"}}, {sort: {score: {$meta: "textScore"}}, limit: 100}
+  else
+    return Transcript.documents.find {}, {sort: {ocasRequestId:1}, limit: 100}
 
 Meteor.publish 'transcript', (transcriptId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId

@@ -8,28 +8,15 @@ Template.transcriptDetail.onCreated () ->
         # Convert XML to HTML using the transcript document service
         t = getTranscript(transcriptId)
         if (t.pescCollegeTranscriptXML)
+          startReviewNeeded = t.awaitingReview()
+          console.log "startReviewNeeded:#{startReviewNeeded}"
+          Meteor.call "startReview", t._id if startReviewNeeded
           HTTP.post Meteor.settings.public.transcriptToHtmlURL, {headers: { "Content-Type":"application/x-www-form-urlencoded" }, params: {"doc": t.pescCollegeTranscriptXML}}, (error, response) ->
             # Update the reactive state to trigger the view to generate!
             template.transcriptHtml.set(response.content)
         else
           template.transcriptHtml.set("<h2>Transcript #{transcriptId} not found</h2>")
     }
-
-Template.transcriptDetail.onRendered () ->
-  template = this
-  # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
-  template.autorun () ->
-    # Watching the path change makes this autorun whenever the path changes!
-    # See http://docs.meteor.com/#/full/template_helpers
-    FlowRouter.watchPathChange()
-    Deps.afterFlush ->
-      console.log "transcriptDetail rendered"
-      $(template.firstNode.parentElement).trigger("create")
-      transcriptId = FlowRouter.getParam('transcriptId')
-      t = getTranscript(transcriptId)
-      startReviewNeeded = t.awaitingReview()
-      console.log "transcript awaitingReview:#{startReviewNeeded}"
-      Meteor.call "startReview", t._id if startReviewNeeded
 
 getTranscript = (id) ->
   id = getTranscriptId() unless id

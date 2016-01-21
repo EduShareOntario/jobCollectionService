@@ -7,3 +7,11 @@ $(document).bind("mobileinit", function () {
   // Disabling this will prevent jQuery Mobile from handling hash changes, which allows you to handle them yourself or use simple deep-links within a document that scroll to a particular id.
   $.mobile.hashListeningEnabled = false;
 });
+
+Template.onRendered(function(){
+  var template = this;
+  Deps.afterFlush(function() {
+    console.log("triggering Jquery mobile component creation for "+template.view.name);
+    $(template.firstNode.parentElement).trigger("create");
+  });
+});

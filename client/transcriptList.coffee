@@ -7,7 +7,11 @@ Template.transcriptList.onCreated () ->
     if Auth.authorized()
       userId = Meteor.userId()
 #      username = Meteor.user()?.username
-      subscription = subscriptionMgr.subscribe "transcripts", userId, {
+      #subscription = subscriptionMgr.subscribe "pendingReviewTranscripts", userId, {
+      #Session.set "searchValue", "bob"
+      console.log "searchValue is #{Session.get 'searchValue'}"
+      console.log "TranscriptIndex is #{TranscriptIndex}"
+      subscription = Meteor.subscribe "transcriptSearch", userId, Session.get "searchValue", {
         onReady: () ->
           console.log "transcriptList autorun subscribed to 'transcripts' publication. when userId is #{userId}"
           # See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
@@ -21,8 +25,9 @@ Template.transcriptList.onCreated () ->
       console.log "subscribed to 'transcripts' publication when userId is #{userId}"
 
   self.transcripts = () ->
-    console.log "transcripts() called from template onCreated event handler."
-    return transcripts()
+    console.log "template transcripts() called."
+    #return transcripts()
+    return transcriptSearchResult()
 
 transcripts = () ->
   console.log "transcripts() called"
@@ -34,15 +39,32 @@ transcripts = () ->
   }
   return cursor
 
+transcriptSearchResult = () ->
+  if Session.get "searchValue"
+    return Transcript.documents.find {}, {sort: [["score", "desc"]]}
+  else
+    return Transcript.documents.find({})
+
 Template.transcriptList.helpers {
   transcripts: () ->
     console.log "transcripts() helper called"
-    return Template.instance().transcripts()
+#    return Template.instance().transcripts()
+    return transcriptSearchResult()
+
+  #todo: move/refactor into transcript search page
+  transcriptSearchResult: () ->
+    return transcriptSearchResult()
 }
 
 Template.transcriptList.events
   'click .view-transcript': (e, t) ->
 #    Meteor.call "startReview", this._id
+  "keyup input" : ->
+    console.log "hello keyup"
+    console.log this.target
+  "keypress input" : ->
+    console.log "hello keypress"
+    console.log this.target
 
 Template.transcriptList.onRendered () ->
   template = this
@@ -79,5 +101,5 @@ Template.transcriptSummary.helpers
     return recs
 
   pathForTranscriptReview: () ->
-    path = FlowRouter.path "transcriptReviewDetail", {transcriptId: this._id}
+    path = FlowRouter.path "transcriptReviewDetail", {transcriptId: this.myId()}
     return path

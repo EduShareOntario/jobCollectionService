@@ -27,6 +27,8 @@ ddp-rate-limiter@1.0.0
 ddp-server@1.2.2
 deps@1.0.9
 diff-sequence@1.0.1
+easysearch:components@2.0.7
+easysearch:core@2.0.5
 ecmascript@0.1.6
 ecmascript-runtime@0.2.6
 ejson@1.0.7
@@ -63,8 +65,13 @@ npm-mongo@1.4.39_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
 peerlibrary:assert@0.2.5
+peerlibrary:base-component@0.14.0
+peerlibrary:blaze-components@0.16.2
 peerlibrary:blocking@0.5.2
+peerlibrary:computed-field@0.3.1
+peerlibrary:data-lookup@0.1.0
 peerlibrary:peerdb@0.19.2
+peerlibrary:reactive-field@0.1.0
 peerlibrary:stacktrace@0.2.0
 peerlibrary:util@0.2.3
 peerlibrary:xml2js@0.4.8_1
