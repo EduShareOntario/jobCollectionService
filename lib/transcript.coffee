@@ -13,7 +13,6 @@ class Transcript extends Described
 #  reviewStartedOn: undefined
 #  reviewCompletedOn: undefined
 #  reviewer: undefined
-#  reviewer2: undefined
   fullName: () ->
     name = @pescCollegeTranscript.CollegeTranscript.Student.Person.Name
     return name.FirstName + ' ' + name.LastName
@@ -31,7 +30,7 @@ class Transcript extends Described
     return (undefined == @reviewer || @reviewerIsMe()) && @reviewCompletedOn == undefined
 
   reviewerIsMe: () ->
-    return @reviewer == Meteor.userId()
+    return @reviewer?._id == Meteor.userId()
 
   @Meta
     name: 'Transcript'
@@ -54,7 +53,7 @@ class Transcript extends Described
           object = fields.pescCollegeTranscript.CollegeTranscript.TransmissionData.RequestTrackingID
           [fields._id, object]
 
-      fields.reviewer2 = @ReferenceField User, false
+      fields.reviewer = @ReferenceField User, ['mail', 'displayName']
 
       fields
 
@@ -94,9 +93,6 @@ class Transcript extends Described
     type: Date
     optional: true
   reviewer:
-    type: String
-    optional: true
-  reviewer2:
     type: @User
     optional: true
     blackbox: true
@@ -123,7 +119,7 @@ Meteor.methods
     exists = Transcript.documents.exists({_id:transcriptId})
     if (exists)
       console.log "#{user._id}, #{user.dn} : completeReview for transcript:" + transcriptId
-      Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, reviewer:user._id}, { $set: {reviewCompletedOn: new Date(), reviewer:user._id, reviewer2:user}})
+      Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, 'reviewer._id':user._id}, { $set: {reviewCompletedOn: new Date(), 'reviewer._id':user._id}})
     else
       console.log "#{user._id}, #{user.dn} : completeReview failed for transcript:" + transcriptId + " ; a document with this id does not exist!"
 
@@ -131,10 +127,10 @@ Meteor.methods
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
     console.log "#{user._id}, #{user.dn} : startReview for transcript:" + transcriptId
-    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $set: {reviewStartedOn: new Date(), reviewer:user._id, reviewer2:user}})
+    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $set: {reviewStartedOn: new Date(), 'reviewer._id':user._id}})
 
   cancelReview: (transcriptId) ->
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
     console.log "#{user._id}, #{user.dn} : cancelReview for transcript:" + transcriptId
-    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, reviewer:user._id}, { $unset: {reviewStartedOn: "", reviewer:"", reviewer2:""}})
+    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, 'reviewer._id':user._id}, { $unset: {reviewStartedOn: "", reviewer:""}})
