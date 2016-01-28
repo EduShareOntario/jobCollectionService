@@ -3,14 +3,14 @@ fs = Npm.require 'fs'
 Meteor.publish 'pendingReviewTranscripts', (userId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
   user = User.documents.findOne this.userId
-  throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+  throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
   this.unblock
   return Transcript.documents.find {reviewCompletedOn:undefined, applicant: {$ne:null}}, {sort: {ocasRequestId:1}}
 
 Meteor.publish 'transcriptSearch', (userId, searchText) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
   user = User.documents.findOne this.userId
-  throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+  throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
   console.log "transcriptSearch called for user #{user.displayName} with searchText #{searchText}"
   this.unblock
   if searchText
@@ -21,7 +21,7 @@ Meteor.publish 'transcriptSearch', (userId, searchText) ->
 Meteor.publish 'transcript', (transcriptId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
   user = User.documents.findOne this.userId
-  throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+  throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
   return Transcript.documents.find {_id: transcriptId}
 
 
@@ -37,7 +37,7 @@ Document.startup () ->
 Meteor.methods
   createTestTranscripts: () ->
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
 
     console.log "createTranscriptsForTesting started by #{user._id}, #{user.dn}"
     testTranscriptDir = "./assets/app/config/testTranscripts/"
@@ -60,7 +60,7 @@ Meteor.methods
   createTranscript: (transcript) ->
     console.log "createTranscript called with #{JSON.stringify(transcript)}"
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
     transcript = new Transcript(transcript)
     newId = Transcript.documents.insert transcript
     return newId
@@ -68,7 +68,7 @@ Meteor.methods
   getTranscript: (transcriptId) ->
     console.log "getTranscript called with #{JSON.stringify(transcriptId)}"
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
     transcript = Transcript.documents.findOne(transcriptId)
     #console.log "transcript is #{transcript}"
     return transcript
@@ -76,7 +76,7 @@ Meteor.methods
   setApplicant: (transcriptId, applicant) ->
     console.log "setApplicant called with transcriptId #{transcriptId} and applicant #{JSON.stringify(applicant)}"
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
     Transcript.documents.update {_id:transcriptId}, { $set:{applicant: applicant} }
     return true
 
@@ -86,7 +86,7 @@ Meteor.methods
   findRedundantJobs: (jobCollectionName, redundantSelector, resultFields) ->
     #console.log "findRedundantJobs called with jobCollectionName #{jobCollectionName}, redundantSelector #{JSON.stringify(redundantSelector)} and resultFields #{JSON.stringify(resultFields)}"
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless 'batch job' in user?.memberOf? or user?.batchJobRunner
+    throw new Meteor.Error(403, "Access denied") user?.isTranscriptBatchJobRunner()
 
     jobCollection = JobCollections[jobCollectionName]
     collection = jobCollection._collection

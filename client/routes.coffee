@@ -56,7 +56,7 @@ privateRoutes.route '/review', {
   name: 'transcriptReviewList'
   action: () ->
     console.log "Rendering transcript review list"
-    BlazeLayout.render "transcriptsMain", {content: "transcriptList"}
+    BlazeLayout.render "transcriptsMain", {content: "transcriptSearch"}
 }
 privateRoutes.route '/review/:transcriptId', {
   name: 'transcriptReviewDetail',

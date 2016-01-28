@@ -105,54 +105,70 @@ class Transcript extends Described
     blackbox: true
 }])
 
+@Schemas.EasySearchTranscript = new SimpleSchema([@Schemas.Transcript, {
+  __originalId:
+    type: String
+    optional: true
+}])
+
 @Schemas.Applicant = new SimpleSchema {
 
 }
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
-Transcript.Meta.collection.attachSchema Schemas.Transcript
+Transcript.Meta.collection.attachSchema Schemas.EasySearchTranscript
 
 if (Meteor.isServer)
   Transcript.Meta.collection._ensureIndex ocasRequestId: 1, created: 1
   Transcript.Meta.collection._ensureIndex reviewCompletedOn: 1
-  #Transcript.Meta.collection._ensureIndex { title: 'text', description: 'text', pescCollegeTranscriptXML: 'text', 'reviewer.displayName': 'text', ocasRequestId: 'text', 'applicant.studentId': 'text', 'applicant.termCode': 'text'}, {background: true, name: 'search'} unless Meteor.isClient
 
 #EasySearch takes care of client and server initialization differences!
 @TranscriptIndex = new EasySearch.Index
   name: 'transcriptIndex'
-  #todo: Fix MongoTextIndex to support more text fields or enusreIndex callback
-  #  fields: ['title','description','pescCollegeTranscriptXML','reviewer.displayName','ocasRequestId','applicant.studentId','applicant.termCode']
-  fields: ['title', 'description','pescCollegeTranscriptXML']
+  fields: ['title', 'description','pescCollegeTranscriptXML', 'reviewer.displayName', 'ocasRequestId']
   defaultSearchOptions: {score: {$meta: "textScore"}, sort: {score: {$meta: "textScore"}}, limit: 50, props: { searchFilter: 'pendingReview' }}
-  #todo: Enhance EasySearch.MongoTextIndex to support ensureIndex with {background: true, name: 'search'}
   engine: new EasySearch.MongoTextIndex {
+    #todo: Enhance EasySearch.MongoTextIndex to support passing through the ensureIndex/createIndex 'options' object.
+    #this would enable naming the index when the field list is large or tuning the index!
     transform: (doc) ->
-      return new Transcript doc
+      try
+        doc = new Transcript doc
+      catch error
+        # Caution: throwing an error will result in an endless loop of sub/unsub by the client!
+        console.log error
+        console.log doc
+
+      return doc
+
     selector: (searchObject, options, aggregation) ->
-      console.log searchObject
-      console.log options
-      console.log aggregation
+#      console.log "engine selector called with searchObject:"
+#      console.log searchObject
+#      console.log "options:"
+#      console.log options
+#      console.log "aggregation:"
+#      console.log aggregation
       selector =  this.defaultConfiguration().selector searchObject, options, aggregation
       switch options.search.props.searchFilter
         when "pendingReview"
           selector.reviewCompletedOn = undefined
           selector.applicant = {$ne:null}
-        when "reviewedByMe"
+        when "reviewerIsMe"
           selector['reviewer._id'] = options.search.userId
         when "reviewed"
-          selector.reviewer = {$ne:null}
+          selector.reviewCompletedOn = {$ne:null}
 
       return selector
   }
   collection: Transcript.Meta.collection
   permission: (options) ->
-    return options.userId # only allow searching when the user is logged in
+    user = User.documents.findOne options.userId
+    return user?.isTranscriptReviewer()
 
 @Transcript = Transcript
 
 Meteor.methods
   completeReview: (transcriptId) ->
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
     exists = Transcript.documents.exists({_id:transcriptId})
     if (exists)
       console.log "#{user._id}, #{user.dn} : completeReview for transcript:" + transcriptId
@@ -162,12 +178,12 @@ Meteor.methods
 
   startReview: (transcriptId) ->
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
     console.log "#{user._id}, #{user.dn} : startReview for transcript:" + transcriptId
     Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $set: {reviewStartedOn: new Date(), 'reviewer._id':user._id}})
 
   cancelReview: (transcriptId) ->
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") unless user?.memberOf?.length > 0
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
     console.log "#{user._id}, #{user.dn} : cancelReview for transcript:" + transcriptId
     Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, 'reviewer._id':user._id}, { $unset: {reviewStartedOn: "", reviewer:""}})
