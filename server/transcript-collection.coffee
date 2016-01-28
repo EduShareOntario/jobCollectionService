@@ -86,7 +86,7 @@ Meteor.methods
   findRedundantJobs: (jobCollectionName, redundantSelector, resultFields) ->
     #console.log "findRedundantJobs called with jobCollectionName #{jobCollectionName}, redundantSelector #{JSON.stringify(redundantSelector)} and resultFields #{JSON.stringify(resultFields)}"
     user = Meteor.user()
-    throw new Meteor.Error(403, "Access denied") user?.isTranscriptBatchJobRunner()
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
 
     jobCollection = JobCollections[jobCollectionName]
     collection = jobCollection._collection
