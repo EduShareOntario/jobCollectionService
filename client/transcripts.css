@@ -21,3 +21,9 @@
 .ui-page-theme-h {
     padding-top: 38px!important;
 }
+
+[data-role="content"] {
+    position: relative;
+    top: 25px;
+    padding: 1em;
+}

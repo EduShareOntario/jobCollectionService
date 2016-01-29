@@ -3,21 +3,22 @@
     {{#header}}
       {{>transcriptReviewNav}}
     {{/header}}
-    {{>reviewStatus}}
-    <div class="ui-body {{#unless showHtml}}hide{{/unless}}">
-      {{{transcriptHtml}}}
-    </div>
-    <div class="ui-body {{#unless showXml}}hide{{/unless}}">
+    <div data-role="content">
+      {{>reviewStatus}}
+      <div class="ui-body {{#unless showHtml}}hide{{/unless}}">
+        {{{transcriptHtml}}}
+      </div>
+      <div class="ui-body {{#unless showXml}}hide{{/unless}}">
       <pre class="wrapText">
         {{transcriptXmlDump}}
       </pre>
-    </div>
-    <div class="ui-body {{#unless showJson}}hide{{/unless}}">
+      </div>
+      <div class="ui-body {{#unless showJson}}hide{{/unless}}">
       <pre>
         {{transcriptJsonDump}}
       </pre>
+      </div>
     </div>
-
     {{#footer}}
       {{>transcriptReviewNav}}
     {{/footer}}

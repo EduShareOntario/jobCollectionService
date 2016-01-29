@@ -1,21 +1,20 @@
 <template name="authStatus">
-  <div class="ui-grid-b ui-responsive">
-    {{>header}}
-    <div class="ui-block-a"></div>
-    <div class="ui-block-b">
-      {{#unless onLoginPage}}
-        {{#unless authorized}}
-          <h3 class="errorText">You are not authorized to access this application.</h3>
-        {{/unless}}
-        {{#if currentUser}}
-          {{>currentUser}}
-        {{else}}
-          <button class="btn" name="gotoLogin">Login</button>
-        {{/if}}
-      {{/unless}}
+  {{#unless onLoginPage}}
+    <div class="ui-grid-b ui-responsive">
+      <div class="ui-block-a"></div>
+      <div class="ui-block-b">
+          {{#unless authorized}}
+            <h3 class="errorText">You are not authorized to access this application.</h3>
+          {{/unless}}
+          {{#if currentUser}}
+            {{>currentUser}}
+          {{else}}
+            <button class="btn" name="gotoLogin">Login</button>
+          {{/if}}
+      </div>
+      <div class="ui-block-c"></div>
     </div>
-    <div class="ui-block-c"></div>
-  </div>
+  {{/unless}}
 </template>
 
 <template name="currentUser">

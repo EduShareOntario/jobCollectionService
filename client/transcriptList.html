@@ -1,14 +1,16 @@
 <template name="transcriptList">
   {{> header}}
-  {{#if Template.subscriptionsReady}}
-    <div data-role="collapsible-set">
-      {{#each transcripts}}
-        {{> transcriptSummary}}
-      {{/each}}
-    </div>
-  {{else}}
-    <p>Loading...</p>
-  {{/if}}
+  <div data-role="content">
+    {{#if Template.subscriptionsReady}}
+      <div data-role="collapsible-set">
+        {{#each transcripts}}
+          {{> transcriptSummary}}
+        {{/each}}
+      </div>
+    {{else}}
+      <p>Loading...</p>
+    {{/if}}
+  </div>
 </template>
 
 <template name="transcriptSummary">
