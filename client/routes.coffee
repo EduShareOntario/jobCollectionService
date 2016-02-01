@@ -4,6 +4,9 @@ exposed = FlowRouter.group {}
 exposed.route '/login', {
   name: 'login',
   action: () ->
+    unless Session.get 'redirectAfterLogin'
+      # default to /review when original path is /login
+      Session.set 'redirectAfterLogin', '/review'
     BlazeLayout.render "login"
 }
 exposed.route '/unauthorized', {
@@ -23,11 +26,11 @@ exposed.route '/logout', {
 # Before going to any route that is part of this route group, make sure the user is logged in!
 ensureLoggedIn = (context, redirect, stop) ->
   console.log "ensureLoggedIn called"
-  routeName = FlowRouter.getRouteName()
-  unless routeName is 'login'
+  currentRouteName = FlowRouter.getRouteName()
+
+  unless currentRouteName is 'login'
     # remember where they want to go!
     currentPath = FlowRouter.current().path
-    console.log "Saving redirectAfterLogin to #{currentPath}"
     Session.set 'redirectAfterLogin', currentPath
     unless Auth.ready() or Auth.authenticating()
       console.log "ensureLoggedIn redirecting to /login"
