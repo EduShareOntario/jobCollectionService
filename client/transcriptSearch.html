@@ -17,11 +17,9 @@
       </div>
     </div>
 
-    <div data-role="collapsible-set">
-      {{#EasySearch.Each index=transcriptIndex}}
-        {{> transcriptSummary}}
-      {{/EasySearch.Each}}
-    </div>
+    {{#EasySearch.Each index=transcriptIndex}}
+      {{> transcriptSummary}}
+    {{/EasySearch.Each}}
 
     {{#EasySearch.IfNoResults index=transcriptIndex}}
       <div class="no-results">No results found!</div>

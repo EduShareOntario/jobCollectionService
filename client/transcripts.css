@@ -1,8 +1,8 @@
 
-.reviewer-not-me, .reviewer-not-me a.ui-btn.ui-btn-c, .reviewer-not-me a:hover.ui-btn.ui-btn-c {
+.reviewer-not-me, a.view-transcript.reviewer-not-me.ui-btn.ui-btn-c, a:hover.view-transcript.reviewer-not-me.ui-btn.ui-btn-c {
     background-color: #e57200;
 }
-.reviewer-is-me, .reviewer-is-me a.ui-btn.ui-btn-c, .reviewer-is-me a:hover.ui-btn.ui-btn-c {
+.reviewer-is-me, a.view-transcript.reviewer-is-me.ui-btn.ui-btn-c, a:hover.view-transcript.reviewer-is-me.ui-btn.ui-btn-c {
     background-color: #C4BFB6;
 }
 
@@ -23,7 +23,10 @@
 }
 
 [data-role="content"] {
-    position: relative;
-    top: 25px;
+    margin-top: 20px;
     padding: 1em;
+}
+
+.view-transcript.ui-btn {
+    text-align: left;
 }

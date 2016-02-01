@@ -24,10 +24,13 @@ class Transcript extends Described
     return JSON.stringify @pescCollegeTranscript, null, '\t'
 
   awaitingReview: () ->
-    return @reviewCompletedOn == undefined  && @reviewer == undefined
+    return @reviewCompletedOn == undefined  && @reviewer == undefined && not @outbound
 
   reviewable: () ->
-    return (undefined == @reviewer || @reviewerIsMe()) && @reviewCompletedOn == undefined
+    return not @outbound && not @reviewCompletedOn && (not @reviewer || @reviewerIsMe())
+
+  reviewerNotMe: () ->
+    return @reviewer && not @reviewerIsMe()
 
   reviewerIsMe: () ->
     return @reviewer?._id == Meteor.userId()
@@ -151,10 +154,13 @@ if (Meteor.isServer)
         when "pendingReview"
           selector.reviewCompletedOn = undefined
           selector.applicant = {$ne:null}
+          selector.outbound = undefined
         when "reviewerIsMe"
           selector['reviewer._id'] = options.search.userId
         when "reviewed"
           selector.reviewCompletedOn = {$ne:null}
+        when "outbound"
+          selector.outbound = true
 
       return selector
   }
@@ -172,7 +178,7 @@ Meteor.methods
     exists = Transcript.documents.exists({_id:transcriptId})
     if (exists)
       console.log "#{user._id}, #{user.dn} : completeReview for transcript:" + transcriptId
-      Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, 'reviewer._id':user._id}, { $set: {reviewCompletedOn: new Date(), 'reviewer._id':user._id}})
+      Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, 'reviewer._id':user._id}, { $set: {reviewCompletedOn: new Date()} })
     else
       console.log "#{user._id}, #{user.dn} : completeReview failed for transcript:" + transcriptId + " ; a document with this id does not exist!"
 
@@ -180,7 +186,7 @@ Meteor.methods
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
     console.log "#{user._id}, #{user.dn} : startReview for transcript:" + transcriptId
-    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null}, { $set: {reviewStartedOn: new Date(), 'reviewer._id':user._id}})
+    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, outbound:null}, { $set: {reviewStartedOn: new Date(), 'reviewer._id':user._id}})
 
   cancelReview: (transcriptId) ->
     user = Meteor.user()

@@ -2,11 +2,9 @@
   {{> header}}
   <div data-role="content">
     {{#if Template.subscriptionsReady}}
-      <div data-role="collapsible-set">
-        {{#each transcripts}}
-          {{> transcriptSummary}}
-        {{/each}}
-      </div>
+      {{#each transcripts}}
+        {{> transcriptSummary}}
+      {{/each}}
     {{else}}
       <p>Loading...</p>
     {{/if}}
@@ -14,31 +12,21 @@
 </template>
 
 <template name="transcriptSummary">
-  <div data-role="collapsible" data-theme="c" class="{{#if reviewerIsMe}}reviewer-is-me{{/if}} {{#unless reviewable}}reviewer-not-me{{/unless}}">
-    {{#if pescCollegeTranscript}}
-      {{#let
-        transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
-        person=pescCollegeTranscript.CollegeTranscript.Student.Person
-      }}
-        <h3>
+  {{#if pescCollegeTranscript}}
+    {{#let
+      transmissionData=pescCollegeTranscript.CollegeTranscript.TransmissionData
+      person=pescCollegeTranscript.CollegeTranscript.Student.Person
+    }}
+    <div data-theme="c">
+        <a data-theme="h"
+           role="button"
+           href="{{pathForTranscriptReview}}"
+           class="view-transcript ui-btn ui-btn-icon-left ui-btn-c {{#if outbound}}ui-icon-action{{else}}ui-icon-arrow-d{{/if}} {{#if reviewerIsMe}}reviewer-is-me{{/if}} {{#if reviewerNotMe}}reviewer-not-me{{/if}}">
           {{pescCollegeTranscript.CollegeTranscript.TransmissionData.RequestTrackingID}} {{fullName}} - {{person.AgencyAssignedID}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
-          <span class="ui-collapsible-heading-status"> click to expand contents</span>
-        </h3>
-        {{#each academicRecords}}
-          {{#if AcademicAward}}
-            {{> academicAward award=AcademicAward}}
-          {{/if}}
-        {{/each}}
-      {{/let}}
-    {{/if}}
-    <a data-role="button"
-       data-icon="grid"
-       data-theme="h"
-       data-inline="true"
-       role="button"
-       href="{{pathForTranscriptReview}}"
-       class="view-transcript">View Transcript</a>
-  </div>
+        </a>
+    </div>
+    {{/let}}
+  {{/if}}
 </template>
 
 <template name="academicAward">
