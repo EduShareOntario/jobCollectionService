@@ -35,7 +35,8 @@
     <div class="ui-block-a">
     </div>
     <div class="ui-block-b">
-      {{> EasySearch.LoadMore attributes=loadMoreAttributes index=index content="Load More"}}
+      <!--{{> EasySearch.LoadMore attributes=loadMoreAttributes index=index content="Load More"}}-->
+      {{> EasySearch.Pagination index=index maxPages=10 }}
     </div>
   </div>
 </template>

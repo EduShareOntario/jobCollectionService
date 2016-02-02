@@ -4,4 +4,35 @@ button.load-more-button {
     min-width: 6em;
 }
 
+.pagination {
+    list-style-type: none;
+    text-align: center;
+    font-size: 17px;
+    padding: 10px 0 0 0;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pagination .page {
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0 2px;
+    min-width: 25px;
+    cursor: pointer;
+}
+
+.pagination .page.disabled {
+    color: grey;
+}
+
+.pagination .page.current {
+    color: black;
+    font-weight: bold;
+}
+
 

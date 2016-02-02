@@ -1,33 +1,14 @@
 Template.transcriptSearch.helpers
   transcriptIndex: ->
-    console.log "transcriptIndex helper called!"
-    console.log TranscriptIndex.config
+    #console.log TranscriptIndex.config
     TranscriptIndex # Instance of EasySearch.Index
 
   inputAttributes: ->
     {
       placeholder: "Search...",
-      'data-role': "none"
+      'data-role': "none",
+      'id': "search-input"
     }
-
-Template.transcriptSearch.events =
-  'keyup input#searchText' : (e) ->
-    console.log "hello keyup"
-    console.log e.target
-
-  'keypress input' : (e) ->
-    console.log "hello keypress"
-    console.log e.target
-
-  'click input' : (e) ->
-    console.log "hello click"
-    console.log e.target
-
-  'click button[name="searchButton"]': (e) ->
-    console.log "hello button" + e
-
-  'click input[name="searchText"]': (e) ->
-    console.log "hello input" + e
 
 Template.transcriptSearchNav.helpers
   loadMoreAttributes: ->
