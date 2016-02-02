@@ -5,6 +5,9 @@ Template.searchFilters.events
     $('span.searchFilters').text selectElement.options[selectElement.selectedIndex].label
     Session.set 'searchFilter', $(selectElement).val()
     TranscriptIndex.getComponentMethods().addProps 'searchFilter', Session.get 'searchFilter'
+    # Get the latest search text input too
+    latestSearchText = $('#search-input').val()
+    TranscriptIndex.getComponentMethods().search(latestSearchText)
 
 Template.searchFilters.onCreated () ->
   @autorun () ->
