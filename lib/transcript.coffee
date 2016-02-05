@@ -192,4 +192,4 @@ Meteor.methods
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
     console.log "#{user._id}, #{user.dn} : cancelReview for transcript:" + transcriptId
-    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, 'reviewer._id':user._id}, { $unset: {reviewStartedOn: "", reviewer:""}})
+    Transcript.documents.update({_id:transcriptId, reviewCompletedOn:null, 'reviewer._id':user._id}, { $unset: {reviewStartedOn: "", reviewer: ""}, $set: {reviewCancelledOn: new Date()}})
