@@ -17,9 +17,13 @@
       </div>
     </div>
 
-    {{#EasySearch.Each index=transcriptIndex}}
-      {{> transcriptSummary}}
-    {{/EasySearch.Each}}
+    <div id="transcript-list-container">
+      {{#AnimateWithVelocity}}
+        {{#EasySearch.Each index=transcriptIndex}}
+          {{> transcriptSummary}}
+        {{/EasySearch.Each}}
+      {{/AnimateWithVelocity}}
+    </div>
 
     {{#EasySearch.IfNoResults index=transcriptIndex}}
       <div class="no-results">No results found!</div>

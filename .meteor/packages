@@ -32,3 +32,5 @@ ejson
 spacebars
 check
 easysearch:components
+frozeman:animation-helper-velocity
+infinitedg:gsap
