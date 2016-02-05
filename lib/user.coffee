@@ -7,7 +7,7 @@ class User extends @Document
     return @memberOf?.length > 0
 
   isTranscriptBatchJobRunner: () ->
-    return @isMemberOf('batch job') or user?.batchJobRunner
+    return @isMemberOf('batch job') or @batchJobRunner
 
   isMemberOf: (group) ->
     return group in @memberOf
