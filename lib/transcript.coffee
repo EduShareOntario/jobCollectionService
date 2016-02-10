@@ -120,55 +120,6 @@ class Transcript extends Described
 # The Collection2 package will take care of validating a document on save when a 'schema' is associated with the collection.
 Transcript.Meta.collection.attachSchema Schemas.EasySearchTranscript
 
-if (Meteor.isServer)
-  Transcript.Meta.collection._ensureIndex ocasRequestId: 1, created: 1
-  Transcript.Meta.collection._ensureIndex reviewCompletedOn: 1
-
-#EasySearch takes care of client and server initialization differences!
-@TranscriptIndex = new EasySearch.Index
-  name: 'transcriptIndex'
-  fields: ['title', 'description','pescCollegeTranscriptXML', 'reviewer.displayName', 'ocasRequestId']
-  defaultSearchOptions: {score: {$meta: "textScore"}, sort: {score: {$meta: "textScore"}}, limit: 50, props: { searchFilter: 'pendingReview' }}
-  engine: new EasySearch.MongoTextIndex {
-    #todo: Enhance EasySearch.MongoTextIndex to support passing through the ensureIndex/createIndex 'options' object.
-    #this would enable naming the index when the field list is large or tuning the index!
-    transform: (doc) ->
-      try
-        doc = new Transcript doc
-      catch error
-        # Caution: throwing an error will result in an endless loop of sub/unsub by the client!
-        console.log error
-        console.log doc
-
-      return doc
-
-    selector: (searchObject, options, aggregation) ->
-#      console.log "engine selector called with searchObject:"
-#      console.log searchObject
-#      console.log "options:"
-#      console.log options
-#      console.log "aggregation:"
-#      console.log aggregation
-      selector =  this.defaultConfiguration().selector searchObject, options, aggregation
-      switch options.search.props.searchFilter
-        when "pendingReview"
-          selector.reviewCompletedOn = undefined
-          selector.applicant = {$ne:null}
-          selector.outbound = undefined
-        when "reviewerIsMe"
-          selector['reviewer._id'] = options.search.userId
-        when "reviewed"
-          selector.reviewCompletedOn = {$ne:null}
-        when "outbound"
-          selector.outbound = true
-
-      return selector
-  }
-  collection: Transcript.Meta.collection
-  permission: (options) ->
-    user = User.documents.findOne options.userId
-    return user?.isTranscriptReviewer()
-
 @Transcript = Transcript
 
 Meteor.methods

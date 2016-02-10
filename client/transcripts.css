@@ -35,6 +35,6 @@ a.view-transcript.reviewer-not-me {
     text-align: left;
 }
 
-.animating a.view-transcript:after {
+.animating a.view-transcript:after, a.view-transcript.review-complete:after {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAGlJREFUKJGVkFEKwCAMQ9vee1AdjLE7x+xnMEXRms/S1zQRCYqkk/TovoiIAEj8FYMBZPZyW0Fmdkwvk3QAqYLOgVP76hecJAkgb0MLNaVYKUUDHSVV9W46ea1zGsHXNlTlvbehyvmJQC95zvcNDVD87AAAAABJRU5ErkJggg==');
 }

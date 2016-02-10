@@ -103,3 +103,12 @@ Template.transcriptSummary.helpers
   pathForTranscriptReview: () ->
     path = FlowRouter.path "transcriptReviewDetail", {transcriptId: this.myId()}
     return path
+
+  reviewIconClass: () ->
+    if this.reviewCompletedOn
+      iconClass = 'review-complete'
+    else if this.outbound
+      iconClass = 'ui-icon-action'
+    else
+      iconClass = 'ui-icon-arrow-d'
+    return iconClass
