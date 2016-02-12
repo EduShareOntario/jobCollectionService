@@ -10,6 +10,6 @@ class User extends @Document
     return @isMemberOf('batch job') or @batchJobRunner
 
   isMemberOf: (group) ->
-    return group in @memberOf
+    return @memberOf and group in @memberOf
 
 @User = User
