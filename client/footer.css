@@ -1,6 +1,11 @@
-[data-role="footer"] {
+.ui-footer {
     background: #004b87 url(../images/header_bg.png) 50% top no-repeat !important;
+    height: 50px;
 }
-[data-role="footer"] .ui-block-b {
+.ui-footer .ui-block-b {
     padding-right: 1%;
+}
+
+.ui-footer .pagination {
+    margin: 0px;
 }
