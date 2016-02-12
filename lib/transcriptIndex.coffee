@@ -1,8 +1,9 @@
 #EasySearch takes care of client and server initialization differences!
 @TranscriptIndex = new EasySearch.Index
-  name: 'transcriptIndex'
+  name: 'transcript'
 #  fields: ['title', 'description', 'reviewer', 'ocasRequestId']
   fields: ['title'] # need at least one!
+  defaultSearchOptions: { limit: 20 }
   engine: new EasySearch.ElasticSearch
     fieldsToIndex: (indexConfig) ->
       ['title', 'description','pescCollegeTranscriptXML', 'reviewer', 'ocasRequestId', 'outbound', 'applicant', 'reviewCompletedOn']
@@ -10,11 +11,11 @@
       try
         doc = new Transcript doc
       catch error
-# Caution: throwing an error will result in an endless loop of sub/unsub by the client!
+        # Caution: throwing an error will result in an endless loop of sub/unsub by the client!
         console.log error
         console.log doc
-
       return doc
+
     query: (searchObject, options) ->
       fieldNames = Object.keys(searchObject)
       searchText = searchObject[fieldNames[0]] # use the first property because they are all the same!
@@ -25,7 +26,7 @@
           "multi_match":
             query: searchText
             type: "best_fields"
-            fields: ['title', 'description', 'reviewer.displayName.*^2', 'ocasRequestId.*^3', 'applicant.firstName.*^2', 'applicant.lastName.*^2', 'applicant.studentId.*^3', 'applicant.applicantId.*^2', 'pescCollegeTranscriptXML']
+            fields: ['title', 'description', 'reviewer.displayName^2', 'ocasRequestId.*^3', 'applicant.firstName.*^2', 'applicant.lastName.*^2', 'applicant.studentId.*^3', 'applicant.applicantId.*^2', 'pescCollegeTranscriptXML']
 
       switch filterType
         when "pendingReview"
@@ -73,6 +74,7 @@
       body.min_score = 0.0005
       console.log JSON.stringify body
       return body
+
   collection: Transcript.Meta.collection
   permission: (options) ->
     user = User.documents.findOne options.userId

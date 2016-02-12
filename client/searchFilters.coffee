@@ -1,32 +1,30 @@
 Template.searchFilters.events
   'change select': (e)->
     console.log e
-    Template.searchFilters.handleFilterChange($(e.target).val())
+    newFilter = $(e.target).val()
+    Session.set 'searchFilter', newFilter
 
-Template.searchFilters.performSearch = () ->
+# Reactively triggered upon Session 'searchFilter' change.
+# Updates reactive TranscriptIndex to trigger a new search.
+# Should NOT depend on any reactive TranscriptIndex or related state, otherwise it
+# will be triggered inappropriately!
+Template.searchFilters.filter = () ->
   searchFilter = Session.get 'searchFilter'
-  # Do nothing if the searchFilter is undefined
-  return unless searchFilter
-
-  # The Input component will trigger a search when the enter key is pressed on the input, but
-  # it doesn't update the session and we still need to initialize the search properties by calling addProps!
-  currentText = $('#search-input').val()
-  TranscriptIndex.getComponentMethods().addProps 'filter', searchFilter
-  TranscriptIndex.getComponentMethods().search(currentText)
-
-Template.searchFilters.handleFilterChange = (filter) ->
+  $('select.searchFilters').val searchFilter # doesn't trigger selection change!
   # keep the span label synchronized with the current selection!
   $('span.searchFilters').text $('select.searchFilters option:selected').text()
-  Session.set 'searchFilter', filter # should trigger autorun!
+  TranscriptIndex.getComponentMethods().addProps 'filter', searchFilter
+  # The Input component will trigger a search ONLY when the enter key is pressed.
+  # Let's make sure the latest term is used upon filtering!
+  currentText = $('#search-input').val()
+  TranscriptIndex.getComponentDict().set 'searchDefinition', currentText
+  #todo: reset paging
 
 Template.searchFilters.onCreated () ->
-  Deps.afterFlush () ->
-    # Setup the autorun to keep the search results updating
-    Deps.autorun Template.searchFilters.performSearch
+  #Make sure the searchFilter is initialized
+  searchFilter = (Session.get 'searchFilter') or 'pendingReview'
+  Session.set 'searchFilter', searchFilter
 
-Template.searchFilters.onRendered () ->
   Deps.afterFlush () ->
-    searchFilter = (Session.get 'searchFilter') or 'pendingReview'
-    $('select.searchFilters').val searchFilter # doesn't trigger selection change!
-    # Simulate the filter change
-    Template.searchFilters.handleFilterChange searchFilter
+    # Setup automatic filtering
+    Deps.autorun Template.searchFilters.filter
