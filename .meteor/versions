@@ -32,10 +32,12 @@ deps@1.0.9
 diff-sequence@1.0.1
 easysearch:components@2.0.7
 easysearch:core@2.0.5
+easysearch:elasticsearch@2.0.3
 ecmascript@0.1.6
 ecmascript-runtime@0.2.6
 ejson@1.0.7
 email@1.0.8
+erasaur:meteor-lodash@3.10.1_1
 fastclick@1.0.7
 frozeman:animation-helper-velocity@0.1.8
 geojson-utils@1.0.4

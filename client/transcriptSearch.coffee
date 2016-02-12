@@ -16,3 +16,4 @@ Template.transcriptSearchNav.helpers
       class: "load-more-button btn ui-btn ui-shadow ui-corner-all",
       'data-role': "none"
     }
+

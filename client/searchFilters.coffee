@@ -1,19 +1,30 @@
 Template.searchFilters.events
   'change select': (e)->
     console.log e
-    selectElement = e.target
-    $('span.searchFilters').text selectElement.options[selectElement.selectedIndex].label
-    Session.set 'searchFilter', $(selectElement).val()
-    TranscriptIndex.getComponentMethods().addProps 'searchFilter', Session.get 'searchFilter'
-    # Get the latest search text input too
-    latestSearchText = $('#search-input').val()
-    TranscriptIndex.getComponentMethods().search(latestSearchText)
+    newFilter = $(e.target).val()
+    Session.set 'searchFilter', newFilter
+
+# Reactively triggered upon Session 'searchFilter' change.
+# Updates reactive TranscriptIndex to trigger a new search.
+# Should NOT depend on any reactive TranscriptIndex or related state, otherwise it
+# will be triggered inappropriately!
+Template.searchFilters.filter = () ->
+  searchFilter = Session.get 'searchFilter'
+  $('select.searchFilters').val searchFilter # doesn't trigger selection change!
+  # keep the span label synchronized with the current selection!
+  $('span.searchFilters').text $('select.searchFilters option:selected').text()
+  TranscriptIndex.getComponentMethods().addProps 'filter', searchFilter
+  # The Input component will trigger a search ONLY when the enter key is pressed.
+  # Let's make sure the latest term is used upon filtering!
+  currentText = $('#search-input').val()
+  TranscriptIndex.getComponentDict().set 'searchDefinition', currentText
+  #todo: reset paging
 
 Template.searchFilters.onCreated () ->
-  @autorun () ->
-    Deps.afterFlush () ->
-      currentSearchFilter = Session.get 'searchFilter'
-      $('select.searchFilters').val currentSearchFilter if currentSearchFilter
+  #Make sure the searchFilter is initialized
+  searchFilter = (Session.get 'searchFilter') or 'pendingReview'
+  Session.set 'searchFilter', searchFilter
 
-      # keep the span label synchronized with the current selection!
-      $('span.searchFilters').text $('select.searchFilters option:selected').text()
+  Deps.afterFlush () ->
+    # Setup automatic filtering
+    Deps.autorun Template.searchFilters.filter

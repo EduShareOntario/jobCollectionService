@@ -1,0 +1,337 @@
+{
+  "properties": {
+    "applicant": {
+      "properties": {
+        "applicantId": {
+          "type": "string",
+          "fields": {
+            "exact": {
+              "type": "string",
+              "analyzer": "simple"
+            },
+            "ngram": {
+              "type": "string",
+              "analyzer": "usernameNgram"
+            }
+          }
+        },
+        "birthDate": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+        },
+        "firstName": {
+          "type": "string",
+          "fields": {
+            "exact": {
+              "type": "string",
+              "analyzer": "simple"
+            },
+            "ngram": {
+              "type": "string",
+              "analyzer": "usernameNgram"
+            }
+          }
+        },
+        "lastName": {
+          "type": "string",
+          "fields": {
+            "exact": {
+              "type": "string",
+              "analyzer": "simple"
+            },
+            "ngram": {
+              "type": "string",
+              "analyzer": "usernameNgram"
+            }
+          }
+        },
+        "pidm": {
+          "type": "long"
+        },
+        "studentId": {
+          "type": "string",
+          "fields": {
+            "exact": {
+              "type": "string",
+              "analyzer": "simple"
+            },
+            "ngram": {
+              "type": "string",
+              "analyzer": "usernameNgram"
+            }
+          }
+        },
+        "termCode": {
+          "type": "string"
+        }
+      }
+    },
+    "created": {
+      "type": "date",
+      "format": "strict_date_optional_time||epoch_millis"
+    },
+    "description": {
+      "type": "string"
+    },
+    "ocasRequestId": {
+      "type": "string",
+      "fields": {
+        "exact": {
+          "type": "string",
+          "analyzer": "simple"
+        },
+        "ngram": {
+          "type": "string",
+          "analyzer": "usernameNgram"
+        }
+      }
+    },
+    "outbound": {
+      "type": "boolean"
+    },
+    "pescCollegeTranscript": {
+      "properties": {
+        "CollegeTranscript": {
+          "properties": {
+            "Student": {
+              "properties": {
+                "AcademicRecord": {
+                  "properties": {
+                    "AcademicSession": {
+                      "properties": {
+                        "AcademicSessionDetail": {
+                          "properties": {
+                            "SessionDesignator": {
+                              "type": "string"
+                            },
+                            "SessionName": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "AcademicSummary": {
+                          "properties": {
+                            "GPA": {
+                              "properties": {
+                                "CreditHoursEarned": {
+                                  "type": "string"
+                                },
+                                "CreditUnit": {
+                                  "type": "string"
+                                },
+                                "GradePointAverage": {
+                                  "type": "string"
+                                },
+                                "NoteMessage": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "NoteMessage": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "Course": {
+                          "properties": {
+                            "CourseAcademicGrade": {
+                              "type": "string"
+                            },
+                            "CourseAcademicGradeScaleCode": {
+                              "type": "string"
+                            },
+                            "CourseCreditBasis": {
+                              "type": "string"
+                            },
+                            "CourseCreditEarned": {
+                              "type": "string"
+                            },
+                            "CourseCreditLevel": {
+                              "type": "string"
+                            },
+                            "CourseCreditUnits": {
+                              "type": "string"
+                            },
+                            "CourseCreditValue": {
+                              "type": "string"
+                            },
+                            "CourseNumber": {
+                              "type": "string"
+                            },
+                            "CourseTitle": {
+                              "type": "string"
+                            },
+                            "NoteMessage": {
+                              "type": "string"
+                            },
+                            "UserDefinedExtensions": {
+                              "properties": {
+                                "CollegeTranscriptCourseExtensions": {
+                                  "properties": {
+                                    "BasisForCreditCode": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "NoteMessage": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "AdditionalStudentAchievements": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Person": {
+                  "properties": {
+                    "AgencyAssignedID": {
+                      "type": "string"
+                    },
+                    "AlternateName": {
+                      "type": "string"
+                    },
+                    "Birth": {
+                      "type": "string"
+                    },
+                    "Gender": {
+                      "properties": {
+                        "GenderCode": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "Name": {
+                      "properties": {
+                        "FirstName": {
+                          "type": "string"
+                        },
+                        "LastName": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "SchoolAssignedPersonID": {
+                      "type": "string",
+                      "fields": {
+                        "exact": {
+                          "type": "string",
+                          "analyzer": "simple"
+                        },
+                        "ngram": {
+                          "type": "string",
+                          "analyzer": "usernameNgram"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "TransmissionData": {
+              "properties": {
+                "CreatedDateTime": {
+                  "type": "date",
+                  "format": "strict_date_optional_time||epoch_millis"
+                },
+                "Destination": {
+                  "properties": {
+                    "Organization": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "DocumentCompleteCode": {
+                  "type": "string"
+                },
+                "DocumentID": {
+                  "type": "string",
+                  "fields": {
+                    "exact": {
+                      "type": "string",
+                      "analyzer": "simple"
+                    },
+                    "ngram": {
+                      "type": "string",
+                      "analyzer": "usernameNgram"
+                    }
+                  }
+                },
+                "DocumentTypeCode": {
+                  "type": "string"
+                },
+                "NoteMessage": {
+                  "type": "string"
+                },
+                "RequestTrackingID": {
+                  "type": "string",
+                  "fields": {
+                    "exact": {
+                      "type": "string",
+                      "analyzer": "simple"
+                    },
+                    "ngram": {
+                      "type": "string",
+                      "analyzer": "usernameNgram"
+                    }
+                  }
+                },
+                "Source": {
+                  "properties": {
+                    "Organization": {
+                      "properties": {
+                        "CSIS": {
+                          "type": "string"
+                        },
+                        "Contacts": {
+                          "type": "string"
+                        },
+                        "OrganizationName": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "TransmissionType": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "pescCollegeTranscriptXML": {
+      "type": "string"
+    },
+    "reviewCompletedOn": {
+      "type": "date",
+      "format": "strict_date_optional_time||epoch_millis"
+    },
+    "reviewStartedOn": {
+      "type": "date",
+      "format": "strict_date_optional_time||epoch_millis"
+    },
+    "reviewer": {
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "mail": {
+          "type": "string"
+        }
+      }
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

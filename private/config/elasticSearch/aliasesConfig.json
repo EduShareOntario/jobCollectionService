@@ -1,0 +1,10 @@
+{
+  "actions": [
+    {
+      "add": {
+        "index": "easysearch_v1",
+        "alias": "easysearch"
+      }
+    }
+  ]
+}

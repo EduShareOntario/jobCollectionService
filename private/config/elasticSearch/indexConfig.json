@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "usernameNgram": {
+            "filter": "lowercase",
+            "type": "custom",
+            "tokenizer": "customNgram"
+          }
+        },
+        "tokenizer": {
+          "customNgram": {
+            "type": "nGram",
+            "min_gram": "3",
+            "max_gram": "5"
+          }
+        }
+      }
+    }
+  }
+}
