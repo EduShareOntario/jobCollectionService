@@ -22,7 +22,7 @@
            role="button"
            href="{{pathForTranscriptReview}}"
            class="view-transcript ui-btn ui-btn-icon-left ui-btn-c {{reviewIconClass}} {{#if reviewerIsMe}}reviewer-is-me {{/if}}{{#if reviewerNotMe}}reviewer-not-me {{/if}}">
-          {{pescCollegeTranscript.CollegeTranscript.TransmissionData.RequestTrackingID}} {{fullName}} - {{#if applicant}}{{applicant.studentId}}{{else}}PENDING{{/if}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
+          {{pescCollegeTranscript.CollegeTranscript.TransmissionData.RequestTrackingID}} {{fullName}} - {{#if applicant}}{{applicant.studentId}}{{else}}UNMATCHED{{/if}} ({{transmissionData.Source.Organization.OrganizationName}} created {{transmissionData.CreatedDateTime}})
         </a>
     </div>
     {{/let}}
