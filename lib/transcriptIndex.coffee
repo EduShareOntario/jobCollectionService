@@ -26,7 +26,23 @@
           "multi_match":
             query: searchText
             type: "best_fields"
-            fields: ['title', 'description', 'reviewer.displayName^2', 'ocasRequestId.*^3', 'applicant.firstName.*^2', 'applicant.lastName.*^2', 'applicant.studentId.*^3', 'applicant.applicantId.*^2', 'pescCollegeTranscriptXML']
+            tie_breaker: 0.2
+            fields: [
+              'title'
+            , 'description'
+            , 'reviewer.displayName'
+            , 'ocasRequestId.exact^3'
+            , 'ocasRequestId.ngram'
+            , 'applicant.firstName.exact^3'
+            , 'applicant.firstName.ngram'
+            , 'applicant.lastName.exact^3'
+            , 'applicant.lastName.ngram'
+            , 'applicant.studentId.exact^3'
+            , 'applicant.studentId.ngram'
+            , 'applicant.applicantId.exact^2'
+            , 'applicant.applicantId.ngram'
+            , 'pescCollegeTranscriptXML'
+            ]
 
       switch filterType
         when "pendingReview"
@@ -67,7 +83,11 @@
       return query
 
     sort: (searchObject, options) ->
-      return [{"_score": {"order": "desc"}}]
+      if searchObject.title is ''
+        s = [{"ocasRequestId": {"order": "asc"}}]
+      else
+        s = [{"_score": {"order": "desc"}}]
+      return s
 
     body: (body) ->
       body.fields = ["_id"]
@@ -83,17 +103,5 @@
 if (Meteor.isServer)
   Transcript.Meta.collection._ensureIndex ocasRequestId: 1, created: 1
   Transcript.Meta.collection._ensureIndex reviewCompletedOn: 1
-  indices = TranscriptIndex.config.elasticSearchClient.indices
-#  mapping =
-#    "applicant.studentId":
-#      properties:
-#        tag:
-#        type:
-#        namespace:
-#        tid:
-#  indices.putMapping
-#    index: "easysearch"
-#    type: "transcriptIndex"
-#    body: mapping
 
 

@@ -12,8 +12,8 @@
         "tokenizer": {
           "customNgram": {
             "type": "nGram",
-            "min_gram": "3",
-            "max_gram": "5"
+            "min_gram": "4",
+            "max_gram": "8"
           }
         }
       }
