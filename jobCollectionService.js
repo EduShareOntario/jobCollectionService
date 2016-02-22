@@ -20,8 +20,9 @@ function createJobCollections(jobCollectionConfigs) {
       if (Meteor.isServer) {
         jobCollection.allow( {
           admin: function(userid, method, params) {
-            console.log(userid);
-            return jobCollectionConfig.adminUserIds.indexOf(userid != -1);
+            allow = (jobCollectionConfig.adminUserIds.indexOf(userid) != -1);
+            console.log("jobCollection "+jobCollectionConfig.name+": checking user "+userid+" allowed was "+allow);
+            return (jobCollectionConfig.adminUserIds.indexOf(userid) != -1);
           }
         });
         _.each(jobCollectionConfig.scheduledJobs, function (jobType) {
