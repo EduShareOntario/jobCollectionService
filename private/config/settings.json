@@ -2,7 +2,7 @@
   "jobCollections": [
     {
       "name": "student-transcript",
-      "adminUserIds": [
+      "adminUserIds": ["fLCAe9sLJtikN9c8q"
         ],
       "adminGroups": [
         "GG-ADMIN-Information Technology-Enterprise Systems-Production"

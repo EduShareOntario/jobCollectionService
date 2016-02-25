@@ -7,7 +7,7 @@
           "fields": {
             "exact": {
               "type": "string",
-              "analyzer": "simple"
+              "index": "not_analyzed"
             },
             "ngram": {
               "type": "string",
@@ -24,7 +24,7 @@
           "fields": {
             "exact": {
               "type": "string",
-              "analyzer": "simple"
+              "index": "not_analyzed"
             },
             "ngram": {
               "type": "string",
@@ -37,7 +37,7 @@
           "fields": {
             "exact": {
               "type": "string",
-              "analyzer": "simple"
+              "index": "not_analyzed"
             },
             "ngram": {
               "type": "string",
@@ -53,7 +53,7 @@
           "fields": {
             "exact": {
               "type": "string",
-              "analyzer": "simple"
+              "index": "not_analyzed"
             },
             "ngram": {
               "type": "string",
@@ -78,7 +78,7 @@
       "fields": {
         "exact": {
           "type": "string",
-          "analyzer": "simple"
+          "index": "not_analyzed"
         },
         "ngram": {
           "type": "string",
@@ -220,7 +220,7 @@
                       "fields": {
                         "exact": {
                           "type": "string",
-                          "analyzer": "simple"
+                          "index": "not_analyzed"
                         },
                         "ngram": {
                           "type": "string",
@@ -253,7 +253,7 @@
                   "fields": {
                     "exact": {
                       "type": "string",
-                      "analyzer": "simple"
+                      "index": "not_analyzed"
                     },
                     "ngram": {
                       "type": "string",
@@ -272,7 +272,7 @@
                   "fields": {
                     "exact": {
                       "type": "string",
-                      "analyzer": "simple"
+                      "index": "not_analyzed"
                     },
                     "ngram": {
                       "type": "string",

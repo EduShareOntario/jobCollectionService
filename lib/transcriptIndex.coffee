@@ -3,7 +3,7 @@
   name: 'transcript'
 #  fields: ['title', 'description', 'reviewer', 'ocasRequestId']
   fields: ['title'] # need at least one!
-  defaultSearchOptions: { limit: 20 }
+  defaultSearchOptions: { limit: 20, sort: {ocasRequestId: 1} }
   engine: new EasySearch.ElasticSearch
     fieldsToIndex: (indexConfig) ->
       ['title', 'description','pescCollegeTranscriptXML', 'reviewer', 'ocasRequestId', 'outbound', 'applicant', 'reviewCompletedOn']
@@ -84,13 +84,13 @@
 
     sort: (searchObject, options) ->
       if searchObject.title is ''
-        s = [{"ocasRequestId": {"order": "asc"}}]
+        s = [{"ocasRequestId.exact": {"order":"asc","missing" : "_last"}}]
       else
-        s = [{"_score": {"order": "desc"}}]
+        s = ["_score"]
       return s
 
     body: (body) ->
-      body.fields = ["_id"]
+      body.fields = []
       body.min_score = 0.0005
       console.log JSON.stringify body
       return body
