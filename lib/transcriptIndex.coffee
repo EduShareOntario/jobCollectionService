@@ -46,9 +46,9 @@
 
       switch filterType
         when "pendingReview"
-          reviewerExists =
+          reviewCompletedOnExists =
             exists:
-              field: "reviewer"
+              field: "reviewCompletedOn"
           outboundExists =
             exists:
               field: "outbound"
@@ -57,7 +57,7 @@
               must:
                 exists:
                   field: "applicant"
-              must_not : [reviewerExists, outboundExists]
+              must_not : [reviewCompletedOnExists, outboundExists]
         when "reviewerIsMe"
           filter =
             match:
