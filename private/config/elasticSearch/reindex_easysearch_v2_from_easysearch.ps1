@@ -1,0 +1,1 @@
+node .\node_modules\elasticsearch-reindex\bin\elasticsearch-reindex.js -f http://localhost:9200/easysearch/transcript -t http://localhost:9200/easysearch_v2/transcript

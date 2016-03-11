@@ -17,12 +17,14 @@
 # See https://technet.microsoft.com/en-us/library/hh847796.aspx for behavior
 $ErrorActionPreference="Stop"
 
-$indexName = 'easysearch_v1'
+$newIndexName = 'easysearch_v1'
+$aliasIndexName = 'easysearch'
 $thisScriptPath = $($MyInvocation.MyCommand.Path)
 $rootPath = Split-Path $thisScriptPath -parent
 $serviceRootUrl = 'http://localhost:9200'
-$createIndexUrl = "$($serviceRootUrl)/$($indexName)"
-$indexMappingUrl = "$($serviceRootUrl)/$($indexName)/_mapping"
+$newIndexUrl = "$($serviceRootUrl)/$($newIndexName)"
+$aliasIndexUrl = "$($serviceRootUrl)/$($aliasIndexName)"
+$indexMappingUrl = "$($serviceRootUrl)/$($newIndexName)/_mapping"
 $aliasesUrl = "$($serviceRootUrl)/_aliases"
 $indexConfigFilename = "$($rootPath)\indexConfig.json"
 $transcriptMappingFilename = "$($rootPath)\transcriptMapping.json"
@@ -30,15 +32,41 @@ $aliasesConfigFilename = "$($rootPath)\aliasesConfig.json"
 
 Push-Location $rootPath
 try {
-    invoke-webrequest -method delete -Uri $createIndexUrl -ErrorAction "Ignore"
+	Write-Host "Making sure $($newIndexName) isn't the current index for $($aliasIndexUrl)"
+	invoke-webrequest -verbose -method HEAD $newIndexUrl
+	invoke-webrequest -verbose -debug -method HEAD "$($newIndexUrl)/_alias/$($aliasIndexName)"
+	Write-Host "Ooops.  Not expecting the new index $($newIndexName) to have the current alias $($aliasIndexName)"
+	Write-Host "The new index MUST NOT be the current index in use via the alias index url $($aliasIndexUrl)"
+    exit 44444
 } catch {
-    Write-Host "Failed to delete existing index"
-    Write-Host $_
+	try {
+		Write-Host "Attempting to delete $($newIndexName)"
+		invoke-webrequest -verbose -debug -method delete -Uri $newIndexUrl -ErrorAction "Ignore"
+	} catch {
+		Write-Host "Non-fatal Error: Failed to delete existing index"
+		Write-Host $_
+	}
 }
-invoke-webrequest -method post -Uri $createIndexUrl -InFile $indexConfigFilename
-invoke-webrequest -method post -Uri "$($indexMappingUrl)/transcript" -InFile $transcriptMappingFilename
-# Add additional index type mappings
-# invoke-webrequest -method post -Uri "$($indexMappingUrl)/abc" -InFile $abcMappingFilename
-#
-invoke-webrequest -method post -Uri $aliasesUrl -InFile $aliasesConfigFilename
+Write-Host "Creating new index $($newIndexName)"
+invoke-webrequest -verbose -debug -method post -Uri $newIndexUrl -InFile $indexConfigFilename
+
+Write-Host "Creating custom mapping for transcript documents"
+invoke-webrequest -verbose -debug -method post -Uri "$($indexMappingUrl)/transcript" -InFile $transcriptMappingFilename
+
+Write-Host "Indexing Transcript documents from current index $($aliasIndexUrl) to new index $($newIndexUrl)"
+node .\node_modules\elasticsearch-reindex\bin\elasticsearch-reindex.js -f $aliasIndexUrl/transcript -t $newIndexUrl/transcript
+
+Write-Host "Switching index alias $($aliasIndexName) to new index $($newIndexName)"
+$swapAliasJSON =
+@"
+	{
+		"actions":
+		[
+			{ "remove": { "index": "*", "alias": "$($aliasIndexName)" } },
+			{ "add": { "index": "$($newIndexName)", "alias": "$($aliasIndexName)" } }
+		]
+	}
+"@
+invoke-RestMethod -verbose -debug -method post -Uri $aliasesUrl -Body $swapAliasJSON
+
 Pop-Location
