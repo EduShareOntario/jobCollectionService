@@ -106,6 +106,9 @@ class Transcript extends Described
     type: Object
     optional: true
     blackbox: true
+  outbound:
+    type: Boolean
+    optional: true
 }])
 
 @Schemas.EasySearchTranscript = new SimpleSchema([@Schemas.Transcript, {
