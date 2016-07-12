@@ -6,6 +6,8 @@ storage:
    dbPath: c:\data\db3
    journal:
       enabled: true
+   mapv1:
+      smallFiles: true
 setParameter:
    enableLocalhostAuthBypass: false
 net:
