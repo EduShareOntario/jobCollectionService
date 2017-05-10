@@ -13,3 +13,5 @@ net:
    port: 27019
 replication:
    replSetName: rs1
+security:
+    keyFile: c:\data\keyfile.txt

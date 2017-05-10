@@ -2,7 +2,7 @@
   "jobCollections": [
     {
       "name": "student-transcript",
-      "adminUserIds": ["fLCAe9sLJtikN9c8q"
+      "adminUserIds": [
         ],
       "adminGroups": [
         "GG-ADMIN-Information Technology-Enterprise Systems-Production"
@@ -26,8 +26,8 @@
     "domain": "georgiancollege.ca",
     "baseDn": "ou=Georgian,dc=admin,dc=georgianc,dc=on,dc=ca",
     "url": "ldap://badcadm03.admin.georgianc.on.ca/",
-    "bindCn": "cn=TBD,ou=TBD,ou=TBD,dc=TBD,dc=TBD,dc=on,dc=ca",
-    "bindPassword": "tbd",
+    "bindCn": "cn=0-LDAPGrails,ou=Service Accounts,ou=Georgian,dc=admin,dc=georgianc,dc=on,dc=ca",
+    "bindPassword": "Gr00vy:Tra1n",
     "autopublishFields": [
       "displayName",
       "givenName",
