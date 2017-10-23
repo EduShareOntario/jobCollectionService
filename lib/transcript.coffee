@@ -48,7 +48,7 @@ class Transcript extends Described
         unless fields.pescCollegeTranscriptXML
           [fields._id, undefined]
         else
-          object = xml2js.parseStringSync fields.pescCollegeTranscriptXML,{ attrkey: '@',  xmlns: false, ignoreAttrs: true, explicitArray: false, tagNameProcessors: [xml2js.processors.stripPrefix] }
+          object = if fields.pescCollegeTranscript then fields.pescCollegeTranscript else xml2js.parseStringSync fields.pescCollegeTranscriptXML,{ attrkey: '@',  xmlns: false, ignoreAttrs: true, explicitArray: false, tagNameProcessors: [xml2js.processors.stripPrefix] }
 #          console.log "in generatedField "+fields.pescCollegeTranscriptXML + "\nobject:" + JSON.stringify(object)
           [fields._id, object]
 
