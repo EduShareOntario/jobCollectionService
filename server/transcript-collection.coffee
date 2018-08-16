@@ -5,7 +5,7 @@ Meteor.publish 'pendingReviewTranscripts', (userId) ->
   user = User.documents.findOne this.userId
   throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptReviewer()
   this.unblock
-  return Transcript.documents.find {reviewCompletedOn:undefined, applicant: {$ne:null}}, {sort: {ocasRequestId:1}}
+  return Transcript.documents.find {reviewCompletedOn: undefined, applicant: {$ne: null}}, {sort: {ocasRequestId: 1}}
 
 Meteor.publish 'transcriptSearch', (userId, searchText) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
@@ -14,9 +14,12 @@ Meteor.publish 'transcriptSearch', (userId, searchText) ->
   console.log "transcriptSearch called for user #{user.displayName} with searchText #{searchText}"
   this.unblock
   if searchText
-    return Transcript.documents.find {$text: { $search: searchText}}, {score: {$meta: "textScore"}}, {sort: {score: {$meta: "textScore"}}, limit: 100}
+    return Transcript.documents.find {$text: {$search: searchText}}, {score: {$meta: "textScore"}}, {
+      sort: {score: {$meta: "textScore"}},
+      limit: 100
+    }
   else
-    return Transcript.documents.find {}, {sort: {ocasRequestId:1}, limit: 100}
+    return Transcript.documents.find {}, {sort: {ocasRequestId: 1}, limit: 100}
 
 Meteor.publish 'transcript', (transcriptId) ->
   throw new Meteor.Error(403, "Access denied") unless this.userId
@@ -32,8 +35,8 @@ Document.prepare () ->
 
 # After Meteor startup, including peerdb observers getting enabled.
 Document.startup () ->
-  # Uncommenting the below updateAll could cause the application to thrash and become very laggy upon startup!
-  # Document.updateAll()
+# Uncommenting the below updateAll could cause the application to thrash and become very laggy upon startup!
+# Document.updateAll()
   console.log("Document.startup() called.")
 
 Meteor.methods
@@ -49,11 +52,11 @@ Meteor.methods
     xmlFiles = _.filter files, (file) -> file.match /\.xml$/
     console.log xmlFiles
     _.each xmlFiles, (file) ->
-        pescXml = fs.readFileSync testTranscriptDir + file, {encoding: "UTF-8"}
-        #SimpleSchema.debug = true
-        transcript = new Transcript {"title": "test #{file}", "description": file, "created": new Date() }
-        transcript.pescCollegeTranscriptXML = pescXml
-        Transcript.documents.insert transcript
+      pescXml = fs.readFileSync testTranscriptDir + file, {encoding: "UTF-8"}
+      #SimpleSchema.debug = true
+      transcript = new Transcript {"title": "test #{file}", "description": file, "created": new Date()}
+      transcript.pescCollegeTranscriptXML = pescXml
+      Transcript.documents.insert transcript
 
     _(Transcript.documents.find({}).fetch()).each (transcipt) ->
       console.log transcipt.title + ":" + transcipt._id
@@ -75,24 +78,34 @@ Meteor.methods
     #console.log "transcript is #{transcript}"
     return transcript
 
+
+
   setApplicant: (transcriptId, applicant) ->
     console.log "setApplicant called with transcriptId #{transcriptId} and applicant #{JSON.stringify(applicant)}"
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
-    Transcript.documents.update {_id:transcriptId}, { $set:{applicant: applicant} }
+    Transcript.documents.update {_id: transcriptId}, {$set: {applicant: applicant}}
     return true
 
-  #
-  # Example use:
-  # ddpClient.call("findRedundantJobs", [createJobConfig.root, {"data.ocasRequestId": {$in: requestIds}, status: {$ne: "failed"}}, {"data.ocasRequestId": 1}], function (err, redundantJobs) { ...}
+#
+# Example use:
+# ddpClient.call("findRedundantJobs", [createJobConfig.root, {"data.ocasRequestId": {$in: requestIds}, status: {$ne: "failed"}}, {"data.ocasRequestId": 1}], function (err, redundantJobs) { ...}
   findRedundantJobs: (jobCollectionName, redundantSelector, resultFields) ->
-    #console.log "findRedundantJobs called with jobCollectionName #{jobCollectionName}, redundantSelector #{JSON.stringify(redundantSelector)} and resultFields #{JSON.stringify(resultFields)}"
+#console.log "findRedundantJobs called with jobCollectionName #{jobCollectionName}, redundantSelector #{JSON.stringify(redundantSelector)} and resultFields #{JSON.stringify(resultFields)}"
     user = Meteor.user()
     throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
 
     jobCollection = JobCollections[jobCollectionName]
     collection = jobCollection._collection
     #console.log "searching Job Collection name:#{jobCollectionName}, object: #{collection}, with keys: #{_.keys(collection unless collection is undefined )}, root:#{jobCollection?.root}, JobCollections:#{JobCollections}, keys:#{_.keys(JobCollections)}"
-    result = collection.find redundantSelector, {fields:resultFields} unless collection is undefined
+    result = collection.find redundantSelector, {fields: resultFields} unless collection is undefined
     return result.fetch()
 
+# Example use:
+# ddpClient.call("findExistingTranscripts", [{ocasRequestId: {$in: newRequestIds}}, {ocasRequestId: 1}], function (error, transcriptIds) {
+  findExistingTranscripts: (query, fields) ->
+    user = Meteor.user()
+    throw new Meteor.Error(403, "Access denied") unless user?.isTranscriptBatchJobRunner()
+
+    cursor = Transcript.documents.find query, {fields}
+    return cursor.fetch()
