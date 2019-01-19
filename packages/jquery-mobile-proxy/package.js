@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.add_files(['jquery.mobile-1.4.5.min.js'], 'client');
+  api.add_files(['jquery.mobile-1.4.5.min.js', 'theme.css'], 'client');
 });
 
 Package.onTest(function(api) {
