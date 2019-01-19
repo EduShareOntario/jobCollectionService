@@ -8,10 +8,3 @@ $(document).bind("mobileinit", function () {
   $.mobile.hashListeningEnabled = false;
 });
 
-Template.onRendered(function(){
-  var template = this;
-  Deps.afterFlush(function() {
-    console.log("triggering Jquery mobile component creation for "+template.view.name);
-    $(template.firstNode.parentElement).trigger("create");
-  });
-});

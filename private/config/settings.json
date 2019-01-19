@@ -1,7 +1,7 @@
 {
   "jobCollections": [
     {
-      "name": "student-transcript",
+      "name": "student-transcript.jobs",
       "adminUserIds": [
         ],
       "adminGroups": [
@@ -16,7 +16,7 @@
   "public": {
     "jobCollections": [
       {
-        "name": "student-transcript"
+        "name": "student-transcript.jobs"
       }
     ],
     "transcriptToHtmlURL": "http://apps.georgiantest.com/transformdoc"

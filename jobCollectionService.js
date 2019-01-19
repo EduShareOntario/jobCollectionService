@@ -53,8 +53,8 @@ if (Meteor.isServer) {
       //Ready jobs that are waiting.
       //Jobs go into a waiting state when they have been running too long as specified by workTimeout.
       // We want to automate returning them to a ready state!
-      Job.processJobs(jobCollection.root, 'readyJobs', {workTimeout: 60*1000}, function(job,cb){
-        Job.readyJobs(job.root);
+      new Job.processJobs(jobCollection.root, 'readyJobs', {workTimeout: 60*1000}, function(job,cb){
+        new Job.readyJobs(job.root);
         job.done();
         cb();
       });
