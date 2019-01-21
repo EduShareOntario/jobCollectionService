@@ -1,3 +1,8 @@
+import { Meteor } from 'meteor/meteor';
+import { Transcript } from "../lib/transcript";
+import { User } from "../lib/user";
+import { JobCollections } from "./JobCollections";
+
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -52,18 +57,6 @@ Meteor.publish('transcript', function (transcriptId) {
     }
     return Transcript.documents.find({_id: transcriptId});
 });
-
-
-// Before observers are enabled.
-// Caution: Generated fields 'observe' changes and hence won't get generated at this phase!!!
-Document.prepare(() => console.log("prepare says 'helloooo todd'"));
-
-// After Meteor startup, including peerdb observers getting enabled.
-Document.startup(() =>
-    // Uncommenting the below updateAll could cause the application to thrash and become very laggy upon startup!
-    // Document.updateAll()
-    console.log("Document.startup() called.")
-);
 
 Meteor.methods({
     createTestTranscripts() {

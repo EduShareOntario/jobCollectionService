@@ -39,7 +39,7 @@ edushareontario:easysearch-components@2.1.2
 edushareontario:easysearch-core@2.1.1
 edushareontario:easysearch-elasticsearch@2.2.0
 edushareontario:meteor-accounts-ldap@0.2.0
-edushareontario:peerdb@0.27.0
+edushareontario:peerdb@0.27.1
 ejson@1.1.0
 email@1.2.3
 erasaur:meteor-lodash@4.0.0

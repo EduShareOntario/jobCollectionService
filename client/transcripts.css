@@ -2,6 +2,7 @@
 .reviewer-not-me, a.view-transcript.reviewer-not-me.ui-btn.ui-btn-c, a:hover.view-transcript.reviewer-not-me.ui-btn.ui-btn-c {
     background-color: #e57200;
 }
+
 a.view-transcript.reviewer-not-me {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAYAAAAbvf3sAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAJJJREFUKJG1kEEKwjAURP8X17WXKXgJKeIx4kkKPZT2TNJuZsbNX4SQlLrwQTZ//swkMcsg+QCwAFjjvEnerQaAWQ0ATFYmh7CRTJJ6kh3JBGCTJJJjnr7EMJXNJJ8R9soNa7T3pUHSJQyffChJqj6u0H1vscbpl+WmQdIg6XrY4O4yM9a0c6P55u7Hr7TH/3/pCxzhpO+XTBPHAAAAAElFTkSuQmCC');
 }
@@ -11,7 +12,7 @@ a.view-transcript.reviewer-not-me {
 }
 
 .hide {
-    display: none!important;
+    display: none !important;
 }
 
 .errorText {
@@ -23,7 +24,7 @@ a.view-transcript.reviewer-not-me {
 }
 
 .ui-page-theme-h {
-    padding-top: 38px!important;
+    padding-top: 38px !important;
 }
 
 [data-role="content"] {

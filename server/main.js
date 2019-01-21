@@ -1,5 +1,7 @@
-import { Meteor } from 'meteor/meteor';
-
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+/**
+ * The following use static Meteor methods to self initialize but must be loaded/imported!
+ */
+import './jobCollectionServiceStartup';
+import './transcript-collection';
+import './user';
+import '../lib/transcriptIndex';

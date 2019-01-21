@@ -1,131 +1,134 @@
 <template name="transcriptDetail">
-  {{#with transcript}}
-    {{#header}}
-      {{>transcriptReviewNav}}
-    {{/header}}
-    <div data-role="content">
-      {{#unless outbound}}
-        {{>reviewStatus}}
-      {{/unless}}
-      <div class="ui-body {{#unless showHtml}}hide{{/unless}}">
-        {{{transcriptHtml}}}
-      </div>
-      <div data-role="collapsible">
-        <h2>Raw Transcript Data</h2>
-        <div class="ui-body {{#unless showXml}}hide{{/unless}}">
+    {{#with transcript}}
+        {{#header}}
+            {{>transcriptReviewNav}}
+        {{/header}}
+        <div data-role="content">
+            {{#unless outbound}}
+                {{>reviewStatus}}
+            {{/unless}}
+            <div class="ui-body {{#unless showHtml}}hide{{/unless}}">
+                {{{transcriptHtml}}}
+            </div>
+            <div data-role="collapsible">
+                <h2>Raw Transcript Data</h2>
+                <div class="ui-body {{#unless showXml}}hide{{/unless}}">
           <pre class="wrapText">
-            {{transcriptXmlDump}}
+              {{transcriptXmlDump}}
           </pre>
-        </div>
-        <div class="ui-body {{#unless showJson}}hide{{/unless}}">
+                </div>
+                <div class="ui-body {{#unless showJson}}hide{{/unless}}">
           <pre>
-            {{transcriptJsonDump}}
+              {{transcriptJsonDump}}
           </pre>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    {{#footer}}
-      {{>transcriptReviewNav}}
-    {{/footer}}
-  {{/with}}
+        {{#footer}}
+            {{>transcriptReviewNav}}
+        {{/footer}}
+    {{/with}}
 </template>
 
 <template name="formatToggle">
-  <style>
-    .custom-size-flipswitch.ui-flipswitch .ui-btn.ui-flipswitch-on {
-      text-indent: -3.9em;
-    }
-  </style>
-  <input type="checkbox" data-role="flipswitch" name="format-checkbox" id="format-checkbox" data-on-text="Format" data-off-text="Raw" data-wrapper-class="custom-size-flipswitch" checked="false">
+    <style>
+        .custom-size-flipswitch.ui-flipswitch .ui-btn.ui-flipswitch-on {
+            text-indent: -3.9em;
+        }
+    </style>
+    <input type="checkbox" data-role="flipswitch" name="format-checkbox" id="format-checkbox" data-on-text="Format"
+           data-off-text="Raw" data-wrapper-class="custom-size-flipswitch" checked="false">
 </template>
 
 <template name="formatButton">
-  <div class="ui-grid-a">
-    <style>
-    </style>
-    <div class="ui-block-a"></div>
-    <div class="ui-block-b">
-      <button class="ui-btn ui-btn-right">Toggle Format</button>
+    <div class="ui-grid-a">
+        <style>
+        </style>
+        <div class="ui-block-a"></div>
+        <div class="ui-block-b">
+            <button class="ui-btn ui-btn-right">Toggle Format</button>
+        </div>
     </div>
-  </div>
 </template>
 
 <template name="formatRadioSelection">
-  <form>
-    <fieldset id="format-selection" data-role="controlgroup" data-type="horizontal" data-mini="true">
-      <input type="radio" name="xml-choice" id="xml-choice" value="xml">
-      <label for="xml-choice">Raw</label>
-      <input type="radio" name="html-choice" id="html-choice" value="html">
-      <label for="html-choice">Pretty</label>
-      <input type="radio" name="json-choice" id="json-choice" value="json">
-      <label for="json-choice">Simple</label>
-    </fieldset>
-  </form>
+    <form>
+        <fieldset id="format-selection" data-role="controlgroup" data-type="horizontal" data-mini="true">
+            <input type="radio" name="xml-choice" id="xml-choice" value="xml">
+            <label for="xml-choice">Raw</label>
+            <input type="radio" name="html-choice" id="html-choice" value="html">
+            <label for="html-choice">Pretty</label>
+            <input type="radio" name="json-choice" id="json-choice" value="json">
+            <label for="json-choice">Simple</label>
+        </fieldset>
+    </form>
 </template>
 
 <template name="formatCheckboxSelection">
-  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-    <input type="checkbox" name="xml-checkbox" id="xml-checkbox" value="xml">
-    <label for="xml-checkbox">Raw</label>
-    <input type="checkbox" name="html-checkbox" id="html-checkbox" value="html" checked="checked">
-    <label for="html-checkbox">Pretty</label>
-    <input type="checkbox" name="json-checkbox" id="json-checkbox" value="json">
-    <label for="json-checkbox">Simple</label>
-  </fieldset>
+    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <input type="checkbox" name="xml-checkbox" id="xml-checkbox" value="xml">
+        <label for="xml-checkbox">Raw</label>
+        <input type="checkbox" name="html-checkbox" id="html-checkbox" value="html" checked="checked">
+        <label for="html-checkbox">Pretty</label>
+        <input type="checkbox" name="json-checkbox" id="json-checkbox" value="json">
+        <label for="json-checkbox">Simple</label>
+    </fieldset>
 </template>
 
 <template name="reviewStatus">
-  <div class="ui-grid-a" data-theme="h">
-    <div class="{{#if reviewerIsMe}}reviewer-is-me{{/if}} {{#if reviewerNotMe}}reviewer-not-me{{/if}}">
-      <p>{{reviewer.displayName}} started review on {{reviewStartedOn}} {{#if reviewCompletedOn}} and completed on {{reviewCompletedOn}}{{/if}}</p>
+    <div class="ui-grid-a" data-theme="h">
+        <div class="{{#if reviewerIsMe}}reviewer-is-me{{/if}} {{#if reviewerNotMe}}reviewer-not-me{{/if}}">
+            <p>{{reviewer.displayName}} started review on {{reviewStartedOn}} {{#if reviewCompletedOn}}
+                and completed on {{reviewCompletedOn}}{{/if}}</p>
+        </div>
     </div>
-  </div>
 </template>
 
 <template name="transcriptReviewNav">
-  {{>transcriptReviewButtons}}
+    {{>transcriptReviewButtons}}
 </template>
 
 <template name="transcriptReviewButtons">
-  <style>
-    .cancel-review {
-      float: right;
-    }
-    .center h3 {
-      text-align: center;
-    }
-  </style>
-  <div class="ui-grid-b">
-    <div class="ui-block-a">
-      {{#unless outbound}}
-        {{#unless reviewCompletedOn}}
-          <a id="review-complete" data-role="button"
-             data-icon="check"
-             data-theme="h"
-             data-inline="true"
-             role="button"
-             class="review-complete {{#unless reviewable}}hide{{/unless}}">Complete Review</a>
-          <a id="review-takeover" data-role="button"
-             data-icon="check"
-             data-theme="h"
-             data-inline="true"
-             role="button"
-             class="review-takeover {{#if reviewerIsMe}}hide{{/if}}">Takeover Review</a>
-        {{/unless}}
-      {{/unless}}
+    <style>
+        .cancel-review {
+            float: right;
+        }
+
+        .center h3 {
+            text-align: center;
+        }
+    </style>
+    <div class="ui-grid-b">
+        <div class="ui-block-a">
+            {{#unless outbound}}
+                {{#unless reviewCompletedOn}}
+                    <a id="review-complete" data-role="button"
+                       data-icon="check"
+                       data-theme="h"
+                       data-inline="true"
+                       role="button"
+                       class="review-complete {{#unless reviewable}}hide{{/unless}}">Complete Review</a>
+                    <a id="review-takeover" data-role="button"
+                       data-icon="check"
+                       data-theme="h"
+                       data-inline="true"
+                       role="button"
+                       class="review-takeover {{#if reviewerIsMe}}hide{{/if}}">Takeover Review</a>
+                {{/unless}}
+            {{/unless}}
+        </div>
+        <div class="ui-block-b center">
+            <h3>{{fullName}}</h3>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button"
+               data-icon="back"
+               data-theme="h"
+               data-inline="true"
+               role="button"
+               class="cancel-review">Cancel</a>
+        </div>
     </div>
-    <div class="ui-block-b center">
-      <h3>{{fullName}}</h3>
-    </div>
-    <div class="ui-block-c">
-      <a data-role="button"
-         data-icon="back"
-         data-theme="h"
-         data-inline="true"
-         role="button"
-         class="cancel-review">Cancel</a>
-    </div>
-  </div>
 
 </template>
 

@@ -1,46 +1,46 @@
 <template name="transcriptSearch">
-  {{> header}}
-  <div data-role="content">
-    <div class="ui-grid-a">
-      {{!--
-      Problem: Jquery Mobile 'Input' element control inadvertenly disables EasySearch.Input event handlers.
-      Workaround: Disable Jquery Mobile 'Input' element adornment/behaviour but keep the style.
-      How:
-      - Wrap the input with a Jquery mobile looking wrapper.
-      - Add the JQuery mobile data-role='none' attribute to disable the default behavior.
-      --}}
-      <div class="ui-block-a ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
-        {{> EasySearch.Input index=transcriptIndex attributes=inputAttributes event="enter"}}
-      </div>
-      <div class="ui-block-b">
-        {{> searchFilters}}
-      </div>
-    </div>
+    {{> header}}
+    <div data-role="content">
+        <div class="ui-grid-a">
+            {{!--
+            Problem: Jquery Mobile 'Input' element control inadvertenly disables EasySearch.Input event handlers.
+            Workaround: Disable Jquery Mobile 'Input' element adornment/behaviour but keep the style.
+            How:
+            - Wrap the input with a Jquery mobile looking wrapper.
+            - Add the JQuery mobile data-role='none' attribute to disable the default behavior.
+            --}}
+            <div class="ui-block-a ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                {{> EasySearch.Input index=transcriptIndex attributes=inputAttributes event="enter"}}
+            </div>
+            <div class="ui-block-b">
+                {{> searchFilters}}
+            </div>
+        </div>
 
-    <div id="transcript-list-container">
-      {{#AnimateWithVelocity}}
-        {{#EasySearch.Each index=transcriptIndex}}
-          {{> transcriptSummary}}
-        {{/EasySearch.Each}}
-      {{/AnimateWithVelocity}}
-    </div>
+        <div id="transcript-list-container">
+            {{#AnimateWithVelocity}}
+                {{#EasySearch.Each index=transcriptIndex}}
+                    {{> transcriptSummary}}
+                {{/EasySearch.Each}}
+            {{/AnimateWithVelocity}}
+        </div>
 
-    {{#EasySearch.IfNoResults index=transcriptIndex}}
-      <div class="no-results">No results found!</div>
-    {{/EasySearch.IfNoResults}}
-  </div>
-  {{#footer}}
-    {{>transcriptSearchNav index=transcriptIndex}}
-  {{/footer}}
+        {{#EasySearch.IfNoResults index=transcriptIndex}}
+            <div class="no-results">No results found!</div>
+        {{/EasySearch.IfNoResults}}
+    </div>
+    {{#footer}}
+        {{>transcriptSearchNav index=transcriptIndex}}
+    {{/footer}}
 </template>
 
 <template name="transcriptSearchNav">
-  <div class="ui-grid-a">
-    <div class="ui-block-a">
+    <div class="ui-grid-a">
+        <div class="ui-block-a">
+        </div>
+        <div class="ui-block-b">
+            <!--{{> EasySearch.LoadMore attributes=loadMoreAttributes index=index content="Load More"}}-->
+            {{> EasySearch.Pagination index=index maxPages=10 }}
+        </div>
     </div>
-    <div class="ui-block-b">
-      <!--{{> EasySearch.LoadMore attributes=loadMoreAttributes index=index content="Load More"}}-->
-      {{> EasySearch.Pagination index=index maxPages=10 }}
-    </div>
-  </div>
 </template>

@@ -1,18 +1,18 @@
 <template name="header">
-  <div data-role="header" data-theme="a" data-position="fixed">
-    {{#if Template.contentBlock}}
-      {{> Template.contentBlock}}
-    {{else}}
-      <div class="ui-grid-a">
-        <div class="georgian-banner ui-block-a">
-          <img class="logo" src="/transcript/images/georgian-college-logo-2014.svg" alt="Georgian College">
-        </div>
-        <div class="ui-block-b">
-          {{#if authReady}}
-            <button class="btn" name="logout">Logout</button>
-          {{/if}}
-        </div>
-      </div>
-    {{/if}}
-  </div>
+    <div data-role="header" data-theme="a" data-position="fixed">
+        {{#if Template.contentBlock}}
+            {{> Template.contentBlock}}
+        {{else}}
+            <div class="ui-grid-a">
+                <div class="georgian-banner ui-block-a">
+                    <img class="logo" src="/transcript/images/georgian-college-logo-2014.svg" alt="Georgian College">
+                </div>
+                <div class="ui-block-b">
+                    {{#if authReady}}
+                        <button class="btn" name="logout">Logout</button>
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}
+    </div>
 </template>
