@@ -7,6 +7,7 @@ import {Template} from 'meteor/templating';
 import {ReactiveVar} from 'meteor/reactive-var';
 import {Meteor} from 'meteor/meteor';
 import {HTTP} from 'meteor/http';
+import {Transcript} from "../lib/transcript";
 
 import './transcriptDetail.html';
 
