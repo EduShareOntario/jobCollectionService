@@ -1,7 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import { Transcript } from "../lib/transcript";
+import {Schemas, Transcript} from "../lib/transcript";
 import { User } from "../lib/user";
 import { JobCollections } from "./JobCollections";
+import SimpleSchema from "simpl-schema";
 
 /*
  * decaffeinate suggestions:
@@ -58,6 +59,28 @@ Meteor.publish('transcript', function (transcriptId) {
     return Transcript.documents.find({_id: transcriptId});
 });
 
+/**
+ * Work-around:
+ * a["{\"msg\":\"result\",\"id\":\"4\",\"error\":{\"isClientSafe\":true,\"error\":400,\"reason\":\"Created cannot be set during an update in Transcript update\",\"details\":\"[{\\\"name\\\":\\\"created\\\",\\\"type\\\":\\\"updateNotAllowed\\\",\\\"value\\\":{\\\"$date\\\":1548163565307}}]\",\"message\":\"Created cannot be set during an update in Transcript update [400]\",\"errorType\":\"Meteor.Error\"}}"]
+ * with Simple schema definition:
+ * Schemas.Described = new SimpleSchema({
+    title: {
+        type: String
+    },
+    description: {
+        type: String
+    },
+    created: {
+        type: Date,
+        defaultValue: new Date(),
+        denyUpdate: true
+    },
+});
+
+ */
+const DefaultTranscript = {
+    created: new Date()
+}
 Meteor.methods({
     createTestTranscripts() {
         const user = Meteor.user();
@@ -90,6 +113,8 @@ Meteor.methods({
         if (!(user != null ? user.isTranscriptBatchJobRunner() : undefined)) {
             throw new Meteor.Error(403, "Access denied");
         }
+        // Work-around Simple Schema default value issue
+        Object.assign(transcript, DefaultTranscript);
         transcript = new Transcript(transcript);
         const newId = Transcript.documents.insert(transcript);
         return newId;
