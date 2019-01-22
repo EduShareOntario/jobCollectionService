@@ -9,11 +9,3 @@ import './transcriptsMain.html';
 Template.registerHelper('addKeys', all =>
     _.map(all, (i, k) => ({key: k, value: i}))
 );
-
-Template.transcriptsMain.onRendered(function () {
-    const template = this;
-    return Tracker.afterFlush(function () {
-        console.log(`triggering Jquery mobile component creation for ${template.view.name}`);
-        return $('body').trigger("create");
-    });
-});

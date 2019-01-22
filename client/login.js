@@ -110,8 +110,7 @@ Template.login.onRendered(function () {
 // See http://docs.meteor.com/#/full/template_helpers
         FlowRouter.watchPathChange();
         return Tracker.afterFlush(function () {
-            console.log("login rendered");
-            return $(template.firstNode.parentElement).trigger("create");
+            console.log("path changed to " + FlowRouter.current());
         });
     });
 });

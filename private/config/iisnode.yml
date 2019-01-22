@@ -1,6 +1,9 @@
-devErrorsEnabled:false
+devErrorsEnabled:true
 debuggingEnabled:false
+debugHeaderEnabled:false
 loggingEnabled:true
-logDirectory:c:\apps\local\transcript\logs
-nodeProcessCommandLine:C:\Program Files (x86)\nodejs\node.exe
+logDirectory:\apps\local\transcript\logs
+maxTotalLogFileSizeInKB:100000
+maxLogFiles:50
+nodeProcessCommandLine:C:\node\8.11.4\node.exe --max-old-space-size=2500
 node_env:production
