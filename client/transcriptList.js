@@ -25,13 +25,13 @@ Template.transcriptList.onCreated(function () {
                     // See https://meteor.hackpad.com/Blaze-Proposals-for-v0.2-hsd54WPJmDV  and https://meteorhacks.com/kadira-blaze-hooks
                     return Tracker.afterFlush(function () {
                         console.log(`transcriptList autorun afterFlush following subscribe ready, DOM should exist. when userId is ${userId}`);
-                        return $('[data-role="page"]').trigger("create");
+                        return $('body').trigger("create");
                     });
                 }
             }));
             if (subscription.ready()) {
                 console.log("subscription ready!");
-                $('[data-role="page"]').trigger("create");
+                $('body').trigger("create");
             }
             return console.log(`subscribed to 'transcripts' publication when userId is ${userId}`);
         }

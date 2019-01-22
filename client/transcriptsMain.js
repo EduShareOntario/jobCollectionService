@@ -14,6 +14,6 @@ Template.transcriptsMain.onRendered(function () {
     const template = this;
     return Tracker.afterFlush(function () {
         console.log(`triggering Jquery mobile component creation for ${template.view.name}`);
-        return $(template.firstNode.parentElement).trigger("create");
+        return $('body').trigger("create");
     });
 });
