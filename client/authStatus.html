@@ -1,37 +1,37 @@
 <template name="authStatus">
-  {{#unless onLoginPage}}
-    <div class="ui-grid-b ui-responsive">
-      <div class="ui-block-a"></div>
-      <div class="ui-block-b">
-          {{#unless authorized}}
-            <h3 class="errorText">You are not authorized to access this application.</h3>
-          {{/unless}}
-          {{#if currentUser}}
-            {{>currentUser}}
-          {{else}}
-            <button class="btn" name="gotoLogin">Login</button>
-          {{/if}}
-      </div>
-      <div class="ui-block-c"></div>
-    </div>
-  {{/unless}}
+    {{#unless onLoginPage}}
+        <div class="ui-grid-b ui-responsive">
+            <div class="ui-block-a"></div>
+            <div class="ui-block-b">
+                {{#unless authorized}}
+                    <h3 class="errorText">You are not authorized to access this application.</h3>
+                {{/unless}}
+                {{#if currentUser}}
+                    {{>currentUser}}
+                {{else}}
+                    <button class="btn" name="gotoLogin">Login</button>
+                {{/if}}
+            </div>
+            <div class="ui-block-c"></div>
+        </div>
+    {{/unless}}
 </template>
 
 <template name="currentUser">
-  {{#if currentUser}}
-    <div class="ui-body ui-body-a">
-      First Name: {{currentUser.givenName}} <br>
-      Last Name: {{currentUser.sn}} <br>
-      Display Name: {{currentUser.displayName}}<br>
-      Email: {{currentUser.mail}}<br>
-      Member Of: <br>
-      {{#each addKeys currentUser.memberOf}}
-        &nbsp;&nbsp; {{key}}: {{value}} <br>
-      {{/each}}
-      Not member Of: <br>
-      {{#each addKeys currentUser.notMemberOf}}
-        &nbsp;&nbsp; {{key}}: {{value}} <br>
-      {{/each}}
-    </div>
-  {{/if}}
+    {{#if currentUser}}
+        <div class="ui-body ui-body-a">
+            First Name: {{currentUser.givenName}} <br>
+            Last Name: {{currentUser.sn}} <br>
+            Display Name: {{currentUser.displayName}}<br>
+            Email: {{currentUser.mail}}<br>
+            Member Of: <br>
+            {{#each addKeys currentUser.memberOf}}
+                &nbsp;&nbsp; {{key}}: {{value}} <br>
+            {{/each}}
+            Not member Of: <br>
+            {{#each addKeys currentUser.notMemberOf}}
+                &nbsp;&nbsp; {{key}}: {{value}} <br>
+            {{/each}}
+        </div>
+    {{/if}}
 </template>

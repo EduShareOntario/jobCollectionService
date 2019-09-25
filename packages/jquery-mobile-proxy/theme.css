@@ -59,7 +59,7 @@
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAEBJREFUGJV9kMEKADAIQmtfbl/uLtsYoXmKfIYUIUQSJKE8B1/NoQbPIQPrkIChdhaeDq3WrDLzBc5crr/9yO9v0Dinb5SKJTsAAAAASUVORK5CYII=');
 }
 .ui-icon-check:after,
-/* Used ui-checkbox-on twice to increase specificity. If active state has background-image for gradient this rule overrides. */
+	/* Used ui-checkbox-on twice to increase specificity. If active state has background-image for gradient this rule overrides. */
 html .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAGlJREFUKJGVkFEKwCAMQ9vee1AdjLE7x+xnMEXRms/S1zQRCYqkk/TovoiIAEj8FYMBZPZyW0Fmdkwvk3QAqYLOgVP76hecJAkgb0MLNaVYKUUDHSVV9W46ea1zGsHXNlTlvbehyvmJQC95zvcNDVD87AAAAABJRU5ErkJggg==');
 }
@@ -640,7 +640,7 @@ div.ui-mobile-viewport {
 .ui-mini .ui-btn-icon-notext,
 .ui-header .ui-btn-icon-notext,
 .ui-footer .ui-btn-icon-notext {
-	font-size: 16px;	
+	font-size: 16px;
 	padding: 0;
 }
 .ui-btn-inline {
@@ -817,28 +817,28 @@ button.ui-btn-icon-notext,
 	animation-duration: 225ms;
 }
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 @keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 @-webkit-keyframes fadeout {
-    from { opacity: 1; }
-    to { opacity: 0; }
+	from { opacity: 1; }
+	to { opacity: 0; }
 }
 @-moz-keyframes fadeout {
-    from { opacity: 1; }
-    to { opacity: 0; }
+	from { opacity: 1; }
+	to { opacity: 0; }
 }
 @keyframes fadeout {
-    from { opacity: 1; }
-    to { opacity: 0; }
+	from { opacity: 1; }
+	to { opacity: 0; }
 }
 .fade.out {
 	opacity: 0;
@@ -873,7 +873,7 @@ button.ui-btn-icon-notext,
 	transform: scale(1);
 	animation-name: popin;
 	animation-duration: 350ms;
-    opacity: 1;
+	opacity: 1;
 }
 .pop.out {
 	-webkit-animation-name: fadeout;
@@ -898,114 +898,114 @@ button.ui-btn-icon-notext,
 	animation-name: popout;
 }
 @-webkit-keyframes popin {
-    from {
-        -webkit-transform: scale(.8);
-        opacity: 0;
-    }
-    to {
-        -webkit-transform: scale(1);
-        opacity: 1;
-    }
+	from {
+		-webkit-transform: scale(.8);
+		opacity: 0;
+	}
+	to {
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
 }
 @-moz-keyframes popin {
-    from {
-        -moz-transform: scale(.8);
-        opacity: 0;
-    }
-    to {
-        -moz-transform: scale(1);
-        opacity: 1;
-    }
+	from {
+		-moz-transform: scale(.8);
+		opacity: 0;
+	}
+	to {
+		-moz-transform: scale(1);
+		opacity: 1;
+	}
 }
 @keyframes popin {
-    from {
-        transform: scale(.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+	from {
+		transform: scale(.8);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 @-webkit-keyframes popout {
-    from {
-        -webkit-transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        -webkit-transform: scale(.8);
-        opacity: 0;
-    }
+	from {
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		-webkit-transform: scale(.8);
+		opacity: 0;
+	}
 }
 @-moz-keyframes popout {
-    from {
-        -moz-transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        -moz-transform: scale(.8);
-        opacity: 0;
-    }
+	from {
+		-moz-transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		-moz-transform: scale(.8);
+		opacity: 0;
+	}
 }
 @keyframes popout {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(.8);
-        opacity: 0;
-    }
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(.8);
+		opacity: 0;
+	}
 }
 /* keyframes for slidein from sides */
 @-webkit-keyframes slideinfromright {
-    from { -webkit-transform: translate3d(100%,0,0); }
-    to { -webkit-transform: translate3d(0,0,0); }
+	from { -webkit-transform: translate3d(100%,0,0); }
+	to { -webkit-transform: translate3d(0,0,0); }
 }
 @-moz-keyframes slideinfromright {
-    from { -moz-transform: translateX(100%); }
-    to { -moz-transform: translateX(0); }
+	from { -moz-transform: translateX(100%); }
+	to { -moz-transform: translateX(0); }
 }
 @keyframes slideinfromright {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+	from { transform: translateX(100%); }
+	to { transform: translateX(0); }
 }
 @-webkit-keyframes slideinfromleft {
-    from { -webkit-transform: translate3d(-100%,0,0); }
-    to { -webkit-transform: translate3d(0,0,0); }
+	from { -webkit-transform: translate3d(-100%,0,0); }
+	to { -webkit-transform: translate3d(0,0,0); }
 }
 @-moz-keyframes slideinfromleft {
-    from { -moz-transform: translateX(-100%); }
-    to { -moz-transform: translateX(0); }
+	from { -moz-transform: translateX(-100%); }
+	to { -moz-transform: translateX(0); }
 }
 @keyframes slideinfromleft {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
+	from { transform: translateX(-100%); }
+	to { transform: translateX(0); }
 }
 /* keyframes for slideout to sides */
 @-webkit-keyframes slideouttoleft {
-    from { -webkit-transform: translate3d(0,0,0); }
-    to { -webkit-transform: translate3d(-100%,0,0); }
+	from { -webkit-transform: translate3d(0,0,0); }
+	to { -webkit-transform: translate3d(-100%,0,0); }
 }
 @-moz-keyframes slideouttoleft {
-    from { -moz-transform: translateX(0); }
-    to { -moz-transform: translateX(-100%); }
+	from { -moz-transform: translateX(0); }
+	to { -moz-transform: translateX(-100%); }
 }
 @keyframes slideouttoleft {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+	from { transform: translateX(0); }
+	to { transform: translateX(-100%); }
 }
 @-webkit-keyframes slideouttoright {
-    from { -webkit-transform: translate3d(0,0,0); }
-    to { -webkit-transform: translate3d(100%,0,0); }
+	from { -webkit-transform: translate3d(0,0,0); }
+	to { -webkit-transform: translate3d(100%,0,0); }
 }
 @-moz-keyframes slideouttoright {
-    from { -moz-transform: translateX(0); }
-    to { -moz-transform: translateX(100%); }
+	from { -moz-transform: translateX(0); }
+	to { -moz-transform: translateX(100%); }
 }
 @keyframes slideouttoright {
-    from { transform: translateX(0); }
-    to { transform: translateX(100%); }
+	from { transform: translateX(0); }
+	to { transform: translateX(100%); }
 }
 .slide.out, .slide.in {
 	-webkit-animation-timing-function: ease-out;
@@ -1131,28 +1131,28 @@ button.ui-btn-icon-notext,
 	animation-duration: 200ms;
 }
 @-webkit-keyframes slideinfromtop {
-    from { -webkit-transform: translateY(-100%); }
-    to { -webkit-transform: translateY(0); }
+	from { -webkit-transform: translateY(-100%); }
+	to { -webkit-transform: translateY(0); }
 }
 @-moz-keyframes slideinfromtop {
-    from { -moz-transform: translateY(-100%); }
-    to { -moz-transform: translateY(0); }
+	from { -moz-transform: translateY(-100%); }
+	to { -moz-transform: translateY(0); }
 }
 @keyframes slideinfromtop {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+	from { transform: translateY(-100%); }
+	to { transform: translateY(0); }
 }
 @-webkit-keyframes slideouttotop {
-    from { -webkit-transform: translateY(0); }
-    to { -webkit-transform: translateY(-100%); }
+	from { -webkit-transform: translateY(0); }
+	to { -webkit-transform: translateY(-100%); }
 }
 @-moz-keyframes slideouttotop {
-    from { -moz-transform: translateY(0); }
-    to { -moz-transform: translateY(-100%); }
+	from { -moz-transform: translateY(0); }
+	to { -moz-transform: translateY(-100%); }
 }
 @keyframes slideouttotop {
-    from { transform: translateY(0); }
-    to { transform: translateY(-100%); }
+	from { transform: translateY(0); }
+	to { transform: translateY(-100%); }
 }
 /* slide up */
 .slideup.out {
@@ -1194,28 +1194,28 @@ button.ui-btn-icon-notext,
 	animation-duration: 200ms;
 }
 @-webkit-keyframes slideinfrombottom {
-    from { -webkit-transform: translateY(100%); }
-    to { -webkit-transform: translateY(0); }
+	from { -webkit-transform: translateY(100%); }
+	to { -webkit-transform: translateY(0); }
 }
 @-moz-keyframes slideinfrombottom {
-    from { -moz-transform: translateY(100%); }
-    to { -moz-transform: translateY(0); }
+	from { -moz-transform: translateY(100%); }
+	to { -moz-transform: translateY(0); }
 }
 @keyframes slideinfrombottom {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+	from { transform: translateY(100%); }
+	to { transform: translateY(0); }
 }
 @-webkit-keyframes slideouttobottom {
-    from { -webkit-transform: translateY(0); }
-    to { -webkit-transform: translateY(100%); }
+	from { -webkit-transform: translateY(0); }
+	to { -webkit-transform: translateY(100%); }
 }
 @-moz-keyframes slideouttobottom {
-    from { -moz-transform: translateY(0); }
-    to { -moz-transform: translateY(100%); }
+	from { -moz-transform: translateY(0); }
+	to { -moz-transform: translateY(100%); }
 }
 @keyframes slideouttobottom {
-    from { transform: translateY(0); }
-    to { transform: translateY(100%); }
+	from { transform: translateY(0); }
+	to { transform: translateY(100%); }
 }
 /* The properties in this rule are only necessary for the 'flip' transition.
  * We need specify the perspective to create a projection matrix. This will add
@@ -1270,52 +1270,52 @@ button.ui-btn-icon-notext,
 	animation-name: flipintoleft;
 }
 @-webkit-keyframes flipouttoleft {
-    from { -webkit-transform: rotateY(0deg); }
-    to { -webkit-transform: rotateY(-90deg) scale(.9); }
+	from { -webkit-transform: rotateY(0deg); }
+	to { -webkit-transform: rotateY(-90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoleft {
-    from { -moz-transform: rotateY(0deg); }
-    to { -moz-transform: rotateY(-90deg) scale(.9); }
+	from { -moz-transform: rotateY(0deg); }
+	to { -moz-transform: rotateY(-90deg) scale(.9); }
 }
 @keyframes flipouttoleft {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(-90deg) scale(.9); }
+	from { transform: rotateY(0deg); }
+	to { transform: rotateY(-90deg) scale(.9); }
 }
 @-webkit-keyframes flipouttoright {
-    from { -webkit-transform: rotateY(0deg) ; }
-    to { -webkit-transform: rotateY(90deg) scale(.9); }
+	from { -webkit-transform: rotateY(0deg) ; }
+	to { -webkit-transform: rotateY(90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoright {
-    from { -moz-transform: rotateY(0deg); }
-    to { -moz-transform: rotateY(90deg) scale(.9); }
+	from { -moz-transform: rotateY(0deg); }
+	to { -moz-transform: rotateY(90deg) scale(.9); }
 }
 @keyframes flipouttoright {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(90deg) scale(.9); }
+	from { transform: rotateY(0deg); }
+	to { transform: rotateY(90deg) scale(.9); }
 }
 @-webkit-keyframes flipintoleft {
-    from { -webkit-transform: rotateY(-90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0deg); }
+	from { -webkit-transform: rotateY(-90deg) scale(.9); }
+	to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoleft {
-    from { -moz-transform: rotateY(-90deg) scale(.9); }
-    to { -moz-transform: rotateY(0deg); }
+	from { -moz-transform: rotateY(-90deg) scale(.9); }
+	to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoleft {
-    from { transform: rotateY(-90deg) scale(.9); }
-    to { transform: rotateY(0deg); }
+	from { transform: rotateY(-90deg) scale(.9); }
+	to { transform: rotateY(0deg); }
 }
 @-webkit-keyframes flipintoright {
-    from { -webkit-transform: rotateY(90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0deg); }
+	from { -webkit-transform: rotateY(90deg) scale(.9); }
+	to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoright {
-    from { -moz-transform: rotateY(90deg) scale(.9); }
-    to { -moz-transform: rotateY(0deg); }
+	from { -moz-transform: rotateY(90deg) scale(.9); }
+	to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoright {
-    from { transform: rotateY(90deg) scale(.9); }
-    to { transform: rotateY(0deg); }
+	from { transform: rotateY(90deg) scale(.9); }
+	to { transform: rotateY(0deg); }
 }
 /* The properties in this rule are only necessary for the 'flip' transition.
  * We need specify the perspective to create a projection matrix. This will add
@@ -1334,11 +1334,11 @@ button.ui-btn-icon-notext,
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateX(0); /* Needed to work around an iOS 3.1 bug that causes listview thumbs to disappear when -webkit-visibility:hidden is used. */
 	-webkit-transform-origin: 0;
-	
+
 	-moz-backface-visibility: hidden;
 	-moz-transform: translateX(0);
 	-moz-transform-origin: 0;
-	
+
 	backface-visibility :hidden;
 	transform: translateX(0);
 	transform-origin: 0;
@@ -1361,7 +1361,7 @@ button.ui-btn-icon-notext,
 	-moz-animation-duration: 250ms;
 	animation-name: flipintoright;
 	animation-duration: 250ms;
-	
+
 }
 .turn.out.reverse {
 	-webkit-transform: rotateY(90deg) scale(.9);
@@ -1377,68 +1377,68 @@ button.ui-btn-icon-notext,
 	animation-name: flipintoleft;
 }
 @-webkit-keyframes flipouttoleft {
-    from { -webkit-transform: rotateY(0deg); }
-    to { -webkit-transform: rotateY(-90deg) scale(.9); }
+	from { -webkit-transform: rotateY(0deg); }
+	to { -webkit-transform: rotateY(-90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoleft {
-    from { -moz-transform: rotateY(0deg); }
-    to { -moz-transform: rotateY(-90deg) scale(.9); }
+	from { -moz-transform: rotateY(0deg); }
+	to { -moz-transform: rotateY(-90deg) scale(.9); }
 }
 @keyframes flipouttoleft {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(-90deg) scale(.9); }
+	from { transform: rotateY(0deg); }
+	to { transform: rotateY(-90deg) scale(.9); }
 }
 @-webkit-keyframes flipouttoright {
-    from { -webkit-transform: rotateY(0deg) ; }
-    to { -webkit-transform: rotateY(90deg) scale(.9); }
+	from { -webkit-transform: rotateY(0deg) ; }
+	to { -webkit-transform: rotateY(90deg) scale(.9); }
 }
 @-moz-keyframes flipouttoright {
-    from { -moz-transform: rotateY(0deg); }
-    to { -moz-transform: rotateY(90deg) scale(.9); }
+	from { -moz-transform: rotateY(0deg); }
+	to { -moz-transform: rotateY(90deg) scale(.9); }
 }
 @keyframes flipouttoright {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(90deg) scale(.9); }
+	from { transform: rotateY(0deg); }
+	to { transform: rotateY(90deg) scale(.9); }
 }
 @-webkit-keyframes flipintoleft {
-    from { -webkit-transform: rotateY(-90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0deg); }
+	from { -webkit-transform: rotateY(-90deg) scale(.9); }
+	to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoleft {
-    from { -moz-transform: rotateY(-90deg) scale(.9); }
-    to { -moz-transform: rotateY(0deg); }
+	from { -moz-transform: rotateY(-90deg) scale(.9); }
+	to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoleft {
-    from { transform: rotateY(-90deg) scale(.9); }
-    to { transform: rotateY(0deg); }
+	from { transform: rotateY(-90deg) scale(.9); }
+	to { transform: rotateY(0deg); }
 }
 @-webkit-keyframes flipintoright {
-    from { -webkit-transform: rotateY(90deg) scale(.9); }
-    to { -webkit-transform: rotateY(0deg); }
+	from { -webkit-transform: rotateY(90deg) scale(.9); }
+	to { -webkit-transform: rotateY(0deg); }
 }
 @-moz-keyframes flipintoright {
-    from { -moz-transform: rotateY(90deg) scale(.9); }
-    to { -moz-transform: rotateY(0deg); }
+	from { -moz-transform: rotateY(90deg) scale(.9); }
+	to { -moz-transform: rotateY(0deg); }
 }
 @keyframes flipintoright {
-    from { transform: rotateY(90deg) scale(.9); }
-    to { transform: rotateY(0deg); }
+	from { transform: rotateY(90deg) scale(.9); }
+	to { transform: rotateY(0deg); }
 }
 /* flow transition */
 .flow {
 	-webkit-transform-origin: 50% 30%;
 	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.4);
-	-moz-transform-origin: 50% 30%;	
+	-moz-transform-origin: 50% 30%;
 	-moz-box-shadow: 0 0 20px rgba(0,0,0,.4);
-	transform-origin: 50% 30%;	
+	transform-origin: 50% 30%;
 	box-shadow: 0 0 20px rgba(0,0,0,.4);
 }
 .ui-dialog.flow {
 	-webkit-transform-origin: none;
 	-webkit-box-shadow: none;
-	-moz-transform-origin: none;	
+	-moz-transform-origin: none;
 	-moz-box-shadow: none;
-	transform-origin: none;	
+	transform-origin: none;
 	box-shadow: none;
 }
 .flow.out {
@@ -1483,64 +1483,64 @@ button.ui-btn-icon-notext,
 	animation-name: flowinfromleft;
 }
 @-webkit-keyframes flowouttoleft {
-    0% { -webkit-transform: translateX(0) scale(1); }
+	0% { -webkit-transform: translateX(0) scale(1); }
 	60%, 70% { -webkit-transform: translateX(0) scale(.7); }
-    100% { -webkit-transform: translateX(-100%) scale(.7); }
+	100% { -webkit-transform: translateX(-100%) scale(.7); }
 }
 @-moz-keyframes flowouttoleft {
-    0% { -moz-transform: translateX(0) scale(1); }
+	0% { -moz-transform: translateX(0) scale(1); }
 	60%, 70% { -moz-transform: translateX(0) scale(.7); }
-    100% { -moz-transform:  translateX(-100%) scale(.7); }
+	100% { -moz-transform:  translateX(-100%) scale(.7); }
 }
 @keyframes flowouttoleft {
-    0% { transform: translateX(0) scale(1); }
+	0% { transform: translateX(0) scale(1); }
 	60%, 70% { transform: translateX(0) scale(.7); }
-    100% { transform:  translateX(-100%) scale(.7); }
+	100% { transform:  translateX(-100%) scale(.7); }
 }
 @-webkit-keyframes flowouttoright {
-    0% { -webkit-transform: translateX(0) scale(1); }
+	0% { -webkit-transform: translateX(0) scale(1); }
 	60%, 70% { -webkit-transform: translateX(0) scale(.7); }
-    100% { -webkit-transform:  translateX(100%) scale(.7); }
+	100% { -webkit-transform:  translateX(100%) scale(.7); }
 }
 @-moz-keyframes flowouttoright {
-    0% { -moz-transform: translateX(0) scale(1); }
+	0% { -moz-transform: translateX(0) scale(1); }
 	60%, 70% { -moz-transform: translateX(0) scale(.7); }
-    100% { -moz-transform:  translateX(100%) scale(.7); }
+	100% { -moz-transform:  translateX(100%) scale(.7); }
 }
 @keyframes flowouttoright {
-    0% { transform: translateX(0) scale(1); }
+	0% { transform: translateX(0) scale(1); }
 	60%, 70% { transform: translateX(0) scale(.7); }
-    100% { transform:  translateX(100%) scale(.7); }
+	100% { transform:  translateX(100%) scale(.7); }
 }
 @-webkit-keyframes flowinfromleft {
-    0% { -webkit-transform: translateX(-100%) scale(.7); }
+	0% { -webkit-transform: translateX(-100%) scale(.7); }
 	30%, 40% { -webkit-transform: translateX(0) scale(.7); }
-    100% { -webkit-transform: translateX(0) scale(1); }
+	100% { -webkit-transform: translateX(0) scale(1); }
 }
 @-moz-keyframes flowinfromleft {
-    0% { -moz-transform: translateX(-100%) scale(.7); }
+	0% { -moz-transform: translateX(-100%) scale(.7); }
 	30%, 40% { -moz-transform: translateX(0) scale(.7); }
-    100% { -moz-transform: translateX(0) scale(1); }
+	100% { -moz-transform: translateX(0) scale(1); }
 }
 @keyframes flowinfromleft {
-    0% { transform: translateX(-100%) scale(.7); }
+	0% { transform: translateX(-100%) scale(.7); }
 	30%, 40% { transform: translateX(0) scale(.7); }
-    100% { transform: translateX(0) scale(1); }
+	100% { transform: translateX(0) scale(1); }
 }
 @-webkit-keyframes flowinfromright {
-    0% { -webkit-transform: translateX(100%) scale(.7); }
+	0% { -webkit-transform: translateX(100%) scale(.7); }
 	30%, 40% { -webkit-transform: translateX(0) scale(.7); }
-    100% { -webkit-transform: translateX(0) scale(1); }
+	100% { -webkit-transform: translateX(0) scale(1); }
 }
 @-moz-keyframes flowinfromright {
-    0% { -moz-transform: translateX(100%) scale(.7); }
+	0% { -moz-transform: translateX(100%) scale(.7); }
 	30%, 40% { -moz-transform: translateX(0) scale(.7); }
-    100% { -moz-transform: translateX(0) scale(1); }
+	100% { -moz-transform: translateX(0) scale(1); }
 }
 @keyframes flowinfromright {
-    0% { transform: translateX(100%) scale(.7); }
+	0% { transform: translateX(100%) scale(.7); }
 	30%, 40% { transform: translateX(0) scale(.7); }
-    100% { transform: translateX(0) scale(1); }
+	100% { transform: translateX(0) scale(1); }
 }
 .ui-field-contain,
 .ui-mobile fieldset.ui-field-contain {
@@ -1696,7 +1696,7 @@ li.ui-block-e {
 }
 .ui-grid-solo > .ui-block-a {
 	width: 100%;
-	float: none; 
+	float: none;
 }
 /* preset breakpoint to switch to stacked grid styles below 35em (560px) */
 @media (max-width: 35em) {
@@ -1705,8 +1705,8 @@ li.ui-block-e {
 	.ui-responsive > .ui-block-c,
 	.ui-responsive > .ui-block-d,
 	.ui-responsive > .ui-block-e {
-		width: 100%; 
-		float: none; 
+		width: 100%;
+		float: none;
 	}
 }
 /* fixed page header & footer configuration */
@@ -1763,10 +1763,10 @@ li.ui-block-e {
 }
 /* Tap toggle: hide external fixed footer. See issue #6604 */
 .ui-footer-fixed.ui-fixed-hidden {
-  display: none;
+	display: none;
 }
 .ui-page .ui-footer-fixed.ui-fixed-hidden {
-  display: block
+	display: block
 }
 .ui-page-header-fullscreen .ui-fixed-hidden,
 .ui-page-footer-fullscreen .ui-fixed-hidden {
@@ -1777,7 +1777,7 @@ li.ui-block-e {
 	clip: rect(1px,1px,1px,1px);
 }
 .ui-header-fixed .ui-btn,
-.ui-footer-fixed .ui-btn { 
+.ui-footer-fixed .ui-btn {
 	z-index: 10;
 }
 /* workarounds for other widgets */
@@ -1876,7 +1876,7 @@ li.ui-block-e {
 	border: 0;
 	outline: 0;
 	-webkit-border-radius: inherit;
-	border-bottom-radius: inherit;	
+	border-bottom-radius: inherit;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	cursor: pointer;
@@ -1938,7 +1938,7 @@ li.ui-block-e {
 }
 .ui-collapsible-content {
 	display: block;
-	margin: 0;	
+	margin: 0;
 	padding: .5em 1em;
 }
 .ui-collapsible-themed-content .ui-collapsible-content {
@@ -1964,27 +1964,27 @@ li.ui-block-e {
 }
 .ui-collapsible-heading,
 .ui-collapsible-heading > .ui-btn {
-	-webkit-border-radius: inherit;	
-	border-radius: inherit;	
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
 }
 .ui-collapsible-set .ui-collapsible.ui-first-child {
-	-webkit-border-top-right-radius: inherit;	
+	-webkit-border-top-right-radius: inherit;
 	border-top-right-radius: inherit;
-	-webkit-border-top-left-radius: inherit;	
-	border-top-left-radius: inherit;		
+	-webkit-border-top-left-radius: inherit;
+	border-top-left-radius: inherit;
 }
 .ui-collapsible-content,
 .ui-collapsible-set .ui-collapsible.ui-last-child {
-	-webkit-border-bottom-right-radius: inherit;	
+	-webkit-border-bottom-right-radius: inherit;
 	border-bottom-right-radius: inherit;
-	-webkit-border-bottom-left-radius: inherit;	
-	border-bottom-left-radius: inherit;		
+	-webkit-border-bottom-left-radius: inherit;
+	border-bottom-left-radius: inherit;
 }
 .ui-collapsible-themed-content:not(.ui-collapsible-collapsed) > .ui-collapsible-heading {
-	-webkit-border-bottom-right-radius: 0;	
+	-webkit-border-bottom-right-radius: 0;
 	border-bottom-right-radius: 0;
-	-webkit-border-bottom-left-radius: 0;	
-	border-bottom-left-radius: 0;		
+	-webkit-border-bottom-left-radius: 0;
+	border-bottom-left-radius: 0;
 }
 .ui-collapsible-set .ui-collapsible {
 	margin: -1px -1em 0;
@@ -2052,7 +2052,7 @@ fieldset.ui-controlgroup {
 .ui-controlgroup-horizontal .ui-controlgroup-controls button.ui-btn-icon-notext {
 	width: 1.5em;
 }
- .ui-controlgroup-controls .ui-btn-icon-notext {
+.ui-controlgroup-controls .ui-btn-icon-notext {
 	height: auto;
 	padding: .7em 1em;
 }
@@ -2124,7 +2124,7 @@ fieldset.ui-controlgroup {
 	clip: rect(1px,1px,1px,1px);
 }
 .ui-dialog {
-	 background: none !important; /* this is to ensure that dialog theming does not apply (by default at least) on the page div */
+	background: none !important; /* this is to ensure that dialog theming does not apply (by default at least) on the page div */
 }
 .ui-dialog-contain {
 	width: 92.5%;
@@ -2134,23 +2134,23 @@ fieldset.ui-controlgroup {
 	position: relative;
 	top: -1em;
 }
-.ui-dialog-contain > .ui-header, 
-.ui-dialog-contain > .ui-content, 
-.ui-dialog-contain > .ui-footer { 
+.ui-dialog-contain > .ui-header,
+.ui-dialog-contain > .ui-content,
+.ui-dialog-contain > .ui-footer {
 	display: block;
-	position: relative; 
+	position: relative;
 	width: auto;
 	margin: 0;
 }
 .ui-dialog-contain > .ui-header {
 	overflow: hidden;
-	z-index: 10; 
+	z-index: 10;
 	padding: 0;
 	border-top-width: 0;
 }
 .ui-dialog-contain > .ui-footer {
-	z-index: 10; 
-	padding: 0 1em; 
+	z-index: 10;
+	padding: 0 1em;
 	border-bottom-width: 0;
 }
 .ui-popup-open .ui-header-fixed,
@@ -2272,7 +2272,7 @@ fieldset.ui-controlgroup {
 }
 .ui-popup > .ui-btn-left,
 .ui-popup > .ui-btn-right {
-	position: absolute; 
+	position: absolute;
 	top: -11px;
 	margin: 0;
 	z-index: 1101;
@@ -2349,7 +2349,7 @@ fieldset.ui-controlgroup {
 /**
  * For each side, the arrow is twice the desired size and its corner is aligned
  * with the edge of the container:
- *                                           
+ *
  *           /\         /\                +----+	     /\
  *          /  \       /  \ 					    | /\ |top   /  \
  *      +----+  \     /  +----+       +-->|/  \|     /    \
@@ -2391,21 +2391,21 @@ fieldset.ui-controlgroup {
 }
 /* Fix rotation center for oldIE - see http://www.useragentman.com/IETransformsTranslator/ */
 .ui-popup-arrow-container.ui-popup-arrow-t.ie .ui-popup-arrow {
-    margin-left: -5.857864376269049px;
-    margin-top: -7.0710678118654755px;
+	margin-left: -5.857864376269049px;
+	margin-top: -7.0710678118654755px;
 }
 .ui-popup-arrow-container.ui-popup-arrow-b.ie .ui-popup-arrow {
-    margin-left: -5.857864376269049px;
-    margin-top: -4.142135623730951px;
+	margin-left: -5.857864376269049px;
+	margin-top: -4.142135623730951px;
 }
- 
+
 .ui-popup-arrow-container.ui-popup-arrow-l.ie .ui-popup-arrow {
-    margin-left: -7.0710678118654755px;
-    margin-top: -5.857864376269049px;
+	margin-left: -7.0710678118654755px;
+	margin-top: -5.857864376269049px;
 }
 .ui-popup-arrow-container.ui-popup-arrow-r.ie .ui-popup-arrow {
-    margin-left: -4.142135623730951px;
-    margin-top: -5.857864376269049px;
+	margin-left: -4.142135623730951px;
+	margin-top: -5.857864376269049px;
 }
 .ui-popup-arrow-background {
 	/* desired triangle height is used here */
@@ -2444,11 +2444,11 @@ fieldset.ui-controlgroup {
 .ui-popup-arrow-container.ie .ui-popup-arrow {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865474, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865474, SizingMethod='auto expand')";
 	filter: progid:DXImageTransform.Microsoft.Matrix(
-	      	M11=0.7071067811865474,
-        	M12=-0.7071067811865477,
-        	M21=0.7071067811865477,
-        	M22=0.7071067811865474,
-        	SizingMethod='auto expand');
+			M11=0.7071067811865474,
+			M12=-0.7071067811865477,
+			M21=0.7071067811865477,
+			M22=0.7071067811865474,
+			SizingMethod='auto expand');
 }
 .ui-popup-arrow-background {
 	position: absolute;
@@ -2467,13 +2467,13 @@ fieldset.ui-controlgroup {
 }
 .ui-popup-arrow-container.ui-popup-arrow-t.ie .ui-popup-arrow-background,
 .ui-popup-arrow-container.ui-popup-arrow-b.ie .ui-popup-arrow-background {
-   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865483, M12=-0.7071067811865467, M21=-0.7071067811865467, M22=-0.7071067811865483, SizingMethod='auto expand')";
-   filter: progid:DXImageTransform.Microsoft.Matrix(
-            M11=0.7071067811865483,
-            M12=-0.7071067811865467,
-            M21=-0.7071067811865467,
-            M22=-0.7071067811865483,
-            SizingMethod='auto expand');
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865483, M12=-0.7071067811865467, M21=-0.7071067811865467, M22=-0.7071067811865483, SizingMethod='auto expand')";
+	filter: progid:DXImageTransform.Microsoft.Matrix(
+			M11=0.7071067811865483,
+			M12=-0.7071067811865467,
+			M21=-0.7071067811865467,
+			M22=-0.7071067811865483,
+			SizingMethod='auto expand');
 }
 .ui-popup-arrow-container.ui-popup-arrow-l .ui-popup-arrow-background,
 .ui-popup-arrow-container.ui-popup-arrow-r .ui-popup-arrow-background {
@@ -2485,13 +2485,13 @@ fieldset.ui-controlgroup {
 }
 .ui-popup-arrow-container.ui-popup-arrow-l.ie .ui-popup-arrow-background,
 .ui-popup-arrow-container.ui-popup-arrow-r.ie .ui-popup-arrow-background {
-   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=-0.7071067811865483, M12=0.7071067811865467, M21=0.7071067811865467, M22=0.7071067811865483, SizingMethod='auto expand')";
-   filter: progid:DXImageTransform.Microsoft.Matrix(
-            M11=-0.7071067811865483,
-            M12=0.7071067811865467,
-            M21=0.7071067811865467,
-            M22=0.7071067811865483,
-            SizingMethod='auto expand');
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=-0.7071067811865483, M12=0.7071067811865467, M21=0.7071067811865467, M22=0.7071067811865483, SizingMethod='auto expand')";
+	filter: progid:DXImageTransform.Microsoft.Matrix(
+			M11=-0.7071067811865483,
+			M12=0.7071067811865467,
+			M21=0.7071067811865467,
+			M22=0.7071067811865483,
+			SizingMethod='auto expand');
 }
 .ui-checkbox,
 .ui-radio {
@@ -2572,7 +2572,7 @@ fieldset.ui-controlgroup {
 	max-height: 100%;
 	outline: 0;
 	-webkit-border-radius: inherit;
-	border-radius: inherit;	
+	border-radius: inherit;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	cursor: pointer;
@@ -2589,7 +2589,7 @@ fieldset.ui-controlgroup {
 .ui-select .ui-state-disabled select {
 	display: none;
 }
-/* Because we add all classes of the select and option elements to the span... */ 
+/* Because we add all classes of the select and option elements to the span... */
 .ui-select span.ui-state-disabled {
 	filter: Alpha(Opacity=100);
 	opacity: 1;
@@ -2656,7 +2656,7 @@ fieldset.ui-controlgroup {
 .ui-selectmenu .ui-selectmenu-list {
 	margin: 0;
 	-webkit-border-radius: inherit;
-	border-radius: inherit;	
+	border-radius: inherit;
 }
 .ui-header:not(.ui-screen-hidden) + .ui-selectmenu-list {
 	-webkit-border-top-right-radius: 0;
@@ -2742,7 +2742,7 @@ fieldset.ui-controlgroup {
 }
 .ui-listview > li.ui-first-child,
 .ui-listview > li.ui-first-child > a.ui-btn {
-	-webkit-border-top-right-radius: inherit;	
+	-webkit-border-top-right-radius: inherit;
 	border-top-right-radius: inherit;
 	-webkit-border-top-left-radius: inherit;
 	border-top-left-radius: inherit;
@@ -2761,7 +2761,7 @@ fieldset.ui-controlgroup {
 	border-bottom-right-radius: 0;
 }
 .ui-listview > li.ui-first-child > a.ui-btn + a.ui-btn {
-	-webkit-border-top-left-radius: 0;	
+	-webkit-border-top-left-radius: 0;
 	border-top-left-radius: 0;
 	-webkit-border-top-right-radius: inherit;
 	border-top-right-radius: inherit;
@@ -2774,15 +2774,15 @@ fieldset.ui-controlgroup {
 }
 .ui-listview > li.ui-first-child img:first-child:not(.ui-li-icon) {
 	-webkit-border-top-left-radius: inherit;
-	border-top-left-radius: inherit;	
+	border-top-left-radius: inherit;
 }
 .ui-listview > li.ui-last-child img:first-child:not(.ui-li-icon) {
 	-webkit-border-bottom-left-radius: inherit;
-	border-bottom-left-radius: inherit;	
+	border-bottom-left-radius: inherit;
 }
 .ui-collapsible-content > .ui-listview:not(.ui-listview-inset) {
 	-webkit-border-radius: inherit;
-	border-radius: inherit;	
+	border-radius: inherit;
 }
 .ui-listview > .ui-li-static {
 	padding: .7em 1em;
@@ -3131,7 +3131,7 @@ div.ui-slider-switch.ui-mini {
 		display: inline-block;
 		width: 5.8em;
 	}
-}	
+}
 /* slider tooltip
 -----------------------------------------------------------------------------------------------------------*/
 .ui-slider-popup {
@@ -3418,7 +3418,7 @@ for Android 4.1 */
 	.ui-field-contain .ui-flipswitch.ui-flipswitch-active {
 		width: 1.875em;
 	}
-}	
+}
 .ui-table {
 	border: 0;
 	border-collapse: collapse;
@@ -3536,35 +3536,35 @@ for Android 4.1 */
  Styles for the table columntoggle mode
 */
 .ui-table-reflow td .ui-table-cell-label,
-.ui-table-reflow th .ui-table-cell-label { 
+.ui-table-reflow th .ui-table-cell-label {
 	display: none;
 }
-/* Mobile first styles: Begin with the stacked presentation at narrow widths */ 
+/* Mobile first styles: Begin with the stacked presentation at narrow widths */
 @media only all {
-	/* Hide the table headers */ 
-	.ui-table-reflow thead td, 
+	/* Hide the table headers */
+	.ui-table-reflow thead td,
 	.ui-table-reflow thead th {
 		display: none;
 	}
-	/* Show the table cells as a block level element */ 
+	/* Show the table cells as a block level element */
 	.ui-table-reflow td,
-	.ui-table-reflow th { 
+	.ui-table-reflow th {
 		text-align: left;
 		display: block;
 	}
-	/* Add a fair amount of top margin to visually separate each row when stacked */  
+	/* Add a fair amount of top margin to visually separate each row when stacked */
 	.ui-table-reflow tbody th {
 		margin-top: 3em;
 	}
-	/* Make the label elements a percentage width */ 
+	/* Make the label elements a percentage width */
 	.ui-table-reflow td .ui-table-cell-label,
-	.ui-table-reflow th .ui-table-cell-label { 
-		padding: .4em; 
-		min-width: 30%; 
+	.ui-table-reflow th .ui-table-cell-label {
+		padding: .4em;
+		min-width: 30%;
 		display: inline-block;
 		margin: -.4em 1em -.4em -.4em;
 	}
-	/* For grouped headers, have a different style to visually separate the levels by classing the first label in each col group */ 
+	/* For grouped headers, have a different style to visually separate the levels by classing the first label in each col group */
 	.ui-table-reflow th .ui-table-cell-label-top,
 	.ui-table-reflow td .ui-table-cell-label-top {
 		display: block;
@@ -3575,13 +3575,13 @@ for Android 4.1 */
 		font-weight: normal;
 	}
 }
-/* Breakpoint to show as a standard table at 560px (35em x 16px) or wider */ 
+/* Breakpoint to show as a standard table at 560px (35em x 16px) or wider */
 @media ( min-width: 35em ) {
 	/* Fixes table rendering when switching between breakpoints in Safari <= 5. See https://github.com/jquery/jquery-mobile/issues/5380 */
 	.ui-table-reflow.ui-responsive {
 		display: table-row-group;
 	}
-	/* Show the table header rows */ 
+	/* Show the table header rows */
 	.ui-table-reflow.ui-responsive td,
 	.ui-table-reflow.ui-responsive th,
 	.ui-table-reflow.ui-responsive tbody th,
@@ -3591,14 +3591,14 @@ for Android 4.1 */
 		display: table-cell;
 		margin: 0;
 	}
-	/* Hide the labels in each cell */ 
+	/* Hide the labels in each cell */
 	.ui-table-reflow.ui-responsive td .ui-table-cell-label,
-	.ui-table-reflow.ui-responsive th .ui-table-cell-label { 
+	.ui-table-reflow.ui-responsive th .ui-table-cell-label {
 		display: none;
 	}
 }
-/* Hack to make IE9 and WP7.5 treat cells like block level elements, scoped to ui-responsive class */ 
-/* Applied in a max-width media query up to the table layout breakpoint so we don't need to negate this*/ 
+/* Hack to make IE9 and WP7.5 treat cells like block level elements, scoped to ui-responsive class */
+/* Applied in a max-width media query up to the table layout breakpoint so we don't need to negate this*/
 @media ( max-width: 35em ) {
 	.ui-table-reflow.ui-responsive td,
 	.ui-table-reflow.ui-responsive th {
@@ -3827,7 +3827,7 @@ for Android 4.1 */
 		margin-left: 17em;
 	}
 	.ui-responsive-panel .ui-panel-page-content-open {
-		width: auto;	
+		width: auto;
 	}
 	.ui-responsive-panel .ui-panel-dismiss-display-push,
 	.ui-responsive-panel.ui-page-active ~ .ui-panel-dismiss-display-push {
@@ -3955,11 +3955,11 @@ label.ui-btn {
 /* Buttons */
 .ui-btn-corner-all,
 .ui-btn.ui-corner-all,
-/* Slider track */
+	/* Slider track */
 .ui-slider-track.ui-corner-all,
-/* Flipswitch */
+	/* Flipswitch */
 .ui-flipswitch.ui-corner-all,
-/* Count bubble */
+	/* Count bubble */
 .ui-li-count {
 	-webkit-border-radius: 				.3125em;
 	border-radius: 						.3125em;
@@ -4046,7 +4046,7 @@ html .ui-alt-icon .ui-radio-off:after {
 	width: 8px;
 	height: 8px;
 	border-width: 5px;
-	border-style: solid; 
+	border-style: solid;
 }
 .ui-alt-icon.ui-btn.ui-radio-on:after,
 .ui-alt-icon .ui-btn.ui-radio-on:after {
@@ -4117,7 +4117,7 @@ html .ui-page-theme-a .ui-btn,html .ui-bar-a .ui-btn,html .ui-body-a .ui-btn,htm
 html .ui-page-theme-a .ui-btn:hover,html .ui-bar-a .ui-btn:hover,html .ui-body-a .ui-btn:hover,html body .ui-group-theme-a .ui-btn:hover,html body .ui-btn.ui-btn-a:hover{background:#4e6d8d;border-color:#4e6d8d;color:#fff}
 html .ui-page-theme-a .ui-btn:active,html .ui-bar-a .ui-btn:active,html .ui-body-a .ui-btn:active,html body .ui-group-theme-a .ui-btn:active,html body .ui-btn.ui-btn-a:active{background:#4e6d8d;border-color:#4e6d8d;color:#fff}
 html .ui-page-theme-a .ui-btn.ui-btn-active,html .ui-bar-a .ui-btn.ui-btn-active,html .ui-body-a .ui-btn.ui-btn-active,html body .ui-group-theme-a .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-a.ui-btn-active,html .ui-page-theme-a .ui-flipswitch-active,html .ui-bar-a .ui-flipswitch-active,html .ui-body-a .ui-flipswitch-active,html body .ui-group-theme-a .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,html .ui-page-theme-a .ui-slider-track .ui-btn-active,html .ui-bar-a .ui-slider-track .ui-btn-active,html .ui-body-a .ui-slider-track .ui-btn-active,html body .ui-group-theme-a .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-a .ui-btn-active{background-color:#4e6d8d;border-color:#4e6d8d;color:#fff}
-html .ui-page-theme-a .ui-checkbox-on:after,html .ui-bar-a .ui-checkbox-on:after,html .ui-body-a .ui-checkbox-on:after,html body .ui-group-theme-a .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-a:after,html background-color: primary_color{border-color:#2c3e50;color:#fff}
+/*html .ui-page-theme-a .ui-checkbox-on:after,html .ui-bar-a .ui-checkbox-on:after,html .ui-body-a .ui-checkbox-on:after,html body .ui-group-theme-a .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-a:after,html background-color: primary_color{border-color:#2c3e50;color:#fff}*/
 html .ui-page-theme-a .ui-radio-on:after,html .ui-bar-a .ui-radio-on:after,html .ui-body-a .ui-radio-on:after,html body .ui-group-theme-a .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-a:after{background-color:#2c3e50;color:#fff}
 
 html .ui-bar-b,html .ui-page-theme-b .ui-bar-inherit,html .ui-bar-b .ui-bar-inherit,html .ui-body-b .ui-bar-inherit,html body .ui-group-theme-b .ui-bar-inherit{background:#16a085;border-color:#16a085;color:#fff;font-weight:bold}
@@ -4133,7 +4133,7 @@ html .ui-page-theme-b .ui-btn,html .ui-bar-b .ui-btn,html .ui-body-b .ui-btn,htm
 html .ui-page-theme-b .ui-btn:hover,html .ui-bar-b .ui-btn:hover,html .ui-body-b .ui-btn:hover,html body .ui-group-theme-b .ui-btn:hover,html body .ui-btn.ui-btn-b:hover{background:#1abc9c;border-color:#1abc9c;color:#fff}
 html .ui-page-theme-b .ui-btn:active,html .ui-bar-b .ui-btn:active,html .ui-body-b .ui-btn:active,html body .ui-group-theme-b .ui-btn:active,html body .ui-btn.ui-btn-b:active{background:#1abc9c;border-color:#1abc9c;color:#fff}
 html .ui-page-theme-b .ui-btn.ui-btn-active,html .ui-bar-b .ui-btn.ui-btn-active,html .ui-body-b .ui-btn.ui-btn-active,html body .ui-group-theme-b .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-b.ui-btn-active,html .ui-page-theme-b .ui-flipswitch-active,html .ui-bar-b .ui-flipswitch-active,html .ui-body-b .ui-flipswitch-active,html body .ui-group-theme-b .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-b.ui-flipswitch-active,html .ui-page-theme-b .ui-slider-track .ui-btn-active,html .ui-bar-b .ui-slider-track .ui-btn-active,html .ui-body-b .ui-slider-track .ui-btn-active,html body .ui-group-theme-b .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-b .ui-btn-active{background-color:#1abc9c;border-color:#1abc9c;color:#fff}
-html .ui-page-theme-b .ui-checkbox-on:after,html .ui-bar-b .ui-checkbox-on:after,html .ui-body-b .ui-checkbox-on:after,html body .ui-group-theme-b .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-b:after,html background-color: primary_color{border-color:#16a085;color:#fff}
+/*html .ui-page-theme-b .ui-checkbox-on:after,html .ui-bar-b .ui-checkbox-on:after,html .ui-body-b .ui-checkbox-on:after,html body .ui-group-theme-b .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-b:after,html background-color: primary_color{border-color:#16a085;color:#fff}*/
 html .ui-page-theme-b .ui-radio-on:after,html .ui-bar-b .ui-radio-on:after,html .ui-body-b .ui-radio-on:after,html body .ui-group-theme-b .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-b:after{background-color:#16a085;color:#fff}
 
 html .ui-bar-c,html .ui-page-theme-c .ui-bar-inherit,html .ui-bar-c .ui-bar-inherit,html .ui-body-c .ui-bar-inherit,html body .ui-group-theme-c .ui-bar-inherit{background:#f2f2f2;border-color:#f2f2f2;color:#000;font-weight:bold}
@@ -4149,7 +4149,7 @@ html .ui-page-theme-c .ui-btn,html .ui-bar-c .ui-btn,html .ui-body-c .ui-btn,htm
 html .ui-page-theme-c .ui-btn:hover,html .ui-bar-c .ui-btn:hover,html .ui-body-c .ui-btn:hover,html body .ui-group-theme-c .ui-btn:hover,html body .ui-btn.ui-btn-c:hover{background:#eee;border-color:#eee;color:#000}
 html .ui-page-theme-c .ui-btn:active,html .ui-bar-c .ui-btn:active,html .ui-body-c .ui-btn:active,html body .ui-group-theme-c .ui-btn:active,html body .ui-btn.ui-btn-c:active{background:#eee;border-color:#eee;color:#000}
 html .ui-page-theme-c .ui-btn.ui-btn-active,html .ui-bar-c .ui-btn.ui-btn-active,html .ui-body-c .ui-btn.ui-btn-active,html body .ui-group-theme-c .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-c.ui-btn-active,html .ui-page-theme-c .ui-flipswitch-active,html .ui-bar-c .ui-flipswitch-active,html .ui-body-c .ui-flipswitch-active,html body .ui-group-theme-c .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-c.ui-flipswitch-active,html .ui-page-theme-c .ui-slider-track .ui-btn-active,html .ui-bar-c .ui-slider-track .ui-btn-active,html .ui-body-c .ui-slider-track .ui-btn-active,html body .ui-group-theme-c .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-c .ui-btn-active{background-color:#eee;border-color:#eee;color:#000}
-html .ui-page-theme-c .ui-checkbox-on:after,html .ui-bar-c .ui-checkbox-on:after,html .ui-body-c .ui-checkbox-on:after,html body .ui-group-theme-c .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-c:after,html background-color: primary_color{border-color:#f2f2f2;color:#000}
+/*html .ui-page-theme-c .ui-checkbox-on:after,html .ui-bar-c .ui-checkbox-on:after,html .ui-body-c .ui-checkbox-on:after,html body .ui-group-theme-c .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-c:after,html background-color: primary_color{border-color:#f2f2f2;color:#000}*/
 html .ui-page-theme-c .ui-radio-on:after,html .ui-bar-c .ui-radio-on:after,html .ui-body-c .ui-radio-on:after,html body .ui-group-theme-c .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-c:after{background-color:#f2f2f2;color:#000}
 
 html .ui-bar-d,html .ui-page-theme-d .ui-bar-inherit,html .ui-bar-d .ui-bar-inherit,html .ui-body-d .ui-bar-inherit,html body .ui-group-theme-d .ui-bar-inherit{background:#c1392b;border-color:#c1392b;color:#fff;font-weight:bold}
@@ -4165,7 +4165,7 @@ html .ui-page-theme-d .ui-btn,html .ui-bar-d .ui-btn,html .ui-body-d .ui-btn,htm
 html .ui-page-theme-d .ui-btn:hover,html .ui-bar-d .ui-btn:hover,html .ui-body-d .ui-btn:hover,html body .ui-group-theme-d .ui-btn:hover,html body .ui-btn.ui-btn-d:hover{background:#e84c3d;border-color:#e84c3d;color:#fff}
 html .ui-page-theme-d .ui-btn:active,html .ui-bar-d .ui-btn:active,html .ui-body-d .ui-btn:active,html body .ui-group-theme-d .ui-btn:active,html body .ui-btn.ui-btn-d:active{background:#e84c3d;border-color:#e84c3d;color:#fff}
 html .ui-page-theme-d .ui-btn.ui-btn-active,html .ui-bar-d .ui-btn.ui-btn-active,html .ui-body-d .ui-btn.ui-btn-active,html body .ui-group-theme-d .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-d.ui-btn-active,html .ui-page-theme-d .ui-flipswitch-active,html .ui-bar-d .ui-flipswitch-active,html .ui-body-d .ui-flipswitch-active,html body .ui-group-theme-d .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-d.ui-flipswitch-active,html .ui-page-theme-d .ui-slider-track .ui-btn-active,html .ui-bar-d .ui-slider-track .ui-btn-active,html .ui-body-d .ui-slider-track .ui-btn-active,html body .ui-group-theme-d .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-d .ui-btn-active{background-color:#e84c3d;border-color:#e84c3d;color:#fff}
-html .ui-page-theme-d .ui-checkbox-on:after,html .ui-bar-d .ui-checkbox-on:after,html .ui-body-d .ui-checkbox-on:after,html body .ui-group-theme-d .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-d:after,html background-color: primary_color{border-color:#c1392b;color:#fff}
+/*html .ui-page-theme-d .ui-checkbox-on:after,html .ui-bar-d .ui-checkbox-on:after,html .ui-body-d .ui-checkbox-on:after,html body .ui-group-theme-d .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-d:after,html background-color: primary_color{border-color:#c1392b;color:#fff}*/
 html .ui-page-theme-d .ui-radio-on:after,html .ui-bar-d .ui-radio-on:after,html .ui-body-d .ui-radio-on:after,html body .ui-group-theme-d .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-d:after{background-color:#c1392b;color:#fff}
 
 html .ui-bar-e,html .ui-page-theme-e .ui-bar-inherit,html .ui-bar-e .ui-bar-inherit,html .ui-body-e .ui-bar-inherit,html body .ui-group-theme-e .ui-bar-inherit{background:#f1c40f;border-color:#f1c40f;color:#fff;font-weight:bold}
@@ -4181,7 +4181,7 @@ html .ui-page-theme-e .ui-btn,html .ui-bar-e .ui-btn,html .ui-body-e .ui-btn,htm
 html .ui-page-theme-e .ui-btn:hover,html .ui-bar-e .ui-btn:hover,html .ui-body-e .ui-btn:hover,html body .ui-group-theme-e .ui-btn:hover,html body .ui-btn.ui-btn-e:hover{background:#f4d03f;border-color:#f4d03f;color:#fff}
 html .ui-page-theme-e .ui-btn:active,html .ui-bar-e .ui-btn:active,html .ui-body-e .ui-btn:active,html body .ui-group-theme-e .ui-btn:active,html body .ui-btn.ui-btn-e:active{background:#f4d03f;border-color:#f4d03f;color:#fff}
 html .ui-page-theme-e .ui-btn.ui-btn-active,html .ui-bar-e .ui-btn.ui-btn-active,html .ui-body-e .ui-btn.ui-btn-active,html body .ui-group-theme-e .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-e.ui-btn-active,html .ui-page-theme-e .ui-flipswitch-active,html .ui-bar-e .ui-flipswitch-active,html .ui-body-e .ui-flipswitch-active,html body .ui-group-theme-e .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-e.ui-flipswitch-active,html .ui-page-theme-e .ui-slider-track .ui-btn-active,html .ui-bar-e .ui-slider-track .ui-btn-active,html .ui-body-e .ui-slider-track .ui-btn-active,html body .ui-group-theme-e .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-e .ui-btn-active{background-color:#f4d03f;border-color:#f4d03f;color:#fff}
-html .ui-page-theme-e .ui-checkbox-on:after,html .ui-bar-e .ui-checkbox-on:after,html .ui-body-e .ui-checkbox-on:after,html body .ui-group-theme-e .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-e:after,html background-color: primary_color{border-color:#f1c40f;color:#fff}
+/*html .ui-page-theme-e .ui-checkbox-on:after,html .ui-bar-e .ui-checkbox-on:after,html .ui-body-e .ui-checkbox-on:after,html body .ui-group-theme-e .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-e:after,html background-color: primary_color{border-color:#f1c40f;color:#fff}*/
 html .ui-page-theme-e .ui-radio-on:after,html .ui-bar-e .ui-radio-on:after,html .ui-body-e .ui-radio-on:after,html body .ui-group-theme-e .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-e:after{background-color:#f1c40f;color:#fff}
 
 html .ui-bar-f,html .ui-page-theme-f .ui-bar-inherit,html .ui-bar-f .ui-bar-inherit,html .ui-body-f .ui-bar-inherit,html body .ui-group-theme-f .ui-bar-inherit{background:#3498db;border-color:#3498db;color:#fff;font-weight:bold}
@@ -4197,7 +4197,7 @@ html .ui-page-theme-f .ui-btn,html .ui-bar-f .ui-btn,html .ui-body-f .ui-btn,htm
 html .ui-page-theme-f .ui-btn:hover,html .ui-bar-f .ui-btn:hover,html .ui-body-f .ui-btn:hover,html body .ui-group-theme-f .ui-btn:hover,html body .ui-btn.ui-btn-f:hover{background:#5dade2;border-color:#5dade2;color:#fff}
 html .ui-page-theme-f .ui-btn:active,html .ui-bar-f .ui-btn:active,html .ui-body-f .ui-btn:active,html body .ui-group-theme-f .ui-btn:active,html body .ui-btn.ui-btn-f:active{background:#5dade2;border-color:#5dade2;color:#fff}
 html .ui-page-theme-f .ui-btn.ui-btn-active,html .ui-bar-f .ui-btn.ui-btn-active,html .ui-body-f .ui-btn.ui-btn-active,html body .ui-group-theme-f .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-f.ui-btn-active,html .ui-page-theme-f .ui-flipswitch-active,html .ui-bar-f .ui-flipswitch-active,html .ui-body-f .ui-flipswitch-active,html body .ui-group-theme-f .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-f.ui-flipswitch-active,html .ui-page-theme-f .ui-slider-track .ui-btn-active,html .ui-bar-f .ui-slider-track .ui-btn-active,html .ui-body-f .ui-slider-track .ui-btn-active,html body .ui-group-theme-f .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-f .ui-btn-active{background-color:#5dade2;border-color:#5dade2;color:#fff}
-html .ui-page-theme-f .ui-checkbox-on:after,html .ui-bar-f .ui-checkbox-on:after,html .ui-body-f .ui-checkbox-on:after,html body .ui-group-theme-f .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-f:after,html background-color: primary_color{border-color:#3498db;color:#fff}
+/*html .ui-page-theme-f .ui-checkbox-on:after,html .ui-bar-f .ui-checkbox-on:after,html .ui-body-f .ui-checkbox-on:after,html body .ui-group-theme-f .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-f:after,html background-color: primary_color{border-color:#3498db;color:#fff}*/
 html .ui-page-theme-f .ui-radio-on:after,html .ui-bar-f .ui-radio-on:after,html .ui-body-f .ui-radio-on:after,html body .ui-group-theme-f .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-f:after{background-color:#3498db;color:#fff}
 
 html .ui-bar-g,html .ui-page-theme-g .ui-bar-inherit,html .ui-bar-g .ui-bar-inherit,html .ui-body-g .ui-bar-inherit,html body .ui-group-theme-g .ui-bar-inherit{background:#2ecc71;border-color:#2ecc71;color:#fff;font-weight:bold}
@@ -4213,7 +4213,7 @@ html .ui-page-theme-g .ui-btn,html .ui-bar-g .ui-btn,html .ui-body-g .ui-btn,htm
 html .ui-page-theme-g .ui-btn:hover,html .ui-bar-g .ui-btn:hover,html .ui-body-g .ui-btn:hover,html body .ui-group-theme-g .ui-btn:hover,html body .ui-btn.ui-btn-g:hover{background:#55d98d;border-color:#55d98d;color:#fff}
 html .ui-page-theme-g .ui-btn:active,html .ui-bar-g .ui-btn:active,html .ui-body-g .ui-btn:active,html body .ui-group-theme-g .ui-btn:active,html body .ui-btn.ui-btn-g:active{background:#55d98d;border-color:#55d98d;color:#fff}
 html .ui-page-theme-g .ui-btn.ui-btn-active,html .ui-bar-g .ui-btn.ui-btn-active,html .ui-body-g .ui-btn.ui-btn-active,html body .ui-group-theme-g .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-g.ui-btn-active,html .ui-page-theme-g .ui-flipswitch-active,html .ui-bar-g .ui-flipswitch-active,html .ui-body-g .ui-flipswitch-active,html body .ui-group-theme-g .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-g.ui-flipswitch-active,html .ui-page-theme-g .ui-slider-track .ui-btn-active,html .ui-bar-g .ui-slider-track .ui-btn-active,html .ui-body-g .ui-slider-track .ui-btn-active,html body .ui-group-theme-g .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-g .ui-btn-active{background-color:#55d98d;border-color:#55d98d;color:#fff}
-html .ui-page-theme-g .ui-checkbox-on:after,html .ui-bar-g .ui-checkbox-on:after,html .ui-body-g .ui-checkbox-on:after,html body .ui-group-theme-g .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-g:after,html background-color: primary_color{border-color:#2ecc71;color:#fff}
+/*html .ui-page-theme-g .ui-checkbox-on:after,html .ui-bar-g .ui-checkbox-on:after,html .ui-body-g .ui-checkbox-on:after,html body .ui-group-theme-g .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-g:after,html background-color: primary_color{border-color:#2ecc71;color:#fff}*/
 html .ui-page-theme-g .ui-radio-on:after,html .ui-bar-g .ui-radio-on:after,html .ui-body-g .ui-radio-on:after,html body .ui-group-theme-g .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-g:after{background-color:#2ecc71;color:#fff}
 
 html .ui-bar-h,html .ui-page-theme-h .ui-bar-inherit,html .ui-bar-h .ui-bar-inherit,html .ui-body-h .ui-bar-inherit,html body .ui-group-theme-h .ui-bar-inherit{background:#64a70b;border-color:#64a70b;color:#fff;font-weight:bold}
@@ -4229,51 +4229,51 @@ html .ui-page-theme-h .ui-btn,html .ui-bar-h .ui-btn,html .ui-body-h .ui-btn,htm
 html .ui-page-theme-h .ui-btn:hover,html .ui-bar-h .ui-btn:hover,html .ui-body-h .ui-btn:hover,html body .ui-group-theme-h .ui-btn:hover,html body .ui-btn.ui-btn-h:hover{background:#c4bfb6;border-color:#c4bfb6;color:#fff}
 html .ui-page-theme-h .ui-btn:active,html .ui-bar-h .ui-btn:active,html .ui-body-h .ui-btn:active,html body .ui-group-theme-h .ui-btn:active,html body .ui-btn.ui-btn-h:active{background:#c4bfb6;border-color:#c4bfb6;color:#fff}
 html .ui-page-theme-h .ui-btn.ui-btn-active,html .ui-bar-h .ui-btn.ui-btn-active,html .ui-body-h .ui-btn.ui-btn-active,html body .ui-group-theme-h .ui-btn.ui-btn-active,html body .ui-btn.ui-btn-h.ui-btn-active,html .ui-page-theme-h .ui-flipswitch-active,html .ui-bar-h .ui-flipswitch-active,html .ui-body-h .ui-flipswitch-active,html body .ui-group-theme-h .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-h.ui-flipswitch-active,html .ui-page-theme-h .ui-slider-track .ui-btn-active,html .ui-bar-h .ui-slider-track .ui-btn-active,html .ui-body-h .ui-slider-track .ui-btn-active,html body .ui-group-theme-h .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-h .ui-btn-active{background-color:#c4bfb6;border-color:#c4bfb6;color:#fff}
-html .ui-page-theme-h .ui-checkbox-on:after,html .ui-bar-h .ui-checkbox-on:after,html .ui-body-h .ui-checkbox-on:after,html body .ui-group-theme-h .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-h:after,html background-color: primary_color{border-color:#64a70b;color:#fff}
+/*html .ui-page-theme-h .ui-checkbox-on:after,html .ui-bar-h .ui-checkbox-on:after,html .ui-body-h .ui-checkbox-on:after,html body .ui-group-theme-h .ui-checkbox-on:after,html .ui-btn.ui-checkbox-on.ui-btn-h:after,html background-color: primary_color{border-color:#64a70b;color:#fff}*/
 html .ui-page-theme-h .ui-radio-on:after,html .ui-bar-h .ui-radio-on:after,html .ui-body-h .ui-radio-on:after,html body .ui-group-theme-h .ui-radio-on:after,html .ui-btn.ui-radio-on.ui-btn-h:after{background-color:#64a70b;color:#fff}
 
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'),
-    local('Lato-Regular'),
-    url(../public/fonts/lato-regular.woff) format('woff'),
-    url(../public/fonts/lato-regular.ttf) format('truetype');
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Lato Regular'),
+	local('Lato-Regular'),
+	url(../public/fonts/lato-regular.woff) format('woff'),
+	url(../public/fonts/lato-regular.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'),
-    local('Lato-Bold'),
-    url(../public/fonts/lato-bold.woff) format('woff'),
-    url(../public/fonts/lato-bold.ttf) format('truetype');
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Lato Bold'),
+	local('Lato-Bold'),
+	url(../public/fonts/lato-bold.woff) format('woff'),
+	url(../public/fonts/lato-bold.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 900;
-  src: local('Lato Black'),
-    local('Lato-Black'),
-    url(../public/fonts/lato-black.woff) format('woff'),
-    url(../public/fonts/lato-black.ttf) format('truetype');
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Lato Black'),
+	local('Lato-Black'),
+	url(../public/fonts/lato-black.woff) format('woff'),
+	url(../public/fonts/lato-black.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'),
-    local('Lato-Italic'),
-    url(../public/fonts/lato-italic.woff) format('woff'),
-    url(../public/fonts/lato-italic.ttf) format('truetype');
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Lato Italic'),
+	local('Lato-Italic'),
+	url(../public/fonts/lato-italic.woff) format('woff'),
+	url(../public/fonts/lato-italic.ttf) format('truetype');
 }
 @font-face {
-  font-family: "Flat-UI-Icons-24";
-  font-weight: normal;
-  font-style: normal;
-  src: url("../public/fonts/Flat-UI-Icons-24.woff") format("woff"),
-    url(../public/fonts/Flat-UI-Icons-24.ttf) format('truetype');
+	font-family: "Flat-UI-Icons-24";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../public/fonts/Flat-UI-Icons-24.woff") format("woff"),
+	url(../public/fonts/Flat-UI-Icons-24.ttf) format('truetype');
 }
 
 /* Use the following CSS code if you want to have a class per icon */
@@ -4300,74 +4300,74 @@ html .ui-page-theme-h .ui-radio-on:after,html .ui-bar-h .ui-radio-on:after,html 
 .ui-icon-flat-bubble:after,
 .ui-icon-flat-volume:after,
 .ui-icon-flat-camera:after {
-  font-family: "Flat-UI-Icons-24";
-  font-size: 14px;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 20px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: none;
+	font-family: "Flat-UI-Icons-24";
+	font-size: 14px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: none;
 
 }
 
 .ui-icon-flat-video:after {
-  content: "\e000"; }
+	content: "\e000"; }
 
 .ui-icon-flat-time:after {
-  content: "\e001"; }
+	content: "\e001"; }
 
 .ui-icon-flat-settings:after {
-  content: "\e002"; }
+	content: "\e002"; }
 
 .ui-icon-flat-plus:after {
-  content: "\e003"; }
+	content: "\e003"; }
 
 .ui-icon-flat-new:after {
-  content: "\e005"; }
+	content: "\e005"; }
 
 .ui-icon-flat-menu:after {
-  content: "\e006"; }
+	content: "\e006"; }
 
 .ui-icon-flat-man:after {
-  content: "\e007"; }
+	content: "\e007"; }
 
 .ui-icon-flat-mail:after {
-  content: "\e008"; }
+	content: "\e008"; }
 
 .ui-icon-flat-lock:after {
-  content: "\e009"; }
+	content: "\e009"; }
 
 .ui-icon-flat-location:after {
-  content: "\e00a"; }
+	content: "\e00a"; }
 
 .ui-icon-flat-heart:after {
-  content: "\e00b"; }
+	content: "\e00b"; }
 
 .ui-icon-flat-eye:after {
-  content: "\e00c"; }
+	content: "\e00c"; }
 
 .ui-icon-flat-cross:after {
-  content: "\e00d"; }
+	content: "\e00d"; }
 
 .ui-icon-flat-cmd:after {
-  content: "\e00e"; }
+	content: "\e00e"; }
 
 .ui-icon-flat-checkround:after {
-  content: "\e00f"; }
+	content: "\e00f"; }
 
 .ui-icon-flat-checkmark:after {
-  content: "\e010"; }
+	content: "\e010"; }
 
 .ui-icon-flat-calendar:after {
-  content: "\e011"; }
+	content: "\e011"; }
 
 .ui-icon-flat-bubble:after {
-  content: "\e012"; }
+	content: "\e012"; }
 
 .ui-icon-flat-volume:after {
-  content: "\e013"; }
+	content: "\e013"; }
 
 .ui-icon-flat-camera:after {
-  content: "\e004"; }
+	content: "\e004"; }
