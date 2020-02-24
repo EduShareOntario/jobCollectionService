@@ -11,14 +11,14 @@ $currentRoot = "$($rootPath)\current"
 #
 # dependency configuration
 #
-$nodePath='c:\Program Files (x86)\nodejs'
+$nodePath='c:\apps\nodejs\8.11.4'
 function isCorrectNodeVersion() {
-    & node --eval "{if (process.arch == 'ia32') { process.exit(99); } }"
+    & node --eval "{if (process.arch == 'x64') { process.exit(99); } }"
     return ($lastexitcode -eq 99)
 }
 
 if (-Not (isCorrectNodeVersion)) {
-    Write-Output "Adding default 32 Bit nodejs to beginning of path"
+    Write-Output "Adding default 64 Bit nodejs to beginning of path"
     $Env:path =  $nodePath + ";" + $Env:path
     if (-Not (isCorrectNodeVersion)) {
         throw "Error. invalid nodejs version!!!!"
