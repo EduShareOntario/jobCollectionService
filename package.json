@@ -10,8 +10,8 @@
     "visualize": "meteor --production --extra-packages bundle-visualizer",
     "prebuild": "rimraf .target && meteor npm install",
     "build": "meteor build --directory .target",
-    "prerun": "cd .target/bundle/programs/server && npm install",
-    "run": "run --mongopass=tbd"
+    "prerun": "cd .target/bundle/programs/server && npm install --production --no-audit",
+    "run": "run --mongopass=tbd --cwd='.target/bundle'"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",

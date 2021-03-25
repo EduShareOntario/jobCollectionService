@@ -4,5 +4,5 @@ set PORT=3000
 set MONGO_URL=mongodb://transcriptTest:%npm_config_mongopass%@bamongodb01:27017,bamongodb02:27017,bamongodb03:27017/transcriptTest?replicaSet=rs1^&authSource=admin
 set NODE_OPTIONS=--max_old_space_size=2500
 set
-cd .target/bundle
+cd %npm_config_cwd%
 meteor node main.js
