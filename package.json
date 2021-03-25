@@ -2,16 +2,23 @@
   "name": "transcriptReview",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "start": "export NODE_OPTIONS=--max_old_space_size=2500 && export MONGO_URL=mongodb://localhost:27017/transcript && meteor run --settings private/config/settings.json --verbose",
+    "start-wsl": "export NODE_OPTIONS=--max_old_space_size=2500 && export MONGO_URL=mongodb://localhost:27017/transcript && export meteor run --settings private/config/settings.json --verbose",
+    "start-embedded-mongo": "set NODE_OPTIONS=--max_old_space_size=2500 && meteor run --settings private/config/settings.json --verbose",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer"
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "prebuild": "rimraf .target && meteor npm install",
+    "build": "meteor build --directory .target",
+    "prerun": "cd .target/bundle/programs/server && npm install",
+    "run": "run --mongopass=tbd"
   },
   "dependencies": {
-    "@babel/runtime": "7.0.0-beta.55",
+    "@babel/runtime": "^7.13.10",
     "babel-runtime": "^6.26.0",
-    "meteor-node-stubs": "^0.4.1",
-    "simpl-schema": "^1.5.2"
+    "jquery": "2.1.3",
+    "meteor-node-stubs": "^1.0.0",
+    "simpl-schema": "^1.10.2"
   },
   "meteor": {
     "mainModule": {

@@ -1,37 +1,38 @@
-The Job Collection Service is a 32 bit Node.js application (created by Meteor) and has a runtime dependency on MongoDB for storage of job information.
+The Job Collection Service is a Node.js application (created with Meteor) and has a runtime dependency on MongoDB for storage of job information.
 
-## Build Machine Setup
+# Windows Build Machine Setup
 
-[Meteor 1.2.1](https://install.meteor.com/windows)
+[Meteor Install on Windows](https://install.meteor.com/windows)
 
-## Build Application
+# Linux Build Machine Setup
+[Meteor Install on Linux](https://install.meteor.com/linux)
+`curl https://install.meteor.com/ | sh`
 
-Since we are targeting a Windows machine and our development machines are also Windows, the default OS architecture should suffice.
+# Build Application
 
-eg.
-- `meteor build .target`
-    - This will create a compressed archive file (jobCollectionService.tar.gz) in a directory called `.target`.
-- `meteor build .target --directory`
-    - This will create a directory called `.target` with an expanded `bundle` subdirectory.
+## Build machine OS Architecture is the SAME as the target runtime machine
+### Compressed Archive
+`meteor build .target`
+- This will create a compressed archive file (jobCollectionService.tar.gz) in a directory called `.target`.
+### Expanded Directory
+`meteor build .target --directory`
+- This will create a directory called `.target` with an expanded `bundle` subdirectory.
 
 
-## Target Machine Setup
+# Windows Runtime Machine Setup
 
-### Install Node via Windows installer
-**Meteor 1.2.1 is tested with Node v0.10.40 by the meteor.com group.**
-- [Node v0.10.40 x86 Windows 32 bit](https://nodejs.org/download/release/v0.10.40/node-v0.10.40-x86.msi)
-    - disable Set PATH feature (Node and NPM)
-- [Node v0.12.6 x86 Windows 32 bit](https://nodejs.org/download/release/v0.12.6/node-v0.12.6-x86.msi)
-    - disable Set PATH feature (Node and NPM)
+## Install Node
+via Windows installer
+**Meteor 1.8.0.2 is tested with Node 8.11.4.0 by the meteor.com group.**
 
-#### Gotcha's
+## Gotcha's
 If you didn't install node then you may need to create the npm directory in your AppData\Roaming directory as per http://stackoverflow.com/questions/25093276/node-js-windows-error-enoent-stat-c-users-rt-appdata-roaming-npm
 
-### Install Visual Studio 2013 Express or Visual Studio 2012
+## Install Visual Studio 2013 Express or Visual Studio 2012 or later
 
 This is required to install/build 'native' node modules.
 
-### Setup IIS and IISNode to manage the Node process
+## Setup IIS and IISNode to manage the Node process
 
 We have chosen to let IIS manage our web application via the IISNode module.  The application can also be [Manually run app from command line](#manually-run-app-from-command-line).
 
@@ -72,9 +73,9 @@ Depends on [Setup Install Scripts](#setup-install-scripts)
 
 ### Manual Application Install
 1. Open Developer Command Prompt for VS2012 or plain cmd if Visual Studio is on the path
-2. Ensure the 32 bit Node program is found.
+2. Ensure the expected Node program is found.
 - `set path=c:\Program Files (x86)\nodejs;%path%`
-3. Ensure the command line is using the correct version of Node as per [Target Machine Setup](#target-machine-setup)
+3. Ensure the command line is using the correct version of Node as per [Windows Runtime Machine Setup](#windows-runtime-machine-setup)
 - `node`
 - `> process.arch`
 - `> process.platform`
